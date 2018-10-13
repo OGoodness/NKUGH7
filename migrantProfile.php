@@ -39,7 +39,6 @@
 
 <main>
     <div class="content">
-<<<<<<< HEAD:migrantForm .php
         <form action="processData.php" method="post">
             <input type="hidden" name="type" value="migrent">
             <?php echo $content["migrant_account__first_name_text"]; ?><input type="text" name="fname"><br>
@@ -58,9 +57,7 @@
             <?php echo $content["migrant_account__picture_text"]; ?><input type="file" name="pic1" accept="image/*"><br>
             <?php echo $content["migrant_account__picture_text"]; ?><input type="file" name="pic2" accept="image/*"><br>
             <?php echo $content["migrant_account__picture_text"]; ?><input type="file" name="pic3" accept="image/*"><br>
-=======
         <form action="migrantForm.php" method="POST"><a href="migrantForm.php"><button type="submit" name="user_type" value="Migrant">Edit Info</button></a></form>
->>>>>>> ProfileWork:migrantProfile.php
 
     </div>
 </main>
