@@ -19,7 +19,6 @@ if(isset($_COOKIE["language"])) {
     <div class="title"><b>Hello</b>, Select your language</div>
     <ul class="languages">
         <li>elige tu idioma</li> <!--Spanish-->
-        <li>choose Language</li> <!--English-->
         <li>اختر لغتك</li> <!--Arabic-->
         <li>chọn ngôn ngữ của bạn</li> <!--Vietnamese-->
         <li>Piliin ang iyong wika</li> <!--Filipino-->
