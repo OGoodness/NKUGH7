@@ -22,6 +22,7 @@
     $content["migrant_account__occupation_text"] = 'Occupation:';
 
     $content["migrant_account__marital_stat_text"] = 'Relationship Status:';
+    $content["migrant_account__select_select"] = 'Select';
     $content["migrant_account__married_select"] = 'Married';
     $content["migrant_account__single_select"] = 'Single';
     $content["migrant_account__complicated_select"] = 'It\'s Complicated';
