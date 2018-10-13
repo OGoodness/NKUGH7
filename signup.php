@@ -169,10 +169,10 @@
         <div class="content" style="margin: 0 auto;">
             <div class="text"><?php echo $content["login__sign_in_account"]; ?></div>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                <input id ="" type="text" name="fname" placeholder="first name"><br>
-                <br><span class="help-block"><?php echo $userFirstNameErr; ?></span>
-                <input id ="" type="text" name="lname" placeholder="last name"><br>
-                <br><span class="help-block"><?php echo $userLastNameErr; ?></span>
+                <input id ="" type="text" name="fname" placeholder="first name">
+                <br><span class="help-block"><?php echo $userFirstNameErr; ?></span><br>
+                <input id ="" type="text" name="lname" placeholder="last name">
+                <br><span class="help-block"><?php echo $userLastNameErr; ?></span><br>
                 <input id ="" type="text" name="email" placeholder="johnsmith@email.com">
                 <br><span class="help-block"><?php echo $emailErr; ?></span><br>
                 <select name="user-type">
@@ -185,9 +185,9 @@
                         }
                     ?>
                 </select><br>
-                <input id="" type="password" name="password" placeholder="password"><br>
+                <input id="" type="password" name="password" placeholder="password">
                 <br><span class="help-block"><?php echo $passwordErr; ?></span>
-                <input id="" type="password" name="confirm_password" placeholder="confirm_password"><br>
+                <input id="" type="password" name="confirm_password" placeholder="confirm_password">
                 <br><span class="help-block"><?php echo $confirmPasswordErr; ?></span>
                 <button type="submit"><?php echo $content["login__sign_up_button"]; ?></button>
             </form>
