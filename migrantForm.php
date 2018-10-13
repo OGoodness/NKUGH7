@@ -15,7 +15,8 @@
     $content["migrant_account__last_name_text"] = 'Last Name:';
     $content["migrant_account__age_text"] = 'Age:';
     $content["migrant_account__gender_text"] = 'Gender:';
-    $content["migrant_account__location_text"] = 'Location(City, State):';
+    $content["migrant_account__location_city"] = 'Location(City):';
+    $content["migrant_account__location_state"] = 'Location(State):';
     $content["migrant_account__nationality_text"] = 'Nationality:';
     $content["migrant_account__religion_text"] = 'Religion:';
     $content["migrant_account__marital_stat_text"] = 'Relationship Status:';
@@ -54,9 +55,10 @@
         <form action="browse.php" method="post">
             <input type="text" name="fname" placeholder="<?php echo $content["migrant_account__first_name_text"]; ?>"><br>
             <input type="text" name="lname" placeholder="<?php echo  $content["migrant_account__last_name_text"]; ?>"><br>
-            <input type="text" name="age" placeholder="<?php echo $content["migrant_account__age_text"]; ?>"><br>
+            <input type="number" step="1" min="1" name="age" placeholder="<?php echo $content["migrant_account__age_text"]; ?>"><br>
             <input type="text" name="gender" placeholder="<?php echo $content["migrant_account__gender_text"]; ?>"><br>
-            <input type="text" name="location"placeholder="<?php echo $content["migrant_account__location_text"]; ?>"><br>
+            <input type="text" name="location"placeholder="<?php echo $content["migrant_account__location_city"]; ?>"><br>
+            <input type="text" name="location"placeholder="<?php echo $content["migrant_account__location_state"]; ?>"><br>
             <input type="text" name="nationality" placeholder="<?php echo $content["migrant_account__nationality_text"]; ?>"><br>
             <input type="text" name="Religion"placeholder="<?php echo $content["migrant_account__religion_text"]; ?>"><br>
 

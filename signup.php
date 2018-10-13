@@ -78,9 +78,12 @@
                 // Attempt to execute the prepared statement
                 if(mysqli_stmt_execute($stmt)){
                     // Redirect to login page
+                    $insert_id = mysqli_stmt_insert_id($stmt);
                     session_start();
                     $_SESSION['user_id'] = $email;
-                    //header("location: ../admin.php");
+                    $_SESSION['insert_id'] = $insert_id;
+                    setcookie("insert_id", $insert_id , time() + (86400 * 30), "/");
+                    header("location: guide_or_migrant.php");
                 } else{
                     echo "Something went wrong. Please try again later.";
                 }
@@ -146,11 +149,11 @@
         <div class="content" style="margin: 0 auto;">
             <div class="text"><?php echo $content["login__sign_in_account"]; ?></div>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                <input id ="" type="text" name="fname" placeholder="first name">
+                <input  type="text" name="fname" placeholder="first name">
                 <br><span class="help-block"><?php echo $userFirstNameErr; ?></span><br>
-                <input id ="" type="text" name="lname" placeholder="last name">
+                <input  type="text" name="lname" placeholder="last name">
                 <br><span class="help-block"><?php echo $userLastNameErr; ?></span><br>
-                <input id ="" type="text" name="email" placeholder="johnsmith@email.com">
+                <input  type="text" name="email" placeholder="johnsmith@email.com">
                 <br><span class="help-block"><?php echo $emailErr; ?></span><br>
                 <select name="user-type">
                     <?php
@@ -162,9 +165,9 @@
                         }
                     ?>
                 </select><br>
-                <input id="" type="password" name="password" placeholder="password">
+                <input  type="password" name="password" placeholder="password">
                 <br><span class="help-block"><?php echo $passwordErr; ?></span>
-                <input id="" type="password" name="confirm_password" placeholder="confirm_password">
+                <input  type="password" name="confirm_password" placeholder="confirm_password">
                 <br><span class="help-block"><?php echo $confirmPasswordErr; ?></span>
                 <button type="submit"><?php echo $content["login__sign_up_button"]; ?></button>
             </form>
