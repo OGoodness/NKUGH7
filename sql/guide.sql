@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `guide` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
   `users_id` int(11) NOT NULL,
   `age` int(11) NOT NULL,
   `gender` varchar(32) NOT NULL,

@@ -5,12 +5,13 @@
     require_once ('vendor/autoload.php');
     use \Statickidz\GoogleTranslate;
 
+ 
     // Define variables and initialize with empty values
     $userFirstName = $userLastName = $type = $password = $confirmPassword = $email = "";
     $userFirstNameErr = $userLastNameErr = $userTypeErr = $passwordErr = $confirmPasswordErr = $emailErr = "";
 
     // Processing form data when form is submitted
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
+    if(!empty($_POST)){
 
         // Validate first name
         if(empty(trim($_POST["fname"]))){
@@ -35,7 +36,28 @@
             $emailErr = "Please enter an email.";
         } else{
             // Prepare a select statement
-            $email = trim($_POST["email"]);
+            $sql = "SELECT user_email FROM users WHERE user_email = ?";
+            if($stmt = mysqli_prepare($conn, $sql)){
+                // Bind variables to the prepared statement as parameters
+                mysqli_stmt_bind_param($stmt, "s", $paramEmail);
+                $paramEmail = trim($_POST["email"]);
+                if(mysqli_stmt_execute($stmt)){
+                    // store result
+                    mysqli_stmt_store_result($stmt);
+
+                    if(mysqli_stmt_num_rows($stmt) == 1){
+                        $emailErr = "This email is already taken.";
+                    } else{
+                        $email = trim($_POST["email"]);
+                    }
+                } else{
+                    echo "Execution email failed";
+                }
+            }
+            else{
+                echo "Prepare email failed";
+            }
+            
 
         }
 
@@ -43,7 +65,7 @@
         if(empty(trim($_POST['password']))){
             $passwordErr = "Please enter a password.";
         } elseif(strlen(trim($_POST['password'])) < 6){
-            $passwordErr = "Password must have atleast 6 characters.";
+            $passwordErr = "Password must have at least 6 characters.";
         } else{
             $password = trim($_POST['password']);
         }
@@ -78,9 +100,12 @@
                 // Attempt to execute the prepared statement
                 if(mysqli_stmt_execute($stmt)){
                     // Redirect to login page
+                    $insert_id = mysqli_stmt_insert_id($stmt);
                     session_start();
                     $_SESSION['user_id'] = $email;
-                    //header("location: ../admin.php");
+                    $_SESSION['insert_id'] = $insert_id;
+                    setcookie("insert_id", $insert_id , time() + (86400 * 30), "/");
+                    header("location: guide_or_migrant.php");
                 } else{
                     echo "Something went wrong. Please try again later.";
                 }
@@ -146,26 +171,24 @@
         <div class="content" style="margin: 0 auto;">
             <div class="text"><?php echo $content["login__sign_in_account"]; ?></div>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                <input id ="" type="text" name="fname" placeholder="first name">
-                <br><span class="help-block"><?php echo $userFirstNameErr; ?></span><br>
-                <input id ="" type="text" name="lname" placeholder="last name">
-                <br><span class="help-block"><?php echo $userLastNameErr; ?></span><br>
-                <input id ="" type="text" name="email" placeholder="johnsmith@email.com">
-                <br><span class="help-block"><?php echo $emailErr; ?></span><br>
+                <input  type="text" name="fname" placeholder="first name">
+                <br><span class="help-block"><?php echo $userFirstNameErr; ?></span><br><br>
+                <input  type="text" name="lname" placeholder="last name">
+                <br><span class="help-block"><?php echo $userLastNameErr; ?></span><br><br>
+                <input  type="text" name="email" placeholder="johnsmith@email.com">
+                <br><span class="help-block"><?php echo $emailErr; ?></span><br><br>
                 <select name="user-type">
                     <?php
                         foreach($user_type as $data)
                         {
-                    ?>
-                    <option value="<?php echo $data->id; ?>"> <?php echo $data->user_type;?></option>
-                    <?php
-                        }
+                                  	echo '<option value="'. $data->id.'">'. $data->user_type.'</option>';
+                          }
                     ?>
                 </select><br>
-                <input id="" type="password" name="password" placeholder="password">
-                <br><span class="help-block"><?php echo $passwordErr; ?></span>
-                <input id="" type="password" name="confirm_password" placeholder="confirm_password">
-                <br><span class="help-block"><?php echo $confirmPasswordErr; ?></span>
+                <input  type="password" name="password" placeholder="password">
+                <br><span class="help-block"><?php echo $passwordErr; ?></span><br>
+                <input  type="password" name="confirm_password" placeholder="confirm_password">
+                <br><span class="help-block"><?php echo $confirmPasswordErr; ?></span><br>
                 <button type="submit"><?php echo $content["login__sign_up_button"]; ?></button>
             </form>
 

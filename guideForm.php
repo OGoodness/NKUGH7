@@ -15,41 +15,38 @@
     $content["migrant_account__last_name_text"] = 'Last Name:';
     $content["migrant_account__age_text"] = 'Age:';
     $content["migrant_account__gender_text"] = 'Gender:';
-    $content["migrant_account__location_text"] = 'Location(City, State):';
+    $content["migrant_account__location_state_text"] = 'Location(State):';
+    $content["migrant_account__location_city_text"] = 'Location(City,):';
     $content["migrant_account__nationality_text"] = 'Nationality:';
+    $content["migrant_account__religion_text"] = 'Religion:';
     $content["migrant_account__occupation_text"] = 'Occupation:';
-    $content["migrant_account__marital_stat_text"] = 'Marital Status:';
-    $content["migrant_account__married_button"] = 'Married';
-    $content["migrant_account__single_button"] = 'Single';
+
+    $content["migrant_account__marital_stat_text"] = 'Relationship Status:';
+    $content["migrant_account__select_select"] = 'Select';
+    $content["migrant_account__married_select"] = 'Married';
+    $content["migrant_account__single_select"] = 'Single';
+    $content["migrant_account__complicated_select"] = 'It\'s Complicated';
+    $content["migrant_account__other_select"] = 'Other';
+
+    $content["migrant_account__self_textarea"] = 'Tell us about yourself...';
     $content["migrant_account__family_textarea"] = 'Tell us about your family...';
-    $content["migrant_account__language_textarea"] = 'What languages do you speak...';
+    $content["migrant_account__primLanguage_textarea"] = 'What is your primary language...';
+    $content["migrant_account__secLanguage_textarea"] = 'What other languages do you know...';
     $content["migrant_account__hobby_text"] = 'Hobby:';
     $content["migrant_account__picture_text"] = 'Insert a Picture:';
 
 
     $trans = new GoogleTranslate();
-    $migrant_account__header_text = $trans->translate("en", $language, $migrant_account__header_text);
-    $migrant_account__title_text = $trans->translate("en", $language, $migrant_account__title_text);
-    $migrant_account__first_name_text = $trans->translate("en", $language,  $migrant_account__first_name_text);
-    $migrant_account__last_name_text = $trans->translate("en", $language,  $migrant_account__last_name_text);
-    $migrant_account__age_text = $trans->translate("en", $language, $migrant_account__age_text);
-    $migrant_account__gender_text = $trans->translate("en", $language, $migrant_account__gender_text);
-    $migrant_account__location_text = $trans->translate("en", $language,  $migrant_account__location_text);
-    $migrant_account__nationality_text = $trans->translate("en", $language,  $migrant_account__nationality_text);
-    $migrant_account__occupation_text = $trans->translate("en", $language, $migrant_account__occupation_text);
-    $migrant_account__marital_stat_text = $trans->translate("en", $language, $migrant_account__marital_stat_text);
-    $migrant_account__married_button = $trans->translate("en", $language,  $migrant_account__married_button);
-    $migrant_account__single_button = $trans->translate("en", $language, $migrant_account__single_button);
-    $migrant_account__family_textarea = $trans->translate("en", $language, $migrant_account__family_textarea);
-    $migrant_account__language_textarea = $trans->translate("en", $language, $migrant_account__language_textarea);
-    $migrant_account__hobby_text= $trans->translate("en", $language,  $migrant_account__hobby_textarea);
+    foreach($content as $key => $text){
+        $content["$key"] = $trans->translate("en", $language, $text);
+    }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
     <meta charset="utf-8">
-    <title><?php echo $migrant_account__title_text; ?></title>
+    <title><?php echo $content["migrant_account__title_text"]; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/theme.css">
     <script src="js/main.js"></script>
@@ -59,34 +56,43 @@
 <body>
 
 <header>
-    <div class="title"><?php echo $migrant_account__header_text; ?></div>
+    <div class="title"><?php echo $content["migrant_account__header_text"]; ?></div>
 </header>
 
 <main>
     <div class="content">
-        <form action="browse.php" method="post">
-        <?php echo $migrant_account__first_name_text; ?><input type="text" name="fname"><br>
-        <?php echo  $migrant_account__last_name_text; ?><input type="text" name="lname"><br>
-        <?php echo $migrant_account__age_text; ?><input type="text" name="age"><br>
-        <?php echo $migrant_account__gender_text; ?><input type="text" name="gender"><br>
-        <?php echo $migrant_account__location_text; ?><input type="text" name="location"><br>
-        <?php echo $migrant_account__nationality_text; ?><input type="text" name="nationality"><br>
-        <?php echo $migrant_account__occupation_text; ?><input type="text" name="occupation"><br>
+        <form action="functions/processData.php" method="post">
+        <input type="hidden" name="type" value="guide">
+        <input required type="text" name="fname" placeholder="<?php echo $content["migrant_account__first_name_text"]; ?>"><br>
+        <input required type="text" name="lname" placeholder="<?php echo  $content["migrant_account__last_name_text"]; ?>"><br>
+        <input required type="text" name="age" placeholder="<?php echo $content["migrant_account__age_text"]; ?>"><br>
+        <input required type="text" name="gender" placeholder="<?php echo $content["migrant_account__gender_text"]; ?>"><br>
 
-        <?php echo $migrant_account__marital_stat_text; ?>
-            <input type="radio" name="maritalStat" value="married"><?php echo $migrant_account__married_button; ?>
-            <input type="radio" name="maritalStat" value="single"> <?php echo $migrant_account__single_button;?><br>
+        <input required type="text" name="state" placeholder="<?php echo $content["migrant_account__location_state_text"]; ?>"><br>
+        <input required type="text" name="city" placeholder="<?php echo $content["migrant_account__location_city_text"]; ?>"><br>
+        <input required type="text" name="nationality" placeholder="<?php echo $content["migrant_account__nationality_text"]; ?>"><br>
+        <input type="text" name="occupation" placeholder="<?php echo $content["migrant_account__occupation_text"]; ?>"><br>
+        <input type="text" name="religion" placeholder="<?php echo $content["migrant_account__religion_text"]; ?>"><br>
 
-        <?php echo $migrant_account__hobby_text; ?><input type="text" name="hobby1"><br>
-        <?php echo $migrant_account__hobby_text; ?><input type="text" name="hobby2"><br>
-
-       
-        <textarea rows="6" cols="50" name="family"><?php echo $migrant_account__family_textarea; ?></textarea><br>
-        <textarea rows="4" cols="50" name="languages"><?php echo $migrant_account__language_textarea; ?></textarea><br>
+        <?php echo $content["migrant_account__marital_stat_text"]; ?><br>
+        <select name="maritalStat">
+            <option value="married"><?php echo $content["migrant_account__married_select"]; ?></option>
+            <option value="Single"><?php echo $content["migrant_account__single_select"]; ?></option>
+            <option value="complicated"><?php echo $content["migrant_account__complicated_select"]; ?></option>
+            <option value="Other"><?php echo $content["migrant_account__other_select"]; ?></option>
+        </select>
         
-        <?php echo $migrant_account__picture_text; ?><input type="file" name="pic1" accept="image/*"><br>
-        <?php echo $migrant_account__picture_text; ?><input type="file" name="pic2" accept="image/*"><br>
-        <?php echo $migrant_account__picture_text; ?><input type="file" name="pic3" accept="image/*"><br>
+
+        <input type="text" name="hobby1" placeholder="<?php echo $content["migrant_account__hobby_text"]; ?>"><br>
+        <input type="text" name="hobby2" placeholder="<?php echo $content["migrant_account__hobby_text"]; ?>"><br>
+        <textarea rows="6" cols="50" name="self" placeholder="<?php echo $content["migrant_account__self_textarea"]; ?>"></textarea><br>
+        <textarea rows="6" cols="50" name="family" placeholder="<?php echo $content["migrant_account__family_textarea"]; ?>"></textarea><br>
+        <textarea required rows="4" cols="50" name="primLanguages" placeholder="<?php echo $content["migrant_account__primLanguage_textarea"]; ?>"></textarea><br>
+        <textarea rows="4" cols="50" name="secLanguages" placeholder="<?php echo $content["migrant_account__secLanguage_textarea"]; ?>"></textarea><br>
+        
+        <?php echo $content["migrant_account__picture_text"]; ?><input type="file" name="pic1" accept="image/*"><br>
+        <input type="file" name="pic2" accept="image/*"><br>
+        <input type="file" name="pic3" accept="image/*"><br>
 
             <input type="submit" value="Submit">
         </form>

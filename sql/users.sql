@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `users` (
-  `user_id` int(10) NOT NULL,
+  `user_id` int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `user_first_name` varchar(50) NOT NULL,
   `user_last_name` varchar(50) NOT NULL,
   `user_email` varchar(256) NOT NULL,

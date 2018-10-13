@@ -37,29 +37,39 @@
 			</script> 
 			<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhc-gJsL4DOC6hA4DUW-uZGLCR_vPDkSk&callback=initMap">
 			</script>
-			<div class="col-md-6 info">
-				<div class="card">
-					<div class="card-body">
-						This is some text within a card body.
-					</div>
-				</div>
-				<div class="card">
-					<div class="card-body">
-						This is some text within a card body.
-					</div>
-				</div>
-				<div class="card">
-					<div class="card-body">
-						This is some text within a card body.
-					</div>
-				</div>
-				<div class="card">
-					<div class="card-body">
-						This is some text within a card body.
-					</div>
-				</div>
+			<div class="col-md-6 info" id = "results">
+				
 			</div>
 		</div>
 	</div>
 </body>
+<script>
+    function initService() {
+        var activity = 'Movies';
+        var location = 'cincinnati';
+        var displaySuggestions = function(predictions, status) {
+          if (status != google.maps.places.PlacesServiceStatus.OK) {
+            alert(status);
+            return;
+          }
+
+          predictions.forEach(function(prediction) {
+            var divcard= document.createElement('div');
+            divcard.setAttribute("class", "card");
+              var divcardbody = document.createElement('div');
+              divcardbody.setAttribute("class","card-body");
+              divcardbody.appendChild(document.createTextNode(prediction.description));
+            divcard.appendChild(divcardbody);
+              document.getElementById("results").appendChild(divcard);
+          });
+        };
+
+        var service = new google.maps.places.AutocompleteService();
+        service.getPlace({ input: activity+' near '+location }, displaySuggestions);
+      }
+    
+    
+    </script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhc-gJsL4DOC6hA4DUW-uZGLCR_vPDkSk&libraries=places&callback=initService"
+        async defer></script>
 </html>

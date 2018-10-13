@@ -1,4 +1,71 @@
 <?php
+
+    require_once 'include/db_connect.php';
+    $email = $password = "";
+    $emailErr = $passwordErr = "";
+
+
+    if(!empty($_POST)){
+        // Check if username is empty
+        if(empty(trim($_POST["email"]))){
+            $emailErr = 'Please enter your email.';
+        } else{
+            $email = trim($_POST["email"]);
+        }
+
+        // Check if password is empty
+        if(empty(trim($_POST['password']))){
+            $passwordErr = 'Please enter your password.';
+        } else{
+            $password = trim($_POST['password']);
+        }
+        // Validate credentials
+        if(empty($emailErr) && empty($passwordErr)){
+            // Prepare a select statement
+            $sql = "SELECT user_email, user_password FROM users WHERE user_email = ?";
+
+            if($stmt = mysqli_prepare($conn, $sql)){
+                // Bind variables to the prepared statement as parameters
+                mysqli_stmt_bind_param($stmt, "s", $paramEmail);
+
+                // Set parameters
+                $paramEmail = $email;
+
+                // Attempt to execute the prepared statement
+                if(mysqli_stmt_execute($stmt)){
+                    // Store result
+                    mysqli_stmt_store_result($stmt);
+
+                    // Check if username exists, if yes then verify password
+                    if(mysqli_stmt_num_rows($stmt) == 1){
+                        // Bind result variables
+                        mysqli_stmt_bind_result($stmt, $email, $hashedPassword);
+                        if(mysqli_stmt_fetch($stmt)){
+                            if(password_verify($password, $hashedPassword)){
+                                /* Password is correct, so start a new session and
+                                save the username to the session */
+                                session_start();
+                                $_SESSION['user_id'] = $email;
+                                header("location: browse.php");
+                            } else{
+                                // Display an error message if password is not valid
+                                $passwordErr = 'The password you entered was not valid.';
+                            }
+                        }
+                    } else{
+                        // Display an error message if username doesn't exist
+                        $emailErr = 'No account found with that email.';
+                    }
+                } else{
+                    echo "Oops! Something went wrong. Please try again later.";
+                }
+            }
+
+        }
+
+    }
+
+
     if(isset($_POST["language"])){
         $language = $_POST["language"];
         setcookie("language", $language, time() + (86400 * 30), "/");
@@ -26,7 +93,9 @@
         $content["$key"] = $trans->translate("en", $language, $text);
     }
 
-    
+    // Close connection
+    mysqli_close($conn);
+
 ?>
 
 <!DOCTYPE html>
@@ -51,17 +120,21 @@
     <div class="two-column-container ">
         <div class="content">
             <div class="text"><?php echo $content["login__sign_in_account"]; ?></div>
-            <form action="mainPage.php" method="post">
-            <input id ="input-user" type="text" name="fname" placeholder="username"><br>
-            <input id="input-lock" type="password" name="lname" placeholder="password"><br>
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                <input id ="input-user" type="text" name="email" placeholder="Enter your email">
+                <br><span class="help-block"><?php echo $emailErr; ?></span><br>
+                <input id="input-lock" type="password" name="password" placeholder="Enter your password">
+                <br><span class="help-block"><?php echo $passwordErr; ?></span><br>
+                <button type="submit"><?php echo $content["login__sign_in_header_text_bold"]; ?></button>
             </form>
 
-            <button><?php echo $content["login__sign_in_header_text_bold"]; ?></button>
+            
         </div>
 
         <div class="content">
             <div class="text"><?php echo $content["login__create_account"]; ?></div>
-            <button> <?php echo $content["login__create_account_button"]; ?></button>
+            <a href="signup.php"><button> <?php echo $content["login__create_account_button"]; ?></button></a>
+            
         </div>
     </div>
 </div>
@@ -70,7 +143,12 @@
 </body>
 <footer>
     <div id="language-footer">
+<<<<<<< HEAD
         <div id="language-display"></div><img id="flag-filipino" src="images/flag-filipino.png" style = "width:30px">
+=======
+        <div id = "language-display" class="languages"><script>displayLanguage('<?php echo $language?>');</script></div>
+        <img id ="language-flag" src="" alt="" onclick="languageSelect(id)">
+>>>>>>> 90da053368a139fc1e48d55779c5eb0847a304c1
 </div>
 </footer>
 </html>
