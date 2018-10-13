@@ -60,7 +60,6 @@
             }
 
             // Close statement
-            mysqli_stmt_close($stmt);
         }
 
         // Validate password
@@ -110,12 +109,9 @@
                 }
             }
 
-            // Close statement
-            mysqli_stmt_close($stmt);
         }
 
-        // Close connection
-        mysqli_close($conn);
+        
     }
 
 
@@ -148,6 +144,7 @@
     
     $user_type = get_user_type($conn);
    print_r($user_type);
+   mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
