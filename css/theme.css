@@ -132,7 +132,7 @@
             padding: 10px;
             color: gray;
         }
-        input {
+        input, select {
             font-family: 'Open Sans', sans-serif;
             width: 100%;
             padding: 10px;
@@ -140,6 +140,10 @@
             border: 1px solid lightgray;
             border-radius: 3px;
             box-sizing: border-box;
+        }
+        select {
+            padding: 10px 5px;
+            color: gray;
         }
         button {
             border: 1px solid lightgray;
