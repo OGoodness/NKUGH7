@@ -17,16 +17,16 @@ function languageSelect(id) {
 function displayLanguage(lang){
     var language;
     switch(lang){
-        case 'ar': language = 'arabic'; break;
+        case 'ar': language = 'عربى'; break;
         case 'en': language = 'english'; break;
         case 'tl': language = 'filipino'; break;
-        case 'vi': language = 'vietnamese'; break;
-        case 'es': language = 'spanish'; break;
-        case 'hi': language = 'hindi'; break;
-        case 'am': language = 'amharic'; break;
-        case 'bg': language = 'bulgarian'; break;
-        case 'fr': language = 'french'; break;
-        case 'tr': language = 'turkish'; break;
+        case 'vi': language = 'Tiếng Việt'; break;
+        case 'es': language = 'español'; break;
+        case 'hi': language = 'हिंदी'; break;
+        case 'am': language = 'አማርኛ'; break;
+        case 'bg': language = 'български'; break;
+        case 'fr': language = 'français'; break;
+        case 'tr': language = 'Türk'; break;
     }
     document.getElementById("language-display").innerHTML=language;
 }
