@@ -1,8 +1,11 @@
-<<<<<<< HEAD
 <?php
-$language = $_POST["language"];
-=======
-<?php 
+    if(isset($_POST["language"])){
+        $language = $_POST["language"];
+    }else{
+        $language = "en"; 
+    }
+    
+
     require_once ('vendor/autoload.php');
     use \Statickidz\GoogleTranslate;
 
@@ -13,7 +16,6 @@ $language = $_POST["language"];
     $trans = new GoogleTranslate();
     $boldText = $trans->translate("en", $R_Post, $boldText);
     $restOfText = $trans->translate("en", $R_Post, $restOfText);
->>>>>>> Translate
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +26,7 @@ $language = $_POST["language"];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/theme.css">
     <script src="js/main.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     </head>
 
 <body class="center">
