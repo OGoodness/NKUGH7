@@ -27,7 +27,7 @@
     $userFirstNameErr = $userLastNameErr = $userTypeErr = $passwordErr = $confirmPasswordErr = $emailErr = "";
 
     // Processing form data when form is submitted
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
+    if(!empty($_POST)){
 
         // Validate first name
         if(empty(trim($_POST["fname"]))){
