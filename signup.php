@@ -35,31 +35,8 @@
             $emailErr = "Please enter an email.";
         } else{
             // Prepare a select statement
-            $sql = "SELECT email FROM users WHERE user_first_name = ?";
+            $email = trim($_POST["email"]);
 
-            if($stmt = mysqli_prepare($conn, $sql)){
-                // Bind variables to the prepared statement as parameters
-                mysqli_stmt_bind_param($stmt, "s", $paramFirstName);
-
-                // Set parameters
-                $paramEmail = trim($_POST["email"]);
-
-                // Attempt to execute the prepared statement
-                if(mysqli_stmt_execute($stmt)){
-                    // store result
-                    mysqli_stmt_store_result($stmt);
-
-                    if(mysqli_stmt_num_rows($stmt) == 1){
-                        $emailErr = "This email is already taken.";
-                    } else{
-                        $email = trim($_POST["email"]);
-                    }
-                } else{
-                    echo "Oops! Something went wrong. Please try again later.";
-                }
-            }
-
-            // Close statement
         }
 
         // Validate password
@@ -143,8 +120,7 @@
 
     
     $user_type = get_user_type($conn);
-   print_r($user_type);
-   mysqli_close($conn);
+    mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
@@ -170,10 +146,10 @@
         <div class="content" style="margin: 0 auto;">
             <div class="text"><?php echo $content["login__sign_in_account"]; ?></div>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                <input id ="" type="text" name="fname" placeholder="first name"><br>
-                <br><span class="help-block"><?php echo $userFirstNameErr; ?></span>
-                <input id ="" type="text" name="lname" placeholder="last name"><br>
-                <br><span class="help-block"><?php echo $userLastNameErr; ?></span>
+                <input id ="" type="text" name="fname" placeholder="first name">
+                <br><span class="help-block"><?php echo $userFirstNameErr; ?></span><br>
+                <input id ="" type="text" name="lname" placeholder="last name">
+                <br><span class="help-block"><?php echo $userLastNameErr; ?></span><br>
                 <input id ="" type="text" name="email" placeholder="johnsmith@email.com">
                 <br><span class="help-block"><?php echo $emailErr; ?></span><br>
                 <select name="user-type">
@@ -186,9 +162,9 @@
                         }
                     ?>
                 </select><br>
-                <input id="" type="password" name="password" placeholder="password"><br>
+                <input id="" type="password" name="password" placeholder="password">
                 <br><span class="help-block"><?php echo $passwordErr; ?></span>
-                <input id="" type="password" name="confirm_password" placeholder="confirm_password"><br>
+                <input id="" type="password" name="confirm_password" placeholder="confirm_password">
                 <br><span class="help-block"><?php echo $confirmPasswordErr; ?></span>
                 <button type="submit"><?php echo $content["login__sign_up_button"]; ?></button>
             </form>
