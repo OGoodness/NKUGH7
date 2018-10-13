@@ -38,11 +38,10 @@
 
     $insert->close();
     }elseif($_POST["type"] == "migrant"){
-        $insert = $conn->prepare("INSERT INTO guide
+        $insert = $conn->prepare("INSERT INTO migrant
             SET users_id=?,
                 age=?,
                 gender=?,
-                occupation=?,
                 self_desc=?,
                 religion=?,
                 marital_status=?,
@@ -53,10 +52,20 @@
                 secondary_language=?,
                 hobby_1=?,
                 hobby_2=?,
-                family_desc=?");
-    $insert->bind_param("iisssssssssssss", $user_id, $_POST["age"], $_POST["gender"], $_POST["occupation"], $_POST["self"], $_POST["religion"], $_POST["maritalStat"], 
+                family_desc=?,
+                end_goal=?");
+        $insert->bind_param("iisssssssssssss", $user_id, $_POST["age"], $_POST["gender"], $_POST["self"], $_POST["religion"], $_POST["maritalStat"], 
                                            $_POST["city"], $_POST["state"], $_POST["nationality"], $_POST["primLanguages"], 
-                                           $_POST["secLanguages"], $_POST["hobby1"], $_POST["hobby2"], $_POST["family"]);
+                                           $_POST["secLanguages"], $_POST["hobby1"], $_POST["hobby2"], $_POST["family"], $_POST["outcome"]);
+            print_r($insert);
+        if (!$insert->execute()) {
+            print_r($insert->error); 
+            echo "Error, could not insert into users";
+        } else {
+            $insert_id = $conn->insert_id;
+        }
+
+        $insert->close();
     }
 
 
@@ -111,7 +120,7 @@
         echo '<p>Click <a href="index.html">here</a> to go back</p>';
     }
 
-    header("Location: ../browse.php");
+    //header("Location: ../browse.php");
 
 
 
