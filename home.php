@@ -90,8 +90,8 @@
             justify-content: center;
         }
         .two-column-container img {
-            height: 100px;
-            width: 100px;
+            height: 150px;
+            width: auto;
             margin: 0px 20px;
             transition: all 0.3s ease-in-out;
         }
