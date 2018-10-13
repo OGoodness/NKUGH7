@@ -60,7 +60,7 @@
         </div>
 
         <div class="content">
-            <div class="text"><?php echo $content["login__create_account"]; ?></div>
+            <a href="signup.php"><div class="text"><?php echo $content["login__create_account"]; ?></div></a>
             <button> <?php echo $content["login__create_account_button"]; ?></button>
         </div>
     </div>
