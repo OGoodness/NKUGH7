@@ -15,14 +15,17 @@
     $content["migrant_account__last_name_text"] = 'Last Name:';
     $content["migrant_account__age_text"] = 'Age:';
     $content["migrant_account__gender_text"] = 'Gender:';
-    $content["migrant_account__location_city"] = 'Location(City):';
-    $content["migrant_account__location_state"] = 'Location(State):';
+    $content["migrant_account__location_city_text"] = 'Location(City):';
+    $content["migrant_account__location_state_text"] = 'Location(State):';
     $content["migrant_account__nationality_text"] = 'Nationality:';
     $content["migrant_account__religion_text"] = 'Religion:';
     $content["migrant_account__marital_stat_text"] = 'Relationship Status:';
     $content["migrant_account__family_textarea"] = 'Tell us about your family...';
+    $content["migrant_account__self_textarea"] = 'Tell us about yourself...';
     $content["migrant_account__language_textarea"] = 'What languages do you speak...';
     $content["migrant_account__hobby_text"] = 'Hobby:';
+    $content["migrant_account__primLanguage_textarea"] = 'What is your primary language...';
+    $content["migrant_account__secLanguage_textarea"] = 'What other languages do you know...';
     $content["migrant_account__outcome_textarea"] = 'What are you hoping to get out of this...';
     $content["migrant_account__picture_text"] = 'Insert Pictures:';
 
@@ -52,15 +55,14 @@
 
 <main>
     <div class="content">
-        <form action="browse.php" method="post">
-            <input required type="text" name="state" placeholder="<?php echo $content["migrant_account__location_state_text"]; ?>"><br>
-            <input required type="text" name="city" placeholder="<?php echo $content["migrant_account__location_city_text"]; ?>"><br>
+        <form action="functions/processData.php" method="post">
+            <input type="hidden" name="type" value="migrant">
             <input type="text" name="fname" placeholder="<?php echo $content["migrant_account__first_name_text"]; ?>"><br>
             <input type="text" name="lname" placeholder="<?php echo  $content["migrant_account__last_name_text"]; ?>"><br>
             <input type="number" step="1" min="1" name="age" placeholder="<?php echo $content["migrant_account__age_text"]; ?>"><br>
             <input type="text" name="gender" placeholder="<?php echo $content["migrant_account__gender_text"]; ?>"><br>
-            <input type="text" name="location"placeholder="<?php echo $content["migrant_account__location_city"]; ?>"><br>
-            <input type="text" name="location"placeholder="<?php echo $content["migrant_account__location_state"]; ?>"><br>
+            <input required type="text" name="state" placeholder="<?php echo $content["migrant_account__location_state_text"]; ?>"><br>
+            <input required type="text" name="city" placeholder="<?php echo $content["migrant_account__location_city_text"]; ?>"><br>
             <input type="text" name="nationality" placeholder="<?php echo $content["migrant_account__nationality_text"]; ?>"><br>
             <input type="text" name="Religion"placeholder="<?php echo $content["migrant_account__religion_text"]; ?>"><br>
 
@@ -70,8 +72,9 @@
             <input type="text" name="hobby2" placeholder="<?php echo $content["migrant_account__hobby_text"]; ?>"><br>
 
             <textarea rows="6" cols="50" name="family" placeholder="<?php echo $content["migrant_account__family_textarea"]; ?>"></textarea><br>
-            <textarea rows="4" cols="50" name="languages" placeholder="<?php echo $content["migrant_account__language_textarea"]; ?>"></textarea><br>
-            
+            <textarea rows="4" cols="50" name="primLanguages" placeholder="<?php echo $content["migrant_account__primLanguage_textarea"]; ?>"></textarea><br>
+            <textarea rows="4" cols="50" name="secLanguages" placeholder="<?php echo $content["migrant_account__secLanguage_textarea"]; ?>"></textarea><br>
+            <textarea required rows="6" cols="50" name="self" placeholder="<?php echo $content["migrant_account__self_textarea"]; ?>"></textarea><br>
             <textarea rows="4" cols="50" name="outcome" placeholder="<?php echo $content["migrant_account__outcome_textarea"]; ?>"></textarea><br>
             
             <?php echo $content["migrant_account__picture_text"]; ?><input type="file" name="pic1" accept="image/*"><br>
