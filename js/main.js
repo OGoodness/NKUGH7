@@ -14,3 +14,19 @@ function languageSelect(id) {
     document.body.appendChild(form);
     form.submit();
 }
+function displayLanguage(lang){
+    var language;
+    switch(lang){
+        case 'ar': language = 'arabic'; break;
+        case 'en': language = 'english'; break;
+        case 'tl': language = 'filipino'; break;
+        case 'vi': language = 'vietnamese'; break;
+        case 'es': language = 'spanish'; break;
+        case 'hi': language = 'hindi'; break;
+        case 'am': language = 'amharic'; break;
+        case 'bg': language = 'bulgarian'; break;
+        case 'fr': language = 'french'; break;
+        case 'tr': language = 'turkish'; break;
+    }
+    document.getElementById("language-display").innerHTML=language;
+}
