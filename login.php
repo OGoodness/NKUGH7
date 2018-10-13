@@ -10,13 +10,14 @@
     require_once ('vendor/autoload.php');
     use \Statickidz\GoogleTranslate;
 
-    $boldText = 'Returning user';
-    $restOfText = ", welcome back";
-    $R_Post = "hi";
+    $login__sign_in_account = "If you have previously created a profile and are a registered guide, please sign in below";
+    $login__login_general_use_description = "This website creates a personal account so you can resume your search for the perfect guide anytime. Don't worry, your information is confidential and secure";
+    $login__sign_in_header_text_bold = "Sign in";
+    $login__sign_in_header_text = "to your account";
+    $login__create_account = "If you are new to this website, click the button below to get started on your personal profile and make one step closer to finding your future guide";
 
     $trans = new GoogleTranslate();
-    $boldText = $trans->translate("en", $language, $boldText);
-    $restOfText = $trans->translate("en", $language, $restOfText);
+    $login__sign_in_account = $trans->translate("en", $language, $login__sign_in_account);
 ?>
 
 <!DOCTYPE html>
@@ -30,18 +31,37 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     </head>
 
-<body class="center">
+<body>
 
 <header>
-    <div class="title">Welcome Select your language</div>
+    <div class="title"><b><?php echo $login__sign_in_header_text_bold; ?></b> <?php echo $login__sign_in_header_text; ?></div>
+    <div class="sub-title"><?php echo $login__login_general_use_description; ?></div>
 </header>
 
 <main>
-    <div class="two-column-container">
+    <div class="two-column-container ">
         <div class="content">
-            <div class="subtitle"><b><?php echo $boldText; ?></b><?php echo $restOfText; ?></div>
+            <div class="text"><?php echo $login__sign_in_account; ?></div>
+            <form action="mainPage.php" method="post">
+            <input id ="input-user" type="text" name="fname" placeholder="username"><br>
+            <input id="input-lock" type="password" name="lname" placeholder="password"><br>
+            </form>
+
+            <button>Sign in</button>
+        </div>
+
+        <div class="content">
+            <div class="text"><?php echo $login__create_account; ?></div>
+            <button>Create an Account</button>
+        </div>
     </div>
+</div>
 </main>
 
 </body>
+<footer>
+    <div id="language-footer">
+        <div class="languages">english</div><img id="flag-filipino" src="images/flag-filipino.png">
+</div>
+</footer>
 </html>
