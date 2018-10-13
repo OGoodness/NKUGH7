@@ -28,7 +28,6 @@
     $content["migrant_account__picture_text"] = 'Insert a Picture:';
 
 
-
     $trans = new GoogleTranslate();
     foreach($content as $key => $text){
         $content["$key"] = $trans->translate("en", $language, $text);
@@ -51,6 +50,7 @@
 <header>
     <div class="title"><?php echo $content["migrant_account__header_text"]; ?></div>
 </header>
+
 <main>
     <div class="content">
         <form action="mainPage.php" method="post">
@@ -65,7 +65,7 @@
             <input type="radio" name="maritalStat" value="single"> <?php echo $content["migrant_account__single_button"] = 'Single:'; ?><br>
             <textarea rows="6" cols="50" name="family"><?php echo $content["migrant_account__family_textarea"]; ?></textarea><br>
             <textarea rows="4" cols="50" name="languages"><?php echo $content["migrant_account__language_textarea"]; ?></textarea><br>
-            <?php echo $content["migrant_account__hobbies_textarea"]; ?><input type="text" name="hobby1"><br><input type="text" name="hobby2"><br>
+            <?php echo $content["migrant_account__location_text"]; ?><input type="text" name="hobby1"><br>
             <textarea rows="4" cols="50" name="outcome"><?php echo $content["migrant_account__outcome_textarea"]; ?></textarea><br>
             <?php echo $content["migrant_account__picture_text"]; ?><input type="file" name="pic1" accept="image/*"><br>
             <?php echo $content["migrant_account__picture_text"]; ?><input type="file" name="pic2" accept="image/*"><br>
@@ -77,4 +77,4 @@
 </main>
 
 </body>
-</html>y6
+</html>
