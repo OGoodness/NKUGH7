@@ -70,7 +70,8 @@
 </body>
 <footer>
     <div id="language-footer">
-        <div class="languages">english</div><img id="flag-filipino" src="images/flag-filipino.png">
+        <div id = "language-display" class="languages"><script>displayLanguage('<?php echo $language?>');</script></div>
+        <img id ="language-flag" src="" alt="" onclick="languageSelect(id)">
 </div>
 </footer>
 </html>
