@@ -60,8 +60,9 @@
         </div>
 
         <div class="content">
-            <a href="signup.php"><div class="text"><?php echo $content["login__create_account"]; ?></div></a>
-            <button> <?php echo $content["login__create_account_button"]; ?></button>
+            <div class="text"><?php echo $content["login__create_account"]; ?></div>
+            <a href="signup.php"><button> <?php echo $content["login__create_account_button"]; ?></button></a>
+            
         </div>
     </div>
 </div>
