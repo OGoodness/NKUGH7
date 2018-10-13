@@ -1,9 +1,3 @@
-<?php
-if(isset($_COOKIE["language"])) {
-   // header("Location: login.php");  Comment this back in when we are ready to change language whenever
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
