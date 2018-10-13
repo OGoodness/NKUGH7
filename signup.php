@@ -36,7 +36,7 @@
             $emailErr = "Please enter an email.";
         } else{
             // Prepare a select statement
-            $sql = "SELECT user_email FROM users WHERE user_email = ?";
+            $stmt = "SELECT user_email FROM users WHERE user_email = ?";
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "s", $paramEmail);
             $paramEmail = trim($_POST["email"]);
