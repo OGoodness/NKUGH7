@@ -50,7 +50,7 @@
                     $email = trim($_POST["email"]);
                 }
             } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                $emailErr = "Didn't execure";
             }
 
         }
