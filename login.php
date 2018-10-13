@@ -143,12 +143,8 @@
 </body>
 <footer>
     <div id="language-footer">
-<<<<<<< HEAD
-        <div id="language-display"></div><img id="flag-filipino" src="images/flag-filipino.png" style = "width:30px">
-=======
         <div id = "language-display" class="languages"><script>displayLanguage('<?php echo $language?>');</script></div>
         <img id ="language-flag" src="" alt="" onclick="languageSelect(id)">
->>>>>>> 90da053368a139fc1e48d55779c5eb0847a304c1
 </div>
 </footer>
 </html>
