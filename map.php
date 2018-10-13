@@ -20,7 +20,7 @@
 	<title></title>
 </head>
 <body>
-	<div class="container">
+	<div class="container map-container">
 		<div class="row">
 			<div class="col-md-6" id="googleMap" style="height: 400px;"></div>
 			<script>

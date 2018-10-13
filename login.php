@@ -70,7 +70,7 @@
 </body>
 <footer>
     <div id="language-footer">
-        <div class="languages">english</div><img id="flag-filipino" src="images/flag-filipino.png">
+        <div id="language-display"></div><img id="flag-filipino" src="images/flag-filipino.png" style = "width:30px">
 </div>
 </footer>
 </html>
