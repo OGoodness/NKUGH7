@@ -1,3 +1,7 @@
+<?php
+$language = $_POST["language"];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
