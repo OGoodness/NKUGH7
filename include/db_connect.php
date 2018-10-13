@@ -1,6 +1,6 @@
 <?php
 ini_set('display_errors', 'On');
-$servername = "18.188.172.221";
+$servername = "ec2-18-188-172-221.us-east-2.compute.amazonaws.com";
 $username = "root";
 $password = "norsehacks";
 $database = "globalhack7";
