@@ -1,4 +1,30 @@
 <?php
+require "include/db_connect.php";
+
+/* $visit="";
+$query = "SELECT";
+
+if ($result = $conn->query($query)) {
+    if ($result->num_rows > 0) {
+        $visit = $result->fetch_object();
+    }else{
+        echo "No rows were found";
+    }
+    $result->free();
+}
+ */
+
+
+/* 
+if (!$insert->execute()) {
+    echo mysqli_error($conn);
+    echo "Unable to insert";
+} else {
+    $insert_id = $conn->insert_id;
+}
+$insert->close(); */
+
+
 if(isset($_COOKIE["language"])) {
    // header("Location: login.php");  Comment this back in when we are ready to change language whenever
 }
