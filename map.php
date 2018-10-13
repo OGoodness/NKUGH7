@@ -45,8 +45,8 @@
 </body>
 <script>
     function initService() {
-        var activity = 'Movies';
-        var location = 'cincinnati';
+        var activity = 'amc';
+        var location = 'Ohio';
         var displaySuggestions = function(predictions, status) {
           if (status != google.maps.places.PlacesServiceStatus.OK) {
             alert(status);
@@ -65,7 +65,7 @@
         };
 
         var service = new google.maps.places.AutocompleteService();
-        service.getPlace({ input: activity+' near '+location }, displaySuggestions);
+        service.getPlacePredictions({ input: activity+' near '+location }, displaySuggestions);
       }
     
     
