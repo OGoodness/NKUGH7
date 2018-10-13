@@ -5,6 +5,23 @@
     require_once ('vendor/autoload.php');
     use \Statickidz\GoogleTranslate;
 
+    $content["error_first_name"] = 'Please enter your first name.';
+    $content["error_last_name"] = 'Please enter your last name.';
+    $content["error_email"] = 'Please enter an email.';
+    $content["error_empty_password"] = 'Please enter a password.';
+    $content["error_length_password"] = 'Password must have at least 6 characters.';
+    $content["error_confirm_password"] = 'Please confirm password.';
+    $content["error__password_ dont_match"] = 'Password did not match.';
+
+    $content["error__prepared_statement"] = 'Something went wrong. Please try again later.';
+    
+
+
+    $trans = new GoogleTranslate();
+    foreach($content as $key => $text){
+        $content["$key"] = $trans->translate("en", $language, $text);
+    }
+
     // Define variables and initialize with empty values
     $userFirstName = $userLastName = $type = $password = $confirmPassword = $email = "";
     $userFirstNameErr = $userLastNameErr = $userTypeErr = $passwordErr = $confirmPasswordErr = $emailErr = "";
@@ -43,7 +60,7 @@
         if(empty(trim($_POST['password']))){
             $passwordErr = "Please enter a password.";
         } elseif(strlen(trim($_POST['password'])) < 6){
-            $passwordErr = "Password must have atleast 6 characters.";
+            $passwordErr = "Password must have at least 6 characters.";
         } else{
             $password = trim($_POST['password']);
         }
