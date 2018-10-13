@@ -13,13 +13,13 @@
     require_once ('vendor/autoload.php');
     use \Statickidz\GoogleTranslate;
     $content["login__sign_in_account"]="If you have previously created a profile and are a registered guide, please sign in below";
-    $content["login__login_general_use_description"]= "This website will allow you to either help guide an immagrant family or if you are an immagrant family you can find resdients help make your transtion to your new home smoother. Don't worry, your information is confidential and secure";
-    $content["login__sign_in_header_text_bold"]= "Sign in";
+    $content["login__login_general_use_description"]= "This website creates a personal account so you can resume your search for the perfect guide anytime. Don't worry, your information is confidential and secure";
+    $content["login__sign_in_header_text_bold"]= "Sign up";
     $content["login__login"] = "Login";
     $content["login__create_account_button"]= "Create Account";
-    $content["login__sign_in_header_text"]= "to your account";
+    $content["login__sign_in_header_text"]= "for your personal account";
     $content["login__create_account"]="If you are new to this website, click the button below to get started on your personal profile and make one step closer to finding your future guide";
-
+    $content["login__sign_up_button"]="continue";
 
     $trans = new GoogleTranslate();
     foreach($content as $key => $text){
@@ -49,20 +49,22 @@
 </header>
 
 <main>
-    <div class="two-column-container ">
-        <div class="content">
+        <div class="content" style="margin: 0 auto;">
             <div class="text"><?php echo $content["login__sign_in_account"]; ?></div>
             <form action="mainPage.php" method="post">
-            <input id ="input-user" type="text" name="fname" placeholder="username"><br>
-            <input id="input-lock" type="password" name="lname" placeholder="password"><br>
+            <input id ="" type="text" name="fname" placeholder="first name"><br>
+            <input id ="" type="text" name="lname" placeholder="last name"><br>
+            <input id ="" type="text" name="fname" placeholder="johnsmith@email.com"><br>
+            <select>
+                <option value = "">Type</option>
+                <option value = "guide">Guide</option>
+                <option value = "non-citizen">Non-citizen</option>
+            </select><br>
+            <input id="" type="password" name="lname" placeholder="password"><br>
+            <input id="" type="password" name="lname" placeholder="password"><br>
             </form>
 
-            <button><?php echo $content["login__sign_in_header_text_bold"]; ?></button>
-        </div>
- 
-        <div class="content">
-            <div class="text"><?php echo $content["login__create_account"]; ?></div>
-            <button> <?php echo $content["login__create_account_button"]; ?></button>
+            <button><?php echo $content["login__sign_up_button"]; ?></button>
         </div>
     </div>
 </div>
