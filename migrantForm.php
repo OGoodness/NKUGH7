@@ -53,6 +53,8 @@
 <main>
     <div class="content">
         <form action="browse.php" method="post">
+            <input required type="text" name="state" placeholder="<?php echo $content["migrant_account__location_state_text"]; ?>"><br>
+            <input required type="text" name="city" placeholder="<?php echo $content["migrant_account__location_city_text"]; ?>"><br>
             <input type="text" name="fname" placeholder="<?php echo $content["migrant_account__first_name_text"]; ?>"><br>
             <input type="text" name="lname" placeholder="<?php echo  $content["migrant_account__last_name_text"]; ?>"><br>
             <input type="number" step="1" min="1" name="age" placeholder="<?php echo $content["migrant_account__age_text"]; ?>"><br>
