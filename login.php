@@ -49,11 +49,11 @@
 </header>
 
 <main>
-    <div class="two-column-container ">
+    <div class="container">
         <div class="content">
             <div class="text"><?php echo $content["login__sign_in_account"]; ?></div>
             <form action="mainPage.php" method="post">
-            <input id ="input-user" type="text" name="fname" placeholder="username"><br>
+            <input id="input-user" type="text" name="fname" placeholder="username"><br>
             <input id="input-lock" type="password" name="lname" placeholder="password"><br>
             </form>
 
@@ -72,8 +72,7 @@
 <footer>
     <div id="language-footer">
         <div id = "language-display" class="languages"><script>displayLanguage('<?php echo $language?>');</script></div>
-        <img src="" alt="">
+        <img id ="language-flag" src="" alt="" onclick="languageSelect(id)">
 </div>
-
 </footer>
 </html>
