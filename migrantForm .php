@@ -53,7 +53,8 @@
 
 <main>
     <div class="content">
-        <form action="mainPage.php" method="post">
+        <form action="processData.php" method="post">
+            <input type="hidden" name="type" value="migrent">
             <?php echo $content["migrant_account__first_name_text"]; ?><input type="text" name="fname"><br>
             <?php echo  $content["migrant_account__last_name_text"]; ?><input type="text" name="lname"><br>
             <?php echo $content["migrant_account__age_text"]; ?><input type="text" name="age"><br>
