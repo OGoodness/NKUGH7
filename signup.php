@@ -11,7 +11,7 @@
     $userFirstNameErr = $userLastNameErr = $userTypeErr = $passwordErr = $confirmPasswordErr = $emailErr = "";
 
     // Processing form data when form is submitted
-    if(!empty($_POST)){
+    if(isset($_POST['signup_submit'])){
 
         // Validate first name
         if(empty(trim($_POST["fname"]))){
@@ -176,7 +176,7 @@
                 <input  type="text" name="lname" placeholder="last name">
                 <br><span class="help-block"><?php echo $userLastNameErr; ?></span><br><br>
                 <input  type="text" name="email" placeholder="johnsmith@email.com">
-                <br><span class="help-block"><?php echo $emailErr; ?></span><br><br>
+                <br><span class="help-block"><?php echo $emailErr; ?></span><br>
                 <select name="user-type">
                     <?php
                         foreach($user_type as $data)
@@ -189,7 +189,7 @@
                 <br><span class="help-block"><?php echo $passwordErr; ?></span><br>
                 <input  type="password" name="confirm_password" placeholder="confirm_password">
                 <br><span class="help-block"><?php echo $confirmPasswordErr; ?></span><br>
-                <button type="submit"><?php echo $content["login__sign_up_button"]; ?></button>
+                <button type="submit" name="signup_submit"><?php echo $content["login__sign_up_button"]; ?></button>
             </form>
 
             
