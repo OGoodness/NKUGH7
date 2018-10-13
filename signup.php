@@ -147,6 +147,7 @@
 
     
     $user_type = getUserType($conn);
+    print_r($user_type);
 ?>
 
 <!DOCTYPE html>
@@ -180,7 +181,8 @@
                 <br><span class="help-block"><?php echo $emailErr; ?></span><br>
                 <select name="user-type">
                     <?php
-                        foreach($user_type as $data){
+                        foreach($user_type as $data)
+                        {
                     ?>
                     <option value="<?php echo $data->id; ?>"> <?php echo $data->user_type;?></option>
                     <?php
