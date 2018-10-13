@@ -146,9 +146,8 @@
     }
 
     
-    //$user_type = getUserType($conn);
-   // print_r($user_type);
-   echo "hello";
+    $user_type = getUserType($conn);
+   print_r($user_type);
 ?>
 
 <!DOCTYPE html>
