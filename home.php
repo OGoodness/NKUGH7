@@ -22,11 +22,13 @@
 
 <main>
     <div class="container">
-    <img id="flag-filipino" src="images/flag-filipino.png" alt="Filipino Flag" data="tl" onclick="languageSelect('flag-filipino')">
+        <img id="flag-filipino" src="images/flag-filipino.png" alt="Filipino Flag" data="tl" onclick="languageSelect('flag-filipino')">
         <img id="flag-usa" src="images/flag-usa.png" alt="USA Flag" data="en" onclick="languageSelect('flag-usa')">
         <img id="flag-arabic" src="images/flag-arabic.png" alt="Arabic Flag" data="ar" onclick="languageSelect('flag-arabic')">
         <img id="flag-vietnam" src="images/flag-vietnam.png" alt="Vietnam Flag" data="vi" onclick="languageSelect('flag-vietnam')">
         <img id="flag-spanish" src="images/flag-spanish.png" alt="Spanish Flag" data="es" onclick="languageSelect('flag-spanish')">
+        
+        <img id="flag-spanish" src="images/flag-ethiopia.png" alt="Ethiopia Flag" data="am" onclick="languageSelect('flag-ethiopia')">
     </div>
 </main>
 
