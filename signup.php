@@ -143,8 +143,7 @@
 
     
     $user_type = get_user_type($conn);
-   print_r($user_type);
-   mysqli_close($conn);
+    mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
