@@ -35,31 +35,8 @@
             $emailErr = "Please enter an email.";
         } else{
             // Prepare a select statement
-            $sql = "SELECT email FROM users WHERE user_first_name = ?";
+            $email = trim($_POST["email"]);
 
-            if($stmt = mysqli_prepare($conn, $sql)){
-                // Bind variables to the prepared statement as parameters
-                mysqli_stmt_bind_param($stmt, "s", $paramFirstName);
-
-                // Set parameters
-                $paramEmail = trim($_POST["email"]);
-
-                // Attempt to execute the prepared statement
-                if(mysqli_stmt_execute($stmt)){
-                    // store result
-                    mysqli_stmt_store_result($stmt);
-
-                    if(mysqli_stmt_num_rows($stmt) == 1){
-                        $emailErr = "This email is already taken.";
-                    } else{
-                        $email = trim($_POST["email"]);
-                    }
-                } else{
-                    echo "Oops! Something went wrong. Please try again later.";
-                }
-            }
-
-            // Close statement
         }
 
         // Validate password
