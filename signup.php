@@ -162,7 +162,7 @@
     }
 
     
-    $user_type = get_user_type($conn);
+    $user_type = getUserType($conn);
     print_r($user_type);
 ?>
 
@@ -189,16 +189,21 @@
         <div class="content" style="margin: 0 auto;">
             <div class="text"><?php echo $content["login__sign_in_account"]; ?></div>
             <form action="mainPage.php" method="post">
-            <input id ="" type="text" name="fname" placeholder="first name"><br>
-            <input id ="" type="text" name="lname" placeholder="last name"><br>
-            <input id ="" type="text" name="email" placeholder="johnsmith@email.com"><br>
-            <select>
-                <option value = "">Type</option>
-                <option value = "guide">Guide</option>
-                <option value = "non-citizen">Non-citizen</option>
-            </select><br>
-            <input id="" type="password" name="lname" placeholder="password"><br>
-            <input id="" type="password" name="lname" placeholder="confirm_password"><br>
+                <input id ="" type="text" name="fname" placeholder="first name"><br>
+                <input id ="" type="text" name="lname" placeholder="last name"><br>
+                <input id ="" type="text" name="email" placeholder="johnsmith@email.com"><br>
+                <select name="user-type">
+                    <option value = "">Type</option>
+                    <?php
+                        foreach($user_type as $data){
+                    ?>
+                    <option value="<?php echo $data->id; ?>"> <?php echo $data->user_type;?></option>
+                    <?php
+                        }
+                    ?>
+                </select><br>
+                <input id="" type="password" name="lname" placeholder="password"><br>
+                <input id="" type="password" name="lname" placeholder="confirm_password"><br>
             </form>
 
             <button type="submit"><?php echo $content["login__sign_up_button"]; ?></button>

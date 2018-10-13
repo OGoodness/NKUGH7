@@ -3,7 +3,7 @@
 
 include "include/db_connect.php";
 
-function get_user_type($conn){
+function getUserType($conn){
     $response = NULL;
     $sql = "SELECT *
     FROM globalhack7.user_type";
@@ -15,7 +15,7 @@ function get_user_type($conn){
         }
     }
     $result->free();
-    return (object)$response;
+    return $response;
 }
 
 
