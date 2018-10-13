@@ -24,7 +24,6 @@
     $migrant_account__language_textarea = 'What languages do you speak...';
     $migrant_account__hobbies_textarea = 'What are some of your hobbies...';
     $migrant_account__picture_text = 'Insert a Picture:';
-    $migrant_account__picture_text = $trans->translate("en", $language, $migrant_account__picture_text);
 
 
     $trans = new GoogleTranslate();
@@ -37,8 +36,8 @@
     $migrant_account__location_text = $trans->translate("en", $language,  $migrant_account__location_text);
     $migrant_account__occupation_text = $trans->translate("en", $language, $migrant_account__occupation_text);
     $migrant_account__marital_stat_text = $trans->translate("en", $language, $migrant_account__marital_stat_text);
-    $migrant_account__married_button = 'Married:'; = $trans->translate("en", $language,  $migrant_account__married_button = 'Married:';);
-    $migrant_account__single_button = 'Single:'; = $trans->translate("en", $language, $migrant_account__single_button = 'Single:';);
+    $migrant_account__married_button = $trans->translate("en", $language,  $migrant_account__married_button);
+    $migrant_account__single_button = $trans->translate("en", $language, $migrant_account__single_button);
     $migrant_account__family_textarea = $trans->translate("en", $language, $migrant_account__family_textarea);
     $migrant_account__language_textarea = $trans->translate("en", $language, $migrant_account__language_textarea);
     $migrant_account__hobbies_textarea= $trans->translate("en", $language,  $migrant_account__hobbies_textarea);
