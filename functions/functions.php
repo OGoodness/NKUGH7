@@ -12,5 +12,5 @@ function get_user_type($conn){
         }
     }
     $result->free();
-    return (object)$response;
+    return $response;
 }
