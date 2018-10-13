@@ -1,7 +1,7 @@
 <?php
     // Include config file
     require_once 'include/db_connect.php';
-    require_once 'function/functions.php';
+    require_once 'functions/functions.php';
     require_once ('vendor/autoload.php');
     use \Statickidz\GoogleTranslate;
 
