@@ -33,20 +33,12 @@
                      var markerCenter = new google.maps.Marker({position: centerLocation, map: map});
                      var markerHost = new google.maps.Marker({position: hostLocation, map: map});
                      var markerMigrant = new google.maps.Marker({position: migrantLocation, map: map});
-                 }
-			</script> 
-			<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhc-gJsL4DOC6hA4DUW-uZGLCR_vPDkSk&callback=initMap">
-			</script>
-			<div class="col-md-6 info" id = "results">
-				
-			</div>
-		</div>
-	</div>
-</body>
-<script>
-    function initService() {
-        var activity = 'amc';
-        var location = 'Ohio';
+                     
+                     
+                     //place predictions
+                     
+                      var activity = 'amc';
+                    var location = 'Ohio';
         var displaySuggestions = function(predictions, status) {
           if (status != google.maps.places.PlacesServiceStatus.OK) {
             alert(status);
@@ -66,10 +58,16 @@
 
         var service = new google.maps.places.AutocompleteService();
         service.getPlacePredictions({ input: activity+' near '+location }, displaySuggestions);
-      }
-    
-    
-    </script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhc-gJsL4DOC6hA4DUW-uZGLCR_vPDkSk&libraries=places&callback=initService"
+      
+                 }
+			</script> 
+			 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhc-gJsL4DOC6hA4DUW-uZGLCR_vPDkSk&libraries=places&callback=initMap"
         async defer></script>
+
+			<div class="col-md-6 info" id = "results">
+				
+			</div>
+		</div>
+	</div>
+</body>
 </html>
