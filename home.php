@@ -1,9 +1,3 @@
-<?php
-if(isset($_COOKIE["language"])) {
-   // header("Location: login.php");  Comment this back in when we are ready to change language whenever
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -28,19 +22,16 @@ if(isset($_COOKIE["language"])) {
 
 <main>
     <div class="container">
-<<<<<<< HEAD
         <img id="flag-filipino" src="images/flag-filipino.png" alt="Filipino Flag" data="tl" onclick="languageSelect('flag-filipino')">
-=======
-    <img id="flag-filipino" src="images/flag-filipino.png" alt="Filipino Flag" data="tl" onclick="languageSelect('flag-filipino')">
->>>>>>> 0b77863da19a63f77ffeb3e44cd13af60cfbaaad
         <img id="flag-usa" src="images/flag-usa.png" alt="USA Flag" data="en" onclick="languageSelect('flag-usa')">
         <img id="flag-arabic" src="images/flag-arabic.png" alt="Arabic Flag" data="ar" onclick="languageSelect('flag-arabic')">
         <img id="flag-vietnam" src="images/flag-vietnam.png" alt="Vietnam Flag" data="vi" onclick="languageSelect('flag-vietnam')">
         <img id="flag-spanish" src="images/flag-spanish.png" alt="Spanish Flag" data="es" onclick="languageSelect('flag-spanish')">
-<<<<<<< HEAD
-        <img id="flag-spanish" src="images/flag-spanish.png" alt="Spanish Flag" data="np" onclick="languageSelect('flag-spanish')">
-=======
->>>>>>> 0b77863da19a63f77ffeb3e44cd13af60cfbaaad
+        <img id="flag-india" src="images/flag-india.png" alt="Indian Flag" data="hi" onclick="languageSelect('flag-spanish')">
+        <img id="flag-ethiopia" src="images/flag-ethiopia.png" alt="Ethiopia Flag" data="am" onclick="languageSelect('flag-ethiopia')">
+        <img id="flag-bulgaria" src="images/flag-bulgaria.png" alt="Bulgaria Flag" data="bg" onclick="languageSelect('flag-ethiopia')">
+        <img id="flag-france" src="images/flag-france.png" alt="France Flag" data="fr" onclick="languageSelect('flag-ethiopia')">
+        <img id="flag-turkey" src="images/flag-turkey.png" alt="Turkey Flag" data="tr" onclick="languageSelect('flag-ethiopia')">
     </div>
 </main>
 
