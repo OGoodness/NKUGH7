@@ -1,13 +1,15 @@
 <?php 
     include "../include/db_connect.php";
-    $user_id="";
+    $user_id=0;
+    print_r($_POST);
     if(isset($_COOKIE["insert_id"])){
         $user_id=$_COOKIE["insert_id"];
     }else if(isset($_SESSION["insert_id"])){
         $user_id=$_SESSION["insert_id"];
     }
+    print_r($user_id);
     if($_POST["type"] == "guide"){
-        $insert = $db->prepare("INSERT INTO guide
+        $insert = $conn->prepare("INSERT INTO guide
             SET users_id=?,
                 age=?,
                 gender=?,
@@ -23,9 +25,12 @@
                 hobby_1=?,
                 hobby_2=?,
                 family_desc=?");
-    $insert->bind_param("iissssssssiisssss", $user_id, $_POST["age"], $_POST["gender"], $_POST["occupation"], $_POST["self"], $_POST["religion"], $_POST["maritalStat"], $_POST["city"], $_POST["state"], $_POST["nationality"], $_POST["primLanguages"], $_POST["secLanguages"], $_POST["hobby1"], $_POST["hobby2"], $_POST["family"]);
-
+    $insert->bind_param("iisssssssssssss", $user_id, $_POST["age"], $_POST["gender"], $_POST["occupation"], $_POST["self"], $_POST["religion"], $_POST["maritalStat"], 
+                                           $_POST["city"], $_POST["state"], $_POST["nationality"], $_POST["primLanguages"], 
+                                           $_POST["secLanguages"], $_POST["hobby1"], $_POST["hobby2"], $_POST["family"]);
+        print_r($insert);
     if (!$insert->execute()) {
+        print_r($insert->error); 
         echo "Error, could not insert into users";
     } else {
         $insert_id = $conn->insert_id;
@@ -88,7 +93,7 @@
         echo '<p>Click <a href="index.html">here</a> to go back</p>';
     }
 
-    header("Location: ../browse.php");
+    //header("Location: ../browse.php");
 
 
 
