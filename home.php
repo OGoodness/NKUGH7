@@ -10,7 +10,7 @@
 
 <body class="center">
 
-<header>
+<header style="margin-top: 0%;">
     <div class="title"><b>Hello</b>, Select your language</div>
     <ul class="languages">
         <li>elige tu idioma</li> <!--Spanish-->
@@ -20,7 +20,7 @@
     </ul>
 </header>
 
-<main>
+<main style="margin-top: 0%;">
     <div class="container">
     <img id="flag-filipino" src="images/flag-filipino.png" alt="Filipino Flag" data="tl" onclick="languageSelect('flag-filipino')">
         <img id="flag-usa" src="images/flag-usa.png" alt="USA Flag" data="en" onclick="languageSelect('flag-usa')">
