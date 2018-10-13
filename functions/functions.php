@@ -1,9 +1,8 @@
 <?php
 //all get functions...........
 
-include "../include/db_connect.php";
 
-function getUserType(){
+function getUserType($conn){
     $response = NULL;
     $sql = "SELECT *
     FROM globalhack7.user_type";
@@ -20,7 +19,7 @@ function getUserType(){
 }
 
 
-
+/*
 function selectGuide(){
     $visit="";
     $query = "SELECT";
@@ -47,5 +46,4 @@ function insertHost(){
 
 
 
-?>
-    } else {
+ */ 
