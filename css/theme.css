@@ -11,7 +11,7 @@
         }
         header {
             text-align: center;
-            margin-top: 5%;
+            margin-top: 10px;
         }
         main {
             margin-top: 7%;
@@ -170,5 +170,5 @@
             background-repeat: no-repeat;
         }
         .help-block{
-            color:black;
+            color:red;
         }

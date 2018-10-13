@@ -13,7 +13,7 @@
     require_once ('vendor/autoload.php');
     use \Statickidz\GoogleTranslate;
     $content["login__sign_in_account"]="If you have previously created a profile and are a registered guide, please sign in below";
-    $content["login__login_general_use_description"]= "This website will allow you to either help guide an immagrant family or if you are an immagrant family you can find resdients help make your transtion to your new home smoother. Don't worry, your information is confidential and secure";
+    $content["login__login_general_use_description"]= "This website will allow you to either help guide an immagrant family or if you are an immagrant family you can find a resdient family to help make your transtion to your new home smoother. Don't worry, your information is confidential and secure";
     $content["login__sign_in_header_text_bold"]= "Sign in";
     $content["login__login"] = "Login";
     $content["login__create_account_button"]= "Create Account";
@@ -36,10 +36,8 @@
         <title><?php $content["login__login"]; ?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/theme.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="js/main.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-        
     </head>
 
 <body>
@@ -50,17 +48,17 @@
 </header>
 
 <main>
-    <div class="container">
+    <div class="two-column-container ">
         <div class="content">
             <div class="text"><?php echo $content["login__sign_in_account"]; ?></div>
             <form action="mainPage.php" method="post">
-            <input id="input-user" type="text" name="fname" placeholder="username"><br>
+            <input id ="input-user" type="text" name="fname" placeholder="username"><br>
             <input id="input-lock" type="password" name="lname" placeholder="password"><br>
             </form>
 
             <button><?php echo $content["login__sign_in_header_text_bold"]; ?></button>
         </div>
- 
+
         <div class="content">
             <div class="text"><?php echo $content["login__create_account"]; ?></div>
             <button> <?php echo $content["login__create_account_button"]; ?></button>
@@ -72,8 +70,7 @@
 </body>
 <footer>
     <div id="language-footer">
-        <div id = "language-display" class="languages"><script>displayLanguage('<?php echo $language?>');</script></div>
-        <img id ="language-flag" src="" alt="" onclick="languageSelect(id)">
+        <div class="languages">english</div><img id="flag-filipino" src="images/flag-filipino.png">
 </div>
 </footer>
 </html>

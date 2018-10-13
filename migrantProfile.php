@@ -9,23 +9,9 @@
     require_once ('vendor/autoload.php');
     use \Statickidz\GoogleTranslate;
 
-    $content["migrant_account__header_text"] = 'Edit Profile';
-    $content["migrant_account__title_text"] = 'Migrant Profile';
-    $content["migrant_account__first_name_text"] = 'First Name:';
-    $content["migrant_account__last_name_text"] = 'Last Name:';
-    $content["migrant_account__age_text"] = 'Age:';
-    $content["migrant_account__gender_text"] = 'Gender:';
-    $content["migrant_account__location_text"] = 'Location:';
-    $content["migrant_account__nationality_text"] = 'Nationality:';
-    $content["migrant_account__religion_text"] = 'Religion:';
-    $content["migrant_account__marital_stat_text"] = 'Marital Status:';
-    $content["migrant_account__married_button"] = 'Married:';
-    $content["migrant_account__single_button"] = 'Single:';
-    $content["migrant_account__family_textarea"] = 'Tell us about your family...';
-    $content["migrant_account__language_textarea"] = 'What languages do you speak...';
-    $content["migrant_account__hobbies_textarea"] = 'What are some of your hobbies...';
-    $content["migrant_account__outcome_textarea"] = 'What are you hoping to get out of this?';
-    $content["migrant_account__picture_text"] = 'Insert a Picture:';
+    $content["display_profile__header_text"] = 'Profile';
+    $content["display_profile__title_text"] = 'Profile';
+
 
 
     $trans = new GoogleTranslate();
@@ -45,7 +31,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     </head>
 
-<body class="center">
+<body>
 
 <header>
     <div class="title"><?php echo $content["migrant_account__header_text"]; ?></div>
@@ -53,7 +39,8 @@
 
 <main>
     <div class="content">
-        <form action="mainPage.php" method="post">
+        <form action="processData.php" method="post">
+            <input type="hidden" name="type" value="migrent">
             <?php echo $content["migrant_account__first_name_text"]; ?><input type="text" name="fname"><br>
             <?php echo  $content["migrant_account__last_name_text"]; ?><input type="text" name="lname"><br>
             <?php echo $content["migrant_account__age_text"]; ?><input type="text" name="age"><br>
@@ -70,9 +57,8 @@
             <?php echo $content["migrant_account__picture_text"]; ?><input type="file" name="pic1" accept="image/*"><br>
             <?php echo $content["migrant_account__picture_text"]; ?><input type="file" name="pic2" accept="image/*"><br>
             <?php echo $content["migrant_account__picture_text"]; ?><input type="file" name="pic3" accept="image/*"><br>
+        <form action="migrantForm.php" method="POST"><a href="migrantForm.php"><button type="submit" name="user_type" value="Migrant">Edit Info</button></a></form>
 
-            <input type="submit" value="Submit">
-        </form>
     </div>
 </main>
 
