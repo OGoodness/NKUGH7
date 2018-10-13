@@ -20,6 +20,21 @@
     $content["login__sign_in_header_text"]= "to your account";
     $content["login__create_account"]="If you are new to this website, click the button below to get started on your personal profile and make one step closer to finding your future guide";
 
+    $content["c1t__first_name"] = ""
+    $content["c1t__last_name"] = ""
+    $content["c1t__age"] = ""
+    $content["c1st__city"] = ""
+    $content["c1st__state"] = ""
+    $content["c1f__language"] = ""
+    $content["c1f__nationality"] = ""
+    $content["c1f__religion"] = ""
+    $content["c1f__gender"] = ""
+    $content["c1f__study"] = ""
+    $content["c1p__family"] = ""
+    $content["c1v__quick_info1"] = ""
+    $content["c1v__quick_info2"] = ""
+    
+
 
     $trans = new GoogleTranslate();
     foreach($content as $key => $text){

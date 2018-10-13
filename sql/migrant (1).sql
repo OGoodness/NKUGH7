@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 13, 2018 at 08:15 PM
+-- Generation Time: Oct 13, 2018 at 11:54 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.10
 
@@ -34,18 +34,18 @@ CREATE TABLE `migrant` (
   `age` int(11) NOT NULL,
   `gender` varchar(32) NOT NULL,
   `self_desc` text NOT NULL,
-  `religion` varchar(128) NOT NULL,
-  `marital_status` varchar(128) NOT NULL,
+  `religion` varchar(128) DEFAULT NULL,
+  `marital_status` varchar(128) DEFAULT NULL,
   `city` varchar(128) NOT NULL,
   `state` varchar(2) NOT NULL,
-  `nationality` varchar(128) NOT NULL,
+  `nationality` varchar(128) DEFAULT NULL,
   `latitude` int(11) NOT NULL,
   `longitude` int(11) NOT NULL,
   `primary_language` varchar(128) NOT NULL,
-  `secondary_language` varchar(128) NOT NULL,
-  `hobby_1` text NOT NULL,
-  `hobby_2` text NOT NULL,
-  `family_desc` text NOT NULL,
+  `secondary_language` varchar(128) DEFAULT NULL,
+  `hobby_1` text,
+  `hobby_2` text,
+  `family_desc` text,
   `end_goal` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 COMMIT;

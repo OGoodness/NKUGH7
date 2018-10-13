@@ -1,25 +1,62 @@
 <?php 
     include "../include/db_connect.php";
-
-    if($_POST["type"] == "migrant"){
-        "";
-        $insert = $db->prepare("INSERT INTO users
-        SET user_first_name=?,
-            user_last_name=?,
-            user_email=?,
-            user_type=?,
-            user_password=?;");
-    $insert->bind_param("sssis", $_POST["fname"], $_POST["lname"], $_POST["type"], $_POST["type"], $_POST["type"]);
-
+    $user_id=0;
+    print_r($_POST);
+    if(isset($_COOKIE["insert_id"])){
+        $user_id=$_COOKIE["insert_id"];
+    }else if(isset($_SESSION["insert_id"])){
+        $user_id=$_SESSION["insert_id"];
+    }
+    print_r($user_id);
+    if($_POST["type"] == "guide"){
+        $insert = $conn->prepare("INSERT INTO guide
+            SET users_id=?,
+                age=?,
+                gender=?,
+                occupation=?,
+                self_desc=?,
+                religion=?,
+                marital_status=?,
+                city=?,
+                state=?,
+                nationality=?,
+                primary_language=?,
+                secondary_language=?,
+                hobby_1=?,
+                hobby_2=?,
+                family_desc=?");
+    $insert->bind_param("iisssssssssssss", $user_id, $_POST["age"], $_POST["gender"], $_POST["occupation"], $_POST["self"], $_POST["religion"], $_POST["maritalStat"], 
+                                           $_POST["city"], $_POST["state"], $_POST["nationality"], $_POST["primLanguages"], 
+                                           $_POST["secLanguages"], $_POST["hobby1"], $_POST["hobby2"], $_POST["family"]);
+        print_r($insert);
     if (!$insert->execute()) {
+        print_r($insert->error); 
         echo "Error, could not insert into users";
     } else {
         $insert_id = $conn->insert_id;
     }
 
     $insert->close();
-    }elseif($_POST["type"] == "guide"){
-        $insert="";
+    }elseif($_POST["type"] == "migrant"){
+        $insert = $conn->prepare("INSERT INTO guide
+            SET users_id=?,
+                age=?,
+                gender=?,
+                occupation=?,
+                self_desc=?,
+                religion=?,
+                marital_status=?,
+                city=?,
+                state=?,
+                nationality=?,
+                primary_language=?,
+                secondary_language=?,
+                hobby_1=?,
+                hobby_2=?,
+                family_desc=?");
+    $insert->bind_param("iisssssssssssss", $user_id, $_POST["age"], $_POST["gender"], $_POST["occupation"], $_POST["self"], $_POST["religion"], $_POST["maritalStat"], 
+                                           $_POST["city"], $_POST["state"], $_POST["nationality"], $_POST["primLanguages"], 
+                                           $_POST["secLanguages"], $_POST["hobby1"], $_POST["hobby2"], $_POST["family"]);
     }
 
 
@@ -73,6 +110,8 @@
         // Echo a link back to the main page
         echo '<p>Click <a href="index.html">here</a> to go back</p>';
     }
+
+    header("Location: ../browse.php");
 
 
 
