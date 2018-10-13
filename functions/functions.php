@@ -1,9 +1,9 @@
 <?php
 //all get functions...........
 
-include "include/db_connect.php";
+include "../include/db_connect.php";
 
-function getUserType($conn){
+function getUserType(){
     $response = NULL;
     $sql = "SELECT *
     FROM globalhack7.user_type";
@@ -12,9 +12,10 @@ function getUserType($conn){
             while($row = $result->fetch_object()){
                 $response[] = $row;
             }
+            $result->free();
         }
     }
-    $result->free();
+   
     return $response;
 }
 
