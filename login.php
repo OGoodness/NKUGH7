@@ -9,22 +9,25 @@
 
     require_once ('vendor/autoload.php');
     use \Statickidz\GoogleTranslate;
+    $content["login__sign_in_account"]="If you have previously created a profile and are a registered guide, please sign in below";
+    $content["login__login_general_use_description"]= "This website creates a personal account so you can resume your search for the perfect guide anytime. Don't worry, your information is confidential and secure";
+    $content["login__sign_in_header_text_bold"]= "Sign in";
+    $content["login__sign_in_header_text"]= "to your account";
+    $content["login__create_account"]="If you are new to this website, click the button below to get started on your personal profile and make one step closer to finding your future guide";
 
-    $login__sign_in_account = "If you have previously created a profile and are a registered guide, please sign in below";
-    $login__login_general_use_description = "This website creates a personal account so you can resume your search for the perfect guide anytime. Don't worry, your information is confidential and secure";
-    $login__sign_in_header_text_bold = "Sign in";
-    $login__sign_in_header_text = "to your account";
-    $login__create_account = "If you are new to this website, click the button below to get started on your personal profile and make one step closer to finding your future guide";
+    foreach(){
+        
+    }
 
     $trans = new GoogleTranslate();
-    $login__sign_in_account = $trans->translate("en", $language, $login__sign_in_account);
+    $login__sign_in_account = $trans->translate("en", $language, $login_sign_in_account);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Griffin Burkhardt | Portfolio</title>
+        <title>Login</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/theme.css">
         <script src="js/main.js"></script>
