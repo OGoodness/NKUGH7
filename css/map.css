@@ -1,7 +1,13 @@
-#google-map{
-    color: green;
-    height: 30;
+
+.row{
+    width: 100%;
 }
-#info{
-    background-color: aqua
+#googleMap{
+    width: 50%;
+    height: 400px;
+}
+.info{
+    
+    width: 50%;
+    height: 400px;
 }
