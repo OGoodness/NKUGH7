@@ -21,7 +21,7 @@
 </header>
 
 <main>
-    <div class="two-column-container">
+    <div class="container">
         <a href="login.php"><img id="flag-filipino" src="images/flag-filipino.png" alt="Filipino Flag" data="Filipino" onclick="languageSelect('flag-filipino')"></a>
         <a href="login.php"><img id="flag-usa" src="images/flag-usa.png" alt="USA Flag" data="English" onclick="languageSelect('flag-usa')"></a>
         <a href="login.php"><img id="flag-arabic" src="images/flag-arabic.png" alt="Arabic Flag" data="Arabic" onclick="languageSelect('flag-arabic')"></a>
