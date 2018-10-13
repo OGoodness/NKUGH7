@@ -146,7 +146,7 @@
     }
 
     
-    $user_type = getUserType($conn);
+    $user_type = get_user_type($conn);
    print_r($user_type);
 ?>
 
