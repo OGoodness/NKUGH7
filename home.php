@@ -21,21 +21,12 @@
 </header>
 
 <main>
-<<<<<<< HEAD
-    <div class="two-column-container">
-        <img id="flag-filipino" src="images/flag-filipino.png" alt="Filipino Flag" data="tl" onclick="languageSelect('flag-filipino')">
+    <div class="container">
+    <img id="flag-filipino" src="images/flag-filipino.png" alt="Filipino Flag" data="tl" onclick="languageSelect('flag-filipino')">
         <img id="flag-usa" src="images/flag-usa.png" alt="USA Flag" data="en" onclick="languageSelect('flag-usa')">
         <img id="flag-arabic" src="images/flag-arabic.png" alt="Arabic Flag" data="ar" onclick="languageSelect('flag-arabic')">
         <img id="flag-vietnam" src="images/flag-vietnam.png" alt="Vietnam Flag" data="vi" onclick="languageSelect('flag-vietnam')">
         <img id="flag-spanish" src="images/flag-spanish.png" alt="Spanish Flag" data="es" onclick="languageSelect('flag-spanish')">
-=======
-    <div class="container">
-        <img id="flag-filipino" src="images/flag-filipino.png" alt="Filipino Flag" data="Filipino" onclick="languageSelect('flag-filipino')">
-        <img id="flag-usa" src="images/flag-usa.png" alt="USA Flag" data="English" onclick="languageSelect('flag-usa')">
-        <img id="flag-arabic" src="images/flag-arabic.png" alt="Arabic Flag" data="Arabic" onclick="languageSelect('flag-arabic')">
-        <img id="flag-vietnam" src="images/flag-vietnam.png" alt="Vietnam Flag" data="Vietnamese" onclick="languageSelect('flag-vietnam')">
-        <img id="flag-spanish" src="images/flag-spanish.png" alt="Spanish Flag" data="Spanish" onclick="languageSelect('flag-spanish')">
->>>>>>> ec5e43606381920c28dbd1d965dd5964e1d2fe1c
     </div>
 </main>
 
