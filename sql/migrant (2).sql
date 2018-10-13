@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 13, 2018 at 11:54 PM
+-- Generation Time: Oct 14, 2018 at 12:20 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.10
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `migrant` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `users_id` int(11) NOT NULL,
   `age` int(11) NOT NULL,
   `gender` varchar(32) NOT NULL,
@@ -48,6 +48,13 @@ CREATE TABLE `migrant` (
   `family_desc` text,
   `end_goal` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `migrant`
+--
+
+INSERT INTO `migrant` (`id`, `users_id`, `age`, `gender`, `self_desc`, `religion`, `marital_status`, `city`, `state`, `nationality`, `latitude`, `longitude`, `primary_language`, `secondary_language`, `hobby_1`, `hobby_2`, `family_desc`, `end_goal`) VALUES
+(0, 10, 21, 'Noah Fields', 'fasdf', NULL, NULL, 'morning view', 'KY', 'United States', 0, 0, 'dasdf', 'asd', 'asdf', 'asdf', 'sadfasd', 'asdf');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
