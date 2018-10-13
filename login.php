@@ -38,6 +38,7 @@
         <link rel="stylesheet" type="text/css" href="css/theme.css">
         <script src="js/main.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+        
     </head>
 
 <body>
@@ -58,7 +59,7 @@
 
             <button><?php echo $content["login__sign_in_header_text_bold"]; ?></button>
         </div>
-
+ 
         <div class="content">
             <div class="text"><?php echo $content["login__create_account"]; ?></div>
             <button> <?php echo $content["login__create_account_button"]; ?></button>
@@ -70,7 +71,9 @@
 </body>
 <footer>
     <div id="language-footer">
-        <div class="languages">english</div><img id="flag-filipino" src="images/flag-filipino.png">
+        <div id = "language-display" class="languages"><script>displayLanguage('<?php echo $language?>');</script></div>
+        <img src="" alt="">
 </div>
+
 </footer>
 </html>
