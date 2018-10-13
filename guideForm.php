@@ -19,9 +19,7 @@
     $content["migrant_account__nationality_text"] = 'Nationality:';
     $content["migrant_account__religion_text"] = 'Religion:';
     $content["migrant_account__occupation_text"] = 'Occupation:';
-    $content["migrant_account__marital_stat_text"] = 'Marital Status:';
-    $content["migrant_account__married_button"] = 'Married';
-    $content["migrant_account__single_button"] = 'Single';
+    $content["migrant_account__marital_stat_text"] = 'Relationship Status:';
     $content["migrant_account__self_textarea"] = 'Tell us about yourself...';
     $content["migrant_account__family_textarea"] = 'Tell us about your family...';
     $content["migrant_account__primLanguage_textarea"] = 'What is your primary language...';
@@ -40,7 +38,7 @@
 <html lang="en">
     <head>
     <meta charset="utf-8">
-    <title><?php echo $migrant_account__title_text; ?></title>
+    <title><?php echo $content["migrant_account__title_text"]; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/theme.css">
     <script src="js/main.js"></script>
@@ -50,37 +48,34 @@
 <body>
 
 <header>
-    <div class="title"><?php echo $migrant_account__header_text; ?></div>
+    <div class="title"><?php echo $content["migrant_account__header_text"]; ?></div>
 </header>
 
 <main>
     <div class="content">
         <form action="browse.php" method="post">
-        <?php echo $migrant_account__first_name_text; ?><input type="text" name="fname"><br>
-        <?php echo  $migrant_account__last_name_text; ?><input type="text" name="lname"><br>
-        <?php echo $migrant_account__age_text; ?><input type="text" name="age"><br>
-        <?php echo $migrant_account__gender_text; ?><input type="text" name="gender"><br>
-        <?php echo $migrant_account__location_text; ?><input type="text" name="location"><br>
-        <?php echo $migrant_account__nationality_text; ?><input type="text" name="nationality"><br>
-        <?php echo $migrant_account__occupation_text; ?><input type="text" name="occupation"><br>
-        <?php echo $migrant_account__religion_text; ?><input type="text" name="religion"><br>
+        <input required type="text" name="fname" placeholder="<?php echo $content["migrant_account__first_name_text"]; ?>"><br>
+        <input required type="text" name="lname" placeholder="<?php echo  $content["migrant_account__last_name_text"]; ?>"><br>
+        <input required type="text" name="age" placeholder="<?php echo $content["migrant_account__age_text"]; ?>"><br>
+        <input type="text" name="gender" placeholder="<?php echo $content["migrant_account__gender_text"]; ?>"><br>
 
+        <input required type="text" name="location" placeholder="<?php echo $content["migrant_account__location_text"]; ?>"><br>
+        <input required type="text" name="nationality" placeholder="<?php echo $content["migrant_account__nationality_text"]; ?>"><br>
+        <input type="text" name="occupation" placeholder="<?php echo $content["migrant_account__occupation_text"]; ?>"><br>
 
-        <?php echo $migrant_account__marital_stat_text; ?>
-            <input type="radio" name="maritalStat" value="married"><?php echo $migrant_account__married_button; ?>
-            <input type="radio" name="maritalStat" value="single"> <?php echo $migrant_account__single_button;?><br>
+        <input type="text" name="marital_stat" placeholder="<?php echo $content["migrant_account__marital_stat_text"]; ?>"><br>
+        
 
-        <?php echo $migrant_account__hobby_text; ?><input type="text" name="hobby1"><br>
-        <?php echo $migrant_account__hobby_text; ?><input type="text" name="hobby2"><br>
-
+        <input type="text" name="hobby1" placeholder="<?php echo $content["migrant_account__hobby_text"]; ?>"><br>
+        <input type="text" name="hobby2" placeholder="<?php echo $content["migrant_account__hobby_text"]; ?>"><br>
         <textarea rows="6" cols="50" name="self"><?php echo $migrant_account__self_textarea; ?></textarea><br>
         <textarea rows="6" cols="50" name="family"><?php echo $migrant_account__family_textarea; ?></textarea><br>
         <textarea rows="4" cols="50" name="primLanguages"><?php echo $migrant_account__primary_language_textarea; ?></textarea><br>
         <textarea rows="4" cols="50" name="secLanguages"><?php echo $migrant_account__secondary_language_textarea; ?></textarea><br>
         
-        <?php echo $migrant_account__picture_text; ?><input type="file" name="pic1" accept="image/*"><br>
-        <?php echo $migrant_account__picture_text; ?><input type="file" name="pic2" accept="image/*"><br>
-        <?php echo $migrant_account__picture_text; ?><input type="file" name="pic3" accept="image/*"><br>
+        <?php echo $content["migrant_account__picture_text"]; ?><input type="file" name="pic1" accept="image/*"><br>
+        <input type="file" name="pic2" accept="image/*"><br>
+        <input type="file" name="pic3" accept="image/*"><br>
 
             <input type="submit" value="Submit">
         </form>
