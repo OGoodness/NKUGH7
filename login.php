@@ -13,7 +13,7 @@
     require_once ('vendor/autoload.php');
     use \Statickidz\GoogleTranslate;
     $content["login__sign_in_account"]="If you have previously created a profile and are a registered guide, please sign in below";
-    $content["login__login_general_use_description"]= "This website creates a personal account so you can resume your search for the perfect guide anytime. Don't worry, your information is confidential and secure";
+    $content["login__login_general_use_description"]= "This website will allow you to either help guide an immagrant family or if you are an immagrant family you can find resdients help make your transtion to your new home smoother. Don't worry, your information is confidential and secure";
     $content["login__sign_in_header_text_bold"]= "Sign in";
     $content["login__login"] = "Login";
     $content["login__create_account_button"]= "Create Account";
