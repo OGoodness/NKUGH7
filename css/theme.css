@@ -11,11 +11,22 @@
         }
         header {
             text-align: center;
+            margin-top: 5%;
+        }
+        main {
+            margin-top: 7%;
         }
         .center {
             margin: 0;
             position: absolute;
             top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .top {
+            margin: 0;
+            position: absolute;
+            top: 25%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
@@ -47,19 +58,30 @@
             letter-spacing: 2px;
         }
         .sub-title {
-            text-transform: uppercase;
-            text-align: left;
+            margin: 10px auto;
+            text-decoration: none;
+            text-transform: lowercase;
+            text-align: justify;
+            text-align-last: justify;
             font-size: 12px;
             font-weight: 400;
             letter-spacing: 1px;
-            color: black;
+            width: 550px;
+            color: gray;
+        }
+        .text {
+            text-transform: lowercase;
+            text-align: justify;
+            text-align-last: justify;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: gray;
+            margin-bottom: 20px;
         }
         .content {
-            text-transform: lowercase;
-            font-size: 13px;
-            font-weight: 300;
-            letter-spacing: 0.1px;
-            color: gray;
+            margin: 0px 10%;
+            width: 25%;
         }
         .divider {
             margin-left: 1%;
@@ -85,21 +107,65 @@
             display: flex;
             justify-content: center;
         }
-        a {
-            display: inline-block;
-            margin: 0px;
+        .container {
+            display: flex;
+            flex-flow: row wrap;
+            align-content: flex-start;
         }
         .container img {
-            height: 60px;
             width: auto;
-            margin: 0px 20px;
+            height: 60px;
+            margin: 5px auto;
             transition: all 0.4s ease-in-out;
             cursor: pointer;
+            margin-bottom: 5px;
         }
         .container img:hover {
             box-shadow: 0px 0px 15px gray;
-            margin-top: -7px;
         }
         .fa-user-edit {
             font-size: 45px;
+        }
+        #language-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            padding: 10px;
+            color: gray;
+        }
+        input, select {
+            font-family: 'Open Sans', sans-serif;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid lightgray;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        select {
+            padding: 10px 5px;
+            color: gray;
+        }
+        button {
+            border: 1px solid lightgray;
+            border-radius: 3px;
+            width: 100%;
+            padding: 10px;
+            font-family: 'Open Sans', sans-serif;
+            text-transform: lowercase;
+            font-weight: 700;
+        }
+        #input-lock {
+            background-size: 17px;
+            background-repeat: no-repeat;
+            
+        }
+        #input-user {
+            width: 100%;
+            background-image: url('images/lock.png');
+            background-size: 17px;
+            background-position: 7px 7px;
+            background-repeat: no-repeat;
         }
