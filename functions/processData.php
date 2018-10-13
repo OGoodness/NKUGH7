@@ -1,6 +1,27 @@
 <?php 
     include "../include/db_connect.php";
 
+    if($_POST["type"] == "migrant"){
+        "";
+        $insert = $db->prepare("INSERT INTO users
+        SET user_first_name=?,
+            user_last_name=?,
+            user_email=?,
+            user_type=?,
+            user_password=?;");
+    $insert->bind_param("sssis", $_POST["fname"], $_POST["lname"], $_POST["type"], $_POST["type"], $_POST["type"]);
+
+    if (!$insert->execute()) {
+        echo "Error, could not insert into users";
+    } else {
+        $insert_id = $conn->insert_id;
+    }
+
+    $insert->close();
+    }elseif($_POST["type"] == "guide"){
+        $insert="";
+    }
+
 
     foreach($_FILES as $key => $file){
         if(isset($_FILES[$key])) {
