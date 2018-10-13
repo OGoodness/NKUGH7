@@ -156,10 +156,8 @@
                     <?php
                         foreach($user_type as $data)
                         {
-                    ?>
-                    <option value="<?php echo $data->id; ?>"> <?php echo $data->user_type;?></option>
-                    <?php
-                        }
+                                  	echo '<option value="'. $data->id.'">'. $data->user_type.'</option>';
+                          }
                     ?>
                 </select><br>
                 <input id="" type="password" name="password" placeholder="password">
