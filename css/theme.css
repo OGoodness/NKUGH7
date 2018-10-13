@@ -62,6 +62,7 @@
             text-decoration: none;
             text-transform: lowercase;
             text-align: justify;
+            text-align-last: justify;
             font-size: 12px;
             font-weight: 400;
             letter-spacing: 1px;
@@ -70,6 +71,8 @@
         }
         .text {
             text-transform: lowercase;
+            text-align: justify;
+            text-align-last: justify;
             font-size: 12px;
             font-weight: 400;
             letter-spacing: 1px;
@@ -155,16 +158,14 @@
             font-weight: 700;
         }
         #input-lock {
-            background-image: url(images/lock-solid.svg);
             background-size: 17px;
             background-repeat: no-repeat;
-            padding-left: 33px;
             
         }
-        input[type='text']#input-user {
-            background: url(images/font-solid.svg);
+        #input-user {
+            width: 100%;
+            background-image: url('images/lock.png');
             background-size: 17px;
             background-position: 7px 7px;
             background-repeat: no-repeat;
-            padding-left: 33px;
         }

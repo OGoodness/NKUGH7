@@ -1,7 +1,7 @@
 <?php
     // Include config file
     require_once 'include/db_connect.php';
-    require_once 'function/functions.php';
+    require_once 'functions/functions.php';
     require_once ('vendor/autoload.php');
     use \Statickidz\GoogleTranslate;
 
@@ -12,55 +12,37 @@
     // Processing form data when form is submitted
     if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-        // Validate username
+        // Validate first name
         if(empty(trim($_POST["fname"]))){
-            $username_err = "Please enter your first name.";
+            $userFirstNameErr = "Please enter your first name.";
         } else{
-            // Prepare a select statement
-            $sql = "SELECT id FROM users WHERE username = ?";
-
-            if($stmt = mysqli_prepare($conn, $sql)){
-                // Bind variables to the prepared statement as parameters
-                mysqli_stmt_bind_param($stmt, "s", $param_username);
-
-                // Set parameters
-                $param_username = trim($_POST["username"]);
-
-                // Attempt to execute the prepared statement
-                if(mysqli_stmt_execute($stmt)){
-                    // store result
-                    mysqli_stmt_store_result($stmt);
-
-                    if(mysqli_stmt_num_rows($stmt) == 1){
-                        $username_err = "This username is already taken.";
-                    } else{
-                        $username = trim($_POST["username"]);
-                    }
-                } else{
-                    echo "Oops! Failed to execute the query.";
-                }
-            }
-            else{
-            echo "Failed to prepare the query";
-            }
-
-            // Close statement
-            mysqli_stmt_close($stmt);
+            $userFirstName = trim($_POST['fname']);
+          
         }
+
+        //Validate last name
+        if(empty(trim($_POST["lname"]))){
+            $userLastNameErr = "Please enter your last name.";
+        } else{
+            $userLastName = trim($_POST['lname']);
+          
+        }
+
+        $type = trim($_POST["user-type"]);
 
         // Validate email
         if(empty(trim($_POST["email"]))){
-            $email_err = "Please enter an email.";
+            $emailErr = "Please enter an email.";
         } else{
             // Prepare a select statement
-            $sql = "SELECT email FROM users WHERE username = ?";
+            $sql = "SELECT email FROM users WHERE user_first_name = ?";
 
             if($stmt = mysqli_prepare($conn, $sql)){
                 // Bind variables to the prepared statement as parameters
-                mysqli_stmt_bind_param($stmt, "s", $param_username);
+                mysqli_stmt_bind_param($stmt, "s", $paramFirstName);
 
                 // Set parameters
-                $param_email = trim($_POST["email"]);
+                $paramEmail = trim($_POST["email"]);
 
                 // Attempt to execute the prepared statement
                 if(mysqli_stmt_execute($stmt)){
@@ -68,7 +50,7 @@
                     mysqli_stmt_store_result($stmt);
 
                     if(mysqli_stmt_num_rows($stmt) == 1){
-                        $email_err = "This email is already taken.";
+                        $emailErr = "This email is already taken.";
                     } else{
                         $email = trim($_POST["email"]);
                     }
@@ -78,25 +60,24 @@
             }
 
             // Close statement
-            mysqli_stmt_close($stmt);
         }
 
         // Validate password
         if(empty(trim($_POST['password']))){
-            $password_err = "Please enter a password.";
+            $passwordErr = "Please enter a password.";
         } elseif(strlen(trim($_POST['password'])) < 6){
-            $password_err = "Password must have atleast 6 characters.";
+            $passwordErr = "Password must have atleast 6 characters.";
         } else{
             $password = trim($_POST['password']);
         }
 
         // Validate confirm password
         if(empty(trim($_POST["confirm_password"]))){
-            $confirm_password_err = 'Please confirm password.';
+            $confirmPasswordErr = 'Please confirm password.';
         } else{
-            $confirm_password = trim($_POST['confirm_password']);
-            if($password != $confirm_password){
-                $confirm_password_err = 'Password did not match.';
+            $confirmPassword = trim($_POST['confirm_password']);
+            if($password != $confirmPassword){
+                $confirmPasswordErr = 'Password did not match.';
             }
         }
 
@@ -108,30 +89,29 @@
 
             if($stmt = mysqli_prepare($conn, $sql)){
                 // Bind variables to the prepared statement as parameters
-                mysqli_stmt_bind_param($stmt, "sssis", $param_username, $param_email, $param_password);
+                mysqli_stmt_bind_param($stmt, "sssis", $paramFirstName, $paramLastName, $paramEmail, $paramType, $paramPassword);
 
                 // Set parameters
-                $param_username = $username;
-                $param_email = $email;
-                $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
+                $paramFirstName = $userFirstName;
+                $paramLastName = $userLastName;
+                $paramEmail = $email;
+                $paramType = $type;
+                $paramPassword = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
 
                 // Attempt to execute the prepared statement
                 if(mysqli_stmt_execute($stmt)){
                     // Redirect to login page
                     session_start();
-                    $_SESSION['username'] = $username;
+                    $_SESSION['user_id'] = $email;
                     //header("location: ../admin.php");
                 } else{
                     echo "Something went wrong. Please try again later.";
                 }
             }
 
-            // Close statement
-            mysqli_stmt_close($stmt);
         }
 
-        // Close connection
-        mysqli_close($conn);
+        
     }
 
 
@@ -163,7 +143,8 @@
 
     
     $user_type = get_user_type($conn);
-    print_r($user_type);
+   print_r($user_type);
+   mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
@@ -188,20 +169,31 @@
 <main>
         <div class="content" style="margin: 0 auto;">
             <div class="text"><?php echo $content["login__sign_in_account"]; ?></div>
-            <form action="mainPage.php" method="post">
-            <input id ="" type="text" name="fname" placeholder="first name"><br>
-            <input id ="" type="text" name="lname" placeholder="last name"><br>
-            <input id ="" type="text" name="email" placeholder="johnsmith@email.com"><br>
-            <select>
-                <option value = "">Type</option>
-                <option value = "guide">Guide</option>
-                <option value = "non-citizen">Non-citizen</option>
-            </select><br>
-            <input id="" type="password" name="lname" placeholder="password"><br>
-            <input id="" type="password" name="lname" placeholder="confirm_password"><br>
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                <input id ="" type="text" name="fname" placeholder="first name"><br>
+                <br><span class="help-block"><?php echo $userFirstNameErr; ?></span>
+                <input id ="" type="text" name="lname" placeholder="last name"><br>
+                <br><span class="help-block"><?php echo $userLastNameErr; ?></span>
+                <input id ="" type="text" name="email" placeholder="johnsmith@email.com">
+                <br><span class="help-block"><?php echo $emailErr; ?></span><br>
+                <select name="user-type">
+                    <?php
+                        foreach($user_type as $data)
+                        {
+                    ?>
+                    <option value="<?php echo $data->id; ?>"> <?php echo $data->user_type;?></option>
+                    <?php
+                        }
+                    ?>
+                </select><br>
+                <input id="" type="password" name="password" placeholder="password"><br>
+                <br><span class="help-block"><?php echo $passwordErr; ?></span>
+                <input id="" type="password" name="confirm_password" placeholder="confirm_password"><br>
+                <br><span class="help-block"><?php echo $confirmPasswordErr; ?></span>
+                <button type="submit"><?php echo $content["login__sign_up_button"]; ?></button>
             </form>
 
-            <button type="submit"><?php echo $content["login__sign_up_button"]; ?></button>
+            
         </div>
     </div>
 </div>
