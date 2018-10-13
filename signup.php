@@ -36,22 +36,28 @@
             $emailErr = "Please enter an email.";
         } else{
             // Prepare a select statement
-            $stmt = "SELECT user_email FROM users WHERE user_email = ?";
-            // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "s", $paramEmail);
-            $paramEmail = trim($_POST["email"]);
-            if(mysqli_stmt_execute($stmt)){
-                // store result
-                mysqli_stmt_store_result($stmt);
+            $sql = "SELECT user_email FROM users WHERE user_email = ?";
+            if($stmt = mysqli_prepare($conn, $sql)){
+                // Bind variables to the prepared statement as parameters
+                mysqli_stmt_bind_param($stmt, "s", $paramEmail);
+                $paramEmail = trim($_POST["email"]);
+                if(mysqli_stmt_execute($stmt)){
+                    // store result
+                    mysqli_stmt_store_result($stmt);
 
-                if(mysqli_stmt_num_rows($stmt) == 1){
-                    $emailErr = "This email is already taken.";
+                    if(mysqli_stmt_num_rows($stmt) == 1){
+                        $emailErr = "This email is already taken.";
+                    } else{
+                        $email = trim($_POST["email"]);
+                    }
                 } else{
-                    $email = trim($_POST["email"]);
+                    echo "Execution email failed";
                 }
-            } else{
-                $emailErr = "Didn't execure";
             }
+            else{
+                echo "Prepare email failed";
+            }
+            
 
         }
 
