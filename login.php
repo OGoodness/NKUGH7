@@ -15,9 +15,9 @@
     $content["login__sign_in_header_text"]= "to your account";
     $content["login__create_account"]="If you are new to this website, click the button below to get started on your personal profile and make one step closer to finding your future guide";
 
-    foreach(){
+   # foreach(){
         
-    }
+    #}
 
     $trans = new GoogleTranslate();
     $login__sign_in_account = $trans->translate("en", $language, $login_sign_in_account);
