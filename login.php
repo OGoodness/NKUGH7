@@ -14,8 +14,8 @@
     $R_Post = "hi";
 
     $trans = new GoogleTranslate();
-    $boldText = $trans->translate("en", $R_Post, $boldText);
-    $restOfText = $trans->translate("en", $R_Post, $restOfText);
+    $boldText = $trans->translate("en", $language, $boldText);
+    $restOfText = $trans->translate("en", $language, $restOfText);
 ?>
 
 <!DOCTYPE html>
