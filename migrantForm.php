@@ -11,26 +11,20 @@
 
     $content["migrant_account__header_text"] = 'Edit Profile';
     $content["migrant_account__title_text"] = 'Migrant Profile';
-<<<<<<< HEAD
-    $content["migrant_account__first_name_text"] = 'John';
-    $content["migrant_account__last_name_text"] = 'Smith';
+    $content["migrant_account__first_name_text"] = 'Griffin';
+    $content["migrant_account__last_name_text"] = 'Burkhardt';
     $content["migrant_account__age_text"] = '20';
     $content["migrant_account__gender_text"] = 'Male';
-    $content["migrant_account__location_text"] = 'Montgomery, OH';
-    $content["migrant_account__nationality_text"] = 'Ethiopian';
+    $content["migrant_account__location_city"] = 'Montgomery';
+    $content["migrant_account__location_state"] = 'Ohio';
+    $content["migrant_account__nationality_text"] = 'American';
     $content["migrant_account__religion_text"] = 'Christian';
     $content["migrant_account__marital_stat_text"] = 'Single';
-=======
-    $content["migrant_account__first_name_text"] = 'First Name:';
-    $content["migrant_account__last_name_text"] = 'Last Name:';
-    $content["migrant_account__age_text"] = 'Age:';
-    $content["migrant_account__gender_text"] = 'Gender:';
-    $content["migrant_account__location_city"] = 'Location(City):';
-    $content["migrant_account__location_state"] = 'Location(State):';
-    $content["migrant_account__nationality_text"] = 'Nationality:';
-    $content["migrant_account__religion_text"] = 'Religion:';
-    $content["migrant_account__marital_stat_text"] = 'Relationship Status:';
->>>>>>> master
+    $content["migrant_account__select_select"] = 'Select';
+    $content["migrant_account__married_select"] = 'Married';
+    $content["migrant_account__single_select"] = 'Single';
+    $content["migrant_account__complicated_select"] = 'It\'s Complicated';
+    $content["migrant_account__other_select"] = 'Other';
     $content["migrant_account__family_textarea"] = 'Tell us about your family...';
     $content["migrant_account__language_textarea"] = 'What languages do you speak...';
     $content["migrant_account__hobby_text"] = 'Composing music';
@@ -82,7 +76,15 @@
             padding: 0px;
             color: black;
             font-weight: 700;
-            width: 75px;
+            width: 100%;
+        }
+        .card-row-header select {
+            border: none;
+            background-color: #fff;
+            padding: 0px;
+            color: black;
+            font-weight: 700;
+            width: 100%;
         }
         .card-row-header textarea {
             border: 1px solid lightgray;
@@ -143,24 +145,6 @@
 <body>
 
 <main>
-<<<<<<< HEAD
-=======
-    <div class="content">
-        <form action="browse.php" method="post">
-            <input required type="text" name="state" placeholder="<?php echo $content["migrant_account__location_state_text"]; ?>"><br>
-            <input required type="text" name="city" placeholder="<?php echo $content["migrant_account__location_city_text"]; ?>"><br>
-            <input type="text" name="fname" placeholder="<?php echo $content["migrant_account__first_name_text"]; ?>"><br>
-            <input type="text" name="lname" placeholder="<?php echo  $content["migrant_account__last_name_text"]; ?>"><br>
-            <input type="number" step="1" min="1" name="age" placeholder="<?php echo $content["migrant_account__age_text"]; ?>"><br>
-            <input type="text" name="gender" placeholder="<?php echo $content["migrant_account__gender_text"]; ?>"><br>
-            <input type="text" name="location"placeholder="<?php echo $content["migrant_account__location_city"]; ?>"><br>
-            <input type="text" name="location"placeholder="<?php echo $content["migrant_account__location_state"]; ?>"><br>
-            <input type="text" name="nationality" placeholder="<?php echo $content["migrant_account__nationality_text"]; ?>"><br>
-            <input type="text" name="Religion"placeholder="<?php echo $content["migrant_account__religion_text"]; ?>"><br>
-
-            <input type="text" name="hobby1"placeholder="<?php echo $content["migrant_account__marital_stat_text"];?>"><br>
->>>>>>> master
-
     <div class="divider">
         <div class="grade">edit</div>
         <div class="date">personal information</div>
@@ -180,11 +164,20 @@
         <div class="card-row-header">
             <div class="card-field"><input required type="text" name="nationality" placeholder="<?php echo $content["migrant_account__nationality_text"]; ?>"><br>nationality<span class="red">*</span></input></div>
             <div class="card-field"><input type="text" name="Religion"placeholder="<?php echo $content["migrant_account__religion_text"]; ?>"><br>religion</input></div>
-            <div class="card-field"><input type="text" name="maritial" placeholder="<?php echo $content["migrant_account__marital_stat_text"];?>"><br>maritial status</input></div>
+            <div class="card-field">
+            <select>
+                <option value = "Select"> <?php echo $content["migrant_account__select_select"]; ?></option>
+                <option value="married"><?php echo $content["migrant_account__married_select"]; ?></option>
+                <option value="Single"><?php echo $content["migrant_account__single_select"]; ?></option>
+                <option value="complicated"><?php echo $content["migrant_account__complicated_select"]; ?></option>
+                <option value="Other"><?php echo $content["migrant_account__other_select"]; ?></option>
+            </select>
+            <br>maritial status</div>
         </div>
         <div class="card-row-header">
-            <div class="card-field"><input style="width: 75%;" required type="text" name="location" placeholder="<?php echo $content["migrant_account__location_text"]; ?>"><br>location (city, state)<span class="red">*</span></input></div>
-            <div class="card-field"><input style="width: 25%;" required type="text" name="age" placeholder="<?php echo $content["migrant_account__age_text"]; ?>"><br>age<span class="red">*</span></input></div>
+            <div class="card-field"><input required type="text" name="location"placeholder="<?php echo $content["migrant_account__location_city"]; ?>"><br>city<span class="red">*</span></input></div>
+            <div class="card-field"><input required type="text" name="location"placeholder="<?php echo $content["migrant_account__location_state"]; ?>"><br>state<span class="red">*</span></input></div>
+            <div class="card-field"><input style="scroll: hidden;" required type="number" min="1" name="age" placeholder="<?php echo $content["migrant_account__age_text"]; ?>"><br>age<span class="red">*</span></input></div>
         </div>
         <div class="card-row-header">
             <div class="card-field"><input style="width: 50%;" type="text" name="hobby1" placeholder="<?php echo $content["migrant_account__hobby_text"];?>"><br>hobby</input></div>
@@ -199,7 +192,7 @@
         <div class="card-row-header">
             <textarea required rows="4" cols="50" name="outcome" placeholder="<?php echo $content["migrant_account__outcome_textarea"]; ?>"></textarea>
         </div>
-        <div class="card-row-header" style="color: black;" >you must complete these fields<span class="red">*</span></div>
+        <div class="card-row-header" style="color: black;">you must complete these fields<span class="red">*</span></div>
         <div class="card-row-header">
             <?php echo $content["migrant_account__picture_text"]; ?>
             <input class="input-photo" type="file" name="pic1" accept="image/*">
