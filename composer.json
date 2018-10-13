@@ -1,0 +1,6 @@
+{
+    "require": {
+        "google/cloud-translate": "^1.2",
+        "statickidz/php-google-translate-free": "^1.0"
+    }
+}
