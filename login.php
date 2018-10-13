@@ -1,5 +1,19 @@
+<<<<<<< HEAD
 <?php
 $language = $_POST["language"];
+=======
+<?php 
+    require_once ('vendor/autoload.php');
+    use \Statickidz\GoogleTranslate;
+
+    $boldText = 'Returning user';
+    $restOfText = ", welcome back";
+    $R_Post = "hi";
+
+    $trans = new GoogleTranslate();
+    $boldText = $trans->translate("en", $R_Post, $boldText);
+    $restOfText = $trans->translate("en", $R_Post, $restOfText);
+>>>>>>> Translate
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +35,7 @@ $language = $_POST["language"];
 <main>
     <div class="two-column-container">
         <div class="content">
-            <div class="subtitle"><b>Returning user</b>, welcome back</div>
+            <div class="subtitle"><b><?php echo $boldText; ?></b><?php echo $restOfText; ?></div>
     </div>
 </main>
 
