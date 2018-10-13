@@ -36,7 +36,22 @@
             $emailErr = "Please enter an email.";
         } else{
             // Prepare a select statement
-            $email = trim($_POST["email"]);
+            $sql = "SELECT user_email FROM users WHERE user_email = ?";
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "s", $paramEmail);
+            $paramEmail = trim($_POST["email"]);
+            if(mysqli_stmt_execute($stmt)){
+                // store result
+                mysqli_stmt_store_result($stmt);
+
+                if(mysqli_stmt_num_rows($stmt) == 1){
+                    $emailErr = "This email is already taken.";
+                } else{
+                    $email = trim($_POST["email"]);
+                }
+            } else{
+                echo "Oops! Something went wrong. Please try again later.";
+            }
 
         }
 
@@ -151,11 +166,11 @@
             <div class="text"><?php echo $content["login__sign_in_account"]; ?></div>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <input  type="text" name="fname" placeholder="first name">
-                <br><span class="help-block"><?php echo $userFirstNameErr; ?></span><br>
+                <br><span class="help-block"><?php echo $userFirstNameErr; ?></span><br><br>
                 <input  type="text" name="lname" placeholder="last name">
-                <br><span class="help-block"><?php echo $userLastNameErr; ?></span><br>
+                <br><span class="help-block"><?php echo $userLastNameErr; ?></span><br><br>
                 <input  type="text" name="email" placeholder="johnsmith@email.com">
-                <br><span class="help-block"><?php echo $emailErr; ?></span><br>
+                <br><span class="help-block"><?php echo $emailErr; ?></span><br><br>
                 <select name="user-type">
                     <?php
                         foreach($user_type as $data)
@@ -165,9 +180,9 @@
                     ?>
                 </select><br>
                 <input  type="password" name="password" placeholder="password">
-                <br><span class="help-block"><?php echo $passwordErr; ?></span>
+                <br><span class="help-block"><?php echo $passwordErr; ?></span><br>
                 <input  type="password" name="confirm_password" placeholder="confirm_password">
-                <br><span class="help-block"><?php echo $confirmPasswordErr; ?></span>
+                <br><span class="help-block"><?php echo $confirmPasswordErr; ?></span><br>
                 <button type="submit"><?php echo $content["login__sign_up_button"]; ?></button>
             </form>
 
