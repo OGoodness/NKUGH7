@@ -1,4 +1,6 @@
 <?php
+    require_once 'functions/functions.php';
+    require_once 'include/db_connect.php';
     if(isset($_POST["language"])){
         $language = $_POST["language"];
     }else{
@@ -48,6 +50,8 @@
     foreach($content as $key => $text){
         $content["$key"] = $trans->translate("en", $language, $text);
     }
+
+    $guides = get_guides($conn);
 ?>
 
 <!DOCTYPE html>
@@ -160,7 +164,9 @@
     <div class="title"><?php echo $content["migrant_account__header_text"]; ?></div>
 </header>
 
-<main>
+<?php  foreach($guides as $person){
+        ?>
+
 <main>
     <div class="divider">
         <div class="grade"><?php echo $content["migrant_account__edit_text"]; ?></div>
@@ -174,13 +180,13 @@
             <div class="input-picture"><img src=""></div>
         </div>
         <div class="card-row-header">
-            <div class="card-field"><input required type="text" name="fname" placeholder="<?php echo $content["migrant_account__first_name_text"]; ?>"><br><?php echo strtolower($content["migrant_account__first_name_text"]); ?><span class="red">*</span></input></div>
-            <div class="card-field"><input required type="text" name="lname" placeholder="<?php echo  $content["migrant_account__last_name_text"]; ?>"><br><?php echo strtolower($content["migrant_account__last_name_text"]); ?><span class="red">*</span></input></div>
-            <div class="card-field"><input type="text" name="gender" placeholder="<?php echo $content["migrant_account__gender_text"]; ?>"><br><?php echo strtolower($content["migrant_account__gender_text"]); ?></input></div>
+            <div class="card-field"><input required type="text" name="fname" placeholder="<?php echo $person->user_first_name; ?>"><br><?php echo strtolower($content["migrant_account__first_name_text"]); ?><span class="red">*</span></input></div>
+            <div class="card-field"><input required type="text" name="lname" placeholder="<?php echo $person->user_last_name; ?>"><br><?php echo strtolower($content["migrant_account__last_name_text"]); ?><span class="red">*</span></input></div>
+            <div class="card-field"><input type="text" name="gender" placeholder="<?php echo $person->gender; ?>"><br><?php echo strtolower($content["migrant_account__gender_text"]); ?></input></div>
         </div>
         <div class="card-row-header">
-            <div class="card-field"><input required type="text" name="nationality" placeholder="<?php echo $content["migrant_account__nationality_text"]; ?>"><br><?php echo strtolower($content["migrant_account__nationality_text"]); ?><span class="red">*</span></input></div>
-            <div class="card-field"><input type="text" name="Religion"placeholder="<?php echo $content["migrant_account__religion_text"]; ?>"><br><?php echo strtolower($content["migrant_account__religion_text"]); ?></input></div>
+            <div class="card-field"><input required type="text" name="nationality" placeholder="<?php echo $person->nationality; ?>"><br><?php echo strtolower($content["migrant_account__nationality_text"]); ?><span class="red">*</span></input></div>
+            <div class="card-field"><input type="text" name="Religion"placeholder="<?php echo $person->religion; ?>"><br><?php echo strtolower($content["migrant_account__religion_text"]); ?></input></div>
             <div class="card-field">
             <select>
                 <option value = "Select"> <?php echo $content["migrant_account__select_select"]; ?></option>
@@ -192,12 +198,12 @@
             <br>maritial status</div>
         </div>
         <div class="card-row-header">
-            <div class="card-field"><input required type="text" name="location"placeholder="<?php echo $content["migrant_account__location_city"]; ?>"><br><?php echo strtolower($content["migrant_account__location_city_text"]); ?><span class="red">*</span></input></div>
-            <div class="card-field"><input required type="text" name="location"placeholder="<?php echo $content["migrant_account__location_state"]; ?>"><br><?php echo strtolower($content["migrant_account__location_state_text"]); ?><span class="red">*</span></input></div>
-            <div class="card-field"><input style="scroll: hidden;" required type="number" min="1" name="age" placeholder="<?php echo $content["migrant_account__age_text"]; ?>"><br><?php echo strtolower($content["migrant_account__age_text"]); ?><span class="red">*</span></input></div>
+            <div class="card-field"><input required type="text" name="location"placeholder="<?php echo $person->city;?>"><br><?php echo strtolower($content["migrant_account__location_city_text"]); ?><span class="red">*</span></input></div>
+            <div class="card-field"><input required type="text" name="location"placeholder="<?php echo $person->state;?>"><br><?php echo strtolower($content["migrant_account__location_state_text"]); ?><span class="red">*</span></input></div>
+            <div class="card-field"><input style="scroll: hidden;" required type="number" min="1" name="age" placeholder="<?php echo $person->age; ?>"><br><?php echo strtolower($content["migrant_account__age_text"]); ?><span class="red">*</span></input></div>
         </div>
         <div class="card-row-header">
-            <div class="card-field"><input required style="width: 50%;" type="text" name="primary_language" placeholder="<?php echo $content["migrant_account__language_text"];?>"><br><?php echo strtolower($content["migrant_account__primary_language_text"]); ?><span class="red">*</span></input></div>
+            <div class="card-field"><input required style="width: 50%;" type="text" name="primary_language" placeholder="<?php echo $person->primary_language; ?>"><br><?php echo strtolower($content["migrant_account__primary_language_text"]); ?><span class="red">*</span></input></div>
             <div class="card-field"><input style="width: 50%;" type="text" name="secondary_language" placeholder="<?php echo $content["migrant_account__language_text"]; ?>"><br><?php echo strtolower($content["migrant_account__secondary_language_text"]); ?></input></div>
         </div>
         <div class="card-row-header">
@@ -205,7 +211,7 @@
             <div class="card-field"><input style="width: 50%;" type="text" name="hobby2" placeholder="<?php echo $content["migrant_account__hobby_text"]; ?>"><br><?php echo strtolower($content["migrant_account__hobby_text"]); ?></input></div>
         </div>
         <div class="card-row-header">
-            <textarea rows="4" cols="50" name="self" placeholder="<?php echo $content["migrant_account__self_textarea"]; ?>"></textarea>
+            <textarea rows="4" cols="50" name="self" placeholder="<?php echo $person->self_desc; ?>"></textarea>
         </div>
         <div class="card-row-header">
             <textarea required rows="4" cols="50" name="family" placeholder="<?php echo $content["migrant_account__family_textarea"]; ?>"></textarea>
@@ -220,6 +226,8 @@
             <input id="input-save" type="submit" value="save changes">
         </form>
     </div>
+    <?php      
+    }?>
 </main>
 
 </body>
