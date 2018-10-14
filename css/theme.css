@@ -127,10 +127,6 @@
             font-size: 45px;
         }
         #language-footer {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
             text-align: center;
             padding: 10px;
             color: gray;
@@ -172,3 +168,8 @@
         .help-block{
             color:red;
         }
+footer{
+    position: relative;
+    margin-top: 150px;
+    height: 150px;
+}
