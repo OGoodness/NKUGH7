@@ -160,7 +160,55 @@
         <link rel="stylesheet" type="text/css" href="css/theme.css">
         <script src="js/main.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-        
+        <style>
+        .box-container {
+            background-color: white;
+            margin-bottom: 25px;
+            margin: auto;
+            margin-top: 10px;
+            width: 50%;
+            box-shadow: 0px 0px 15px lightgray;
+        }
+        .card-row-header {
+            font-size: 13px;
+            color: gray;
+            margin-bottom: 25px;
+            overflow: auto;
+            padding: 0px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            text-align-last: center;
+        }
+        .card-row-header input::placeholder {
+            font-family: 'Open Sans', sans-serif;
+            text-transform: uppercase;
+            color: lightgray;
+        }
+        .card-field {
+            flex-grow: 1;
+            margin: 0px auto 10px auto;
+            width: 33.33%;
+        }
+        .card-row-header input {
+            border: none;
+            background-color: #fff;
+            padding: 0px;
+            color: black;
+            font-weight: 700;
+            width: 100%;
+        }
+        .divider {
+            width: 50%;
+            margin: 0 auto;
+        }
+        button {
+            cursor: pointer;
+        }
+        button:focus {
+            outline:0;
+        }
+    </style>
     </head>
 
 <body>
