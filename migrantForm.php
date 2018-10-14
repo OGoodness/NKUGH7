@@ -1,4 +1,6 @@
 <?php
+    require_once 'include/db_connect.php';
+    require_once 'functions/functions.php';
     if(isset($_POST["language"])){
         $language = $_POST["language"];
     }else{
