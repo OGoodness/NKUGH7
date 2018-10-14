@@ -134,7 +134,6 @@
             color: lightgray;
         }
         .card-field {
-            flex-grow: 1;
             margin: 0px auto 10px auto;
             width: 33.33%;
         }

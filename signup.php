@@ -186,7 +186,6 @@
             color: lightgray;
         }
         .card-field {
-            flex-grow: 1;
             margin: 0px auto 10px auto;
             width: 33.33%;
         }
@@ -230,9 +229,9 @@
                 <div class="card-row-header" style="padding-top: 20px;">
                     <div class="card-field"><input  type="text" name="fname" placeholder="first name"><?php echo $userFirstNameErr; ?><br>first name</div>
                     <div class="card-field"><input  type="text" name="lname" placeholder="last name"><?php echo $userLastNameErr; ?><br>first name</div>
-                    <div class="card-field"><input  type="text" name="email" placeholder="johnsmith@email.com"><?php echo $emailErr; ?><br>email</div>
                 </div>
                 <div class="card-row-header">
+                <div class="card-field"><input  type="text" name="email" placeholder="johnsmith@email.com"><?php echo $emailErr; ?><br>email</div>
                     <select name="user-type">
                     <?php
                         foreach($user_type as $data)
@@ -241,6 +240,7 @@
                           }
                         ?>
                     </select>
+                    <br>citizenship status</div>
                 </div>
                 <div class="card-row-header">
                     <div class="card-field"><input  type="password" name="password" placeholder="password"><?php echo $passwordErr; ?><br>password</div>
