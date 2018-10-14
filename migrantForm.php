@@ -3,12 +3,17 @@
     require_once 'functions/functions.php';
     if(isset($_POST["language"])){
         $language = $_POST["language"];
+        setcookie("language", $language, time() + (86400 * 30), "/");
+    }elseif(!isset($_COOKIE["language"])) {
+        $language = "en";
+        setcookie("language", $language, time() + (86400 * 30), "/");
     }else{
-        $language = "en"; 
+        $language=$_COOKIE["language"];
     }
     
 
     require_once ('vendor/autoload.php');
+    require_once ('functions/processData.php');
     use \Statickidz\GoogleTranslate;
 
     $id = null;

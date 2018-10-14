@@ -1,10 +1,13 @@
 <?php
     if(isset($_POST["language"])){
         $language = $_POST["language"];
+        setcookie("language", $language, time() + (86400 * 30), "/");
+    }elseif(!isset($_COOKIE["language"])) {
+        $language = "en";
+        setcookie("language", $language, time() + (86400 * 30), "/");
     }else{
-        $language = "en"; 
+        $language=$_COOKIE["language"];
     }
-    
 
     require_once ('vendor/autoload.php');
     use \Statickidz\GoogleTranslate;
@@ -161,7 +164,7 @@
 </header>
 
 <main>
-<main>
+
     <div class="divider">
         <div class="grade"><?php echo $content["migrant_account__edit_text"]; ?></div>
         <div class="date"><?php echo $content["migrant_account__personal_text"]; ?></div>
