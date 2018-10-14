@@ -1,6 +1,7 @@
 <?php
 
-        $hostLatitude = 38.562579;
+//Test One
+       /* $hostLatitude = 38.562579;
         $hostLongitude = -84.401139; //union ky
         $migrantLatitude = 39.14300;
         $migrantLongitude = -84.203060;//montgomery
@@ -10,7 +11,18 @@
         $hostLike2 = "soccer";
         $migrantLike1 = "movies";
         $migrantLike2 = "concert";
-        $migrantEthnicity = "Italian";
+        $migrantEthnicity = "Italian";*/
+        $hostLatitude = 
+        $hostLongitude =
+        $migrantLatitude = 
+        $migrantLongitude = 
+        $centerLatitude = ($hostLatitude + $migrantLatitude) /2;
+        $centerLongitude = ($hostLongitude + $migrantLongitude)/ 2;
+        $hostLike1 = "restraunt";
+        $hostLike2 = "golf";
+        $migrantEthnicity = "Bulgrian";
+        $migrantLike1 = "BasketBall";
+        $migrantLike2 = "Boardgames";
         $likesHostArray = array($hostLike1, $hostLike2, $migrantLike1, $migrantLike2, $migrantEthnicity);
         $ideasArray = array();
     ?>

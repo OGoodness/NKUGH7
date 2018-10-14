@@ -158,21 +158,21 @@
         <div class="card-container-left">
             <div class="card-picture"><img src=""></div>
             <div class="card-container-title">
-                <div class="card-title"><b><?php echo $trans->translate(en, $language, $person->user_first_name . " " . $person->user_last_name); ?></b>, <?php echo $trans->translate($person->age); ?></div>
-                <div class="card-subtitle"><?php echo $trans->translate(en, $language, $person->city . ", " . $person->state);?></div>
+                <div class="card-title"><b><?php echo $trans->translate("en", $language, $person->user_first_name . " " . $person->user_last_name); ?></b>, <?php echo $trans->translate($person->age); ?></div>
+                <div class="card-subtitle"><?php echo $trans->translate("en", $language, $person->city . ", " . $person->state);?></div>
             </div>
         </div>
         <div class="card-container-right">
             <div class="card-container-content">
                 <div class="card-row">
-                    <div class="card-field"><b><?php echo $trans->translate(en, $language, $person->primary_language); ?></b><br>primary language</div>
-                    <div class="card-field"><b><?php echo $trans->translate(en, $language, $person->nationality); ?></b><br>nationality</div>
-                    <div class="card-field"><b><?php echo $trans->translate(en, $language, $person->religion); ?></b><br>religion</div>
-                    <div class="card-field"><b><?php echo $trans->translate(en, $language, $person->gender); ?></b><br>gender</div>
-                    <div class="card-field"><b><?php echo $trans->translate(en, $language, $person->occupation); ?></b><br>field of study</div>
+                    <div class="card-field"><b><?php echo $trans->translate("en", $language, $person->primary_language); ?></b><br>primary language</div>
+                    <div class="card-field"><b><?php echo $trans->translate("en", $language, $person->nationality); ?></b><br>nationality</div>
+                    <div class="card-field"><b><?php echo $trans->translate("en", $language, $person->religion); ?></b><br>religion</div>
+                    <div class="card-field"><b><?php echo $trans->translate("en", $language, $person->gender); ?></b><br>gender</div>
+                    <div class="card-field"><b><?php echo $trans->translate("en", $language, $person->occupation); ?></b><br>field of study</div>
                 </div>
                 <div class="card-row">
-                    <div class="card-paragraph"><?php echo $trans->translate(en, $language, $person->self_desc); ?></div>
+                    <div class="card-paragraph"><?php echo $trans->translate("en", $language, $person->self_desc); ?></div>
                 </div>
                <!--  <div class="card-row">
                     <div class="card-verified" style="color: #008F95;"><i class="fas fa-users"></i> &nbsp;Involved in Community</div>
@@ -191,25 +191,25 @@
         <div class="card-container-left">
             <div class="card-picture"><img src=""></div>
             <div class="card-container-title">
-                <div class="card-title"><b><?php echo $trans->translate(en, $language, 'Griffin Burkhardt')?></b>, 20</div>
-                <div class="card-subtitle"><?php echo $trans->translate(en, $language, 'Montgomery, OH')?></div>
+                <div class="card-title"><b><?php echo $trans->translate("en", $language, 'Griffin Burkhardt')?></b>, 20</div>
+                <div class="card-subtitle"><?php echo $trans->translate("en", $language, 'Montgomery, OH')?></div>
             </div>
         </div>
         <div class="card-container-right">
             <div class="card-container-content">
                 <div class="card-row">
-                    <div class="card-field"><b><?php echo $trans->translate(en, $language,'English')?></b><br><?php echo $trans->translate(en, $language, 'primary language') ?></div>
-                    <div class="card-field"><b><?php echo $trans->translate(en, $language, 'White')?></b><br><?php echo $trans->translate(en, $language, 'nationality')?></div>
-                    <div class="card-field"><b><?php echo $trans->translate(en, $language, 'Christian') ?></b><br><?php echo $trans->translate(en, $language, 'religion') ?></div>
-                    <div class="card-field"><b><?php echo $trans->translate(en, $language, 'Male')?></b><br><?php echo $trans->translate(en, $language, 'gender')?></div>
-                    <div class="card-field"><b><?php echo $trans->translate(en, $language, 'Business')?></b><br><?php echo $trans->translate(en, $language, 'field of study')?></div>
+                    <div class="card-field"><b><?php echo $trans->translate("en", $language,'English')?></b><br><?php echo $trans->translate("en", $language, 'primary language') ?></div>
+                    <div class="card-field"><b><?php echo $trans->translate("en", $language, 'White')?></b><br><?php echo $trans->translate("en", $language, 'nationality')?></div>
+                    <div class="card-field"><b><?php echo $trans->translate("en", $language, 'Christian') ?></b><br><?php echo $trans->translate("en", $language, 'religion') ?></div>
+                    <div class="card-field"><b><?php echo $trans->translate("en", $language, 'Male')?></b><br><?php echo $trans->translate("en", $language, 'gender')?></div>
+                    <div class="card-field"><b><?php echo $trans->translate("en", $language, 'Business')?></b><br><?php echo $trans->translate("en", $language, 'field of study')?></div>
                 </div>
                 <div class="card-row">
-                    <div class="card-paragraph"><?php echo $trans->translate(en, $language, 'Hi, my name is Griffin, a leadership-oriented Junior student at Northern Kentucky University with an ability to utilize agile methodology and an inspiration to produce quality driven work seeking an internship in project management that blends business analytics and web development')?></div>
+                    <div class="card-paragraph"><?php echo $trans->translate("en", $language, 'Hi, my name is Griffin, a leadership-oriented Junior student at Northern Kentucky University with an ability to utilize agile methodology and an inspiration to produce quality driven work seeking an internship in project management that blends business analytics and web development')?></div>
                 </div>
                 <div class="card-row">
-                    <div class="card-verified" style="color: #008F95;"><i class="fas fa-users"></i> &nbsp;<?php echo $trans->translate(en, $language, 'Involved in Community')?></div>
-                    <div class="card-verified" style="color: #E24E42;"><i class="fas fa-clock"></i> &nbsp;<?php echo $trans->translate(en, $language, 'Previous Refugee')?></div>
+                    <div class="card-verified" style="color: #008F95;"><i class="fas fa-users"></i> &nbsp;<?php echo $trans->translate("en", $language, 'Involved in Community')?></div>
+                    <div class="card-verified" style="color: #E24E42;"><i class="fas fa-clock"></i> &nbsp;<?php echo $trans->translate("en", $language, 'Previous Refugee')?></div>
                 </div>
             </div>
         </div>
@@ -219,24 +219,24 @@
         <div class="card-container-left">
             <div class="card-picture"><img src=""></div>
             <div class="card-container-title">
-                <div class="card-title"><b>Brent Schleper</b>, 20</div>
-                <div class="card-subtitle">Highland Heights, KY</div>
+                <div class="card-title"><b><?php echo $trans->translate("en", $language, 'Brent Schleper')?></b>, 20</div>
+                <div class="card-subtitle"><?php echo $trans->translate("en", $language, 'Highland Heights, KY')?></div>
             </div>
         </div>
         <div class="card-container-right">
             <div class="card-container-content">
-                <div class="card-row">
-                    <div class="card-field"><b>English</b><br>primary language</div>
-                    <div class="card-field"><b>White</b><br>nationality</div>
-                    <div class="card-field"><b>Christian</b><br>religion</div>
-                    <div class="card-field"><b>Male</b><br>gender</div>
-                    <div class="card-field"><b>Technology</b><br>field of study</div>
+            <div class="card-row">
+                    <div class="card-field"><b><?php echo $trans->translate("en", $language,'English')?></b><br><?php echo $trans->translate("en", $language, 'primary language') ?></div>
+                    <div class="card-field"><b><?php echo $trans->translate("en", $language, 'White')?></b><br><?php echo $trans->translate("en", $language, 'nationality')?></div>
+                    <div class="card-field"><b><?php echo $trans->translate("en", $language, 'Christian') ?></b><br><?php echo $trans->translate("en", $language, 'religion') ?></div>
+                    <div class="card-field"><b><?php echo $trans->translate("en", $language, 'Male')?></b><br><?php echo $trans->translate("en", $language, 'gender')?></div>
+                    <div class="card-field"><b><?php echo $trans->translate("en", $language, 'Technology')?></b><br><?php echo $trans->translate("en", $language, 'field of study')?></div>
                 </div>
                 <div class="card-row">
-                    <div class="card-paragraph">Student in the College of Informatics at Northern Kentucky University driven in furthering my knowledge in software development and data science</div>
+                    <div class="card-paragraph"><?php echo $trans->translate("en", $language, 'Student in the College of Informatics at Northern Kentucky University driven in furthering my knowledge in software development and data science')?></div>
                 </div>
                 <div class="card-row">
-                    <div class="card-verified" style="color: #008F95;"><i class="fas fa-users"></i> &nbsp;Involved in Community</div>
+                    <div class="card-verified" style="color: #008F95;"><i class="fas fa-users"></i> &nbsp;<?php echo $trans->translate("en", $language, 'Involved in Community')?></div>
                 </div>
             </div>
         </div>
@@ -246,26 +246,28 @@
         <div class="card-container-left">
             <div class="card-picture"><img src=""></div>
             <div class="card-container-title">
-                <div class="card-title"><b>Tobel Atnafu</b>, 27</div>
-                <div class="card-subtitle">Highland Heights, KY</div>
+            <div class="card-title"><b><?php echo $trans->translate("en", $language, 'Tobel Atnafu')?></b>, 27</div>
+                <div class="card-subtitle"><?php echo $trans->translate("en", $language, 'Highland Heights, KY')?></div>
             </div>
         </div>
         <div class="card-container-right">
             <div class="card-container-content">
                 <div class="card-row">
-                    <div class="card-field"><b>English</b><br>primary<br> language</div>
-                    <div class="card-field"><b>Amharic</b><br>secondary<br> language</div>
-                    <div class="card-field"><b>Ethiopian</b><br>nationality</div>
-                    <div class="card-field"><b>Christian</b><br>religion</div>
-                    <div class="card-field"><b>Male</b><br>gender</div>
-                    <div class="card-field"><b>Technology</b><br>field of study</div>
+                    <div class="card-field"><b><?php echo $trans->translate("en", $language,'English')?></b><br><?php echo $trans->translate("en", $language, 'primary language') ?></div>
+                    <div class="card-field"><b><?php echo $trans->translate("en", $language,'Amharic')?></b><br><?php echo $trans->translate("en", $language, 'secondary language') ?></div>
+                    <div class="card-field"><b><?php echo $trans->translate("en", $language, 'Ethopian')?></b><br><?php echo $trans->translate("en", $language, 'nationality')?></div>
+                    <div class="card-field"><b><?php echo $trans->translate("en", $language, 'Christian') ?></b><br><?php echo $trans->translate("en", $language, 'religion') ?></div>
+                    <div class="card-field"><b><?php echo $trans->translate("en", $language, 'Male')?></b><br><?php echo $trans->translate("en", $language, 'gender')?></div>
+                    <div class="card-field"><b><?php echo $trans->translate("en", $language, 'Technology')?></b><br><?php echo $trans->translate("en", $language, 'field of study')?></div>
                 </div>
                 <div class="card-row">
-                    <div class="card-paragraph">Student in the College of Informatics at Northern Kentucky University driven in furthering my knowledge in software development and data science</div>
+                    <div class="card-paragraph"><?php echo $trans->translate("en", $language, 'Student in the College of Informatics at Northern Kentucky University driven in furthering my knowledge in software development and data science')?></div>
                 </div>
                 <div class="card-row">
                     <div class="card-verified" style="color: #E24E42;"><i class="fas fa-clock"></i> &nbsp;F1 Student Visa</div>
                     <div class="card-verified" style="color: #6A5ACD;"><i class="fas fa-graduation-cap"></i> &nbsp;Educational Student</div>
+                    <div class="card-verified" style="color: #008F95;"><i class="fas fa-users"></i> &nbsp;<?php echo $trans->translate("en", $language, 'F1 Student Visa')?></div>
+                    <div class="card-verified" style="color: #E24E42;"><i class="fas fa-clock"></i> &nbsp;<?php echo $trans->translate("en", $language, 'Educational Student')?></div>
                 </div>
             </div>
         </div>
