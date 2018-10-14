@@ -8,14 +8,14 @@
     if(isset($_POST['login_submit'])){
         // Check if username is empty
         if(empty(trim($_POST["email"]))){
-            $emailErr = 'Please enter your email.';
+            $emailErr = 'enter a valid email';
         } else{
             $email = trim($_POST["email"]);
         }
 
         // Check if password is empty
         if(empty(trim($_POST['password']))){
-            $passwordErr = 'Please enter your password.';
+            $passwordErr = 'incorrect password';
         } else{
             $password = trim($_POST['password']);
         }
@@ -153,6 +153,7 @@
         button {
             cursor: pointer;
         }
+        button:focus {outline:0;}
     </style>
     </head>
 
@@ -174,7 +175,7 @@
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <div class="card-row-header" style="padding-top: 20px;">
                     <div class="card-field"><input id ="input-user" type="text" name="email" placeholder="johnsmith@gmail.com"><?php echo $emailErr; ?><br>email</div>
-                    <div class="card-field"><input id="input-lock" type="password" name="password" placeholder="●●●●●●●●"><?php echo $passwordErr; ?><br>password</div>
+                    <div class="card-field"><input id="input-lock" type="password" name="password" placeholder="●●●●●●●●●●●"><?php echo $passwordErr; ?><br>password</div>
                 </div>
                 <div class="card-row-header">
                     <div class="card-field"><button type="submit" name="login_submit"><?php echo $content["login__sign_in_button"]; ?></button></div>
