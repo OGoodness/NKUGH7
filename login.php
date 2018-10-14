@@ -161,20 +161,17 @@
             <div class="text"><?php echo $content["login__sign_in_account"]; ?></div>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="card-row-header">
-                <div class="card-field"><input id ="input-user" type="text" name="email" placeholder="Enter your email">
-                <div class="card-field"><br><span class="help-block"><?php echo $emailErr; ?></span><br>email
+                <div class="card-field"><input id ="input-user" type="text" name="email" placeholder="Enter your email"></div>
+                <div class="card-field"><br><span class="help-block"><?php echo $emailErr; ?></span><br>email</div>
             </div>
             <div class="card-row-header">
-                <div class="card-field"><input id="input-lock" type="password" name="password" placeholder="Enter your password">
-                <div class="card-field"><br><span class="help-block"><?php echo $passwordErr; ?></span><br>password
+                <div class="card-field"><input id="input-lock" type="password" name="password" placeholder="Enter your password"></div>
+                <div class="card-field"><br><span class="help-block"><?php echo $passwordErr; ?></span><br>password</div>
             </div>
             <div class="card-row-header">
-                <button type="submit" name="login_submit"><?php echo $content["login__sign_in_header_text_bold"]; ?></button>
+                <div class="card-field"><button type="submit" name="login_submit"><?php echo $content["login__sign_in_header_text_bold"]; ?></button></div>
             </div>
-    </div>
             </form>
-
-            
         </div>
 
         <div class="box-container">
