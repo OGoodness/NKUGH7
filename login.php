@@ -154,16 +154,17 @@
 
 <body>
 
-<header>
+<header style="margin-top: 10%;">
     <div class="title"><b><?php echo  $content["login__sign_in_header_text_bold"]; ?></b> <?php echo $content["login__sign_in_header_text"]; ?></div>
     <div class="sub-title"><?php echo  $content["login__login_general_use_description"]; ?></div>
 </header>
 
 <main>
-    <div class="divider">
-        <div class="grade">log in</div>
-        <div class="date">personal account</div>
-    </div>
+    <div class="left-container">
+        <div class="divider">
+            <div class="grade">log in</div>
+            <div class="date">personal account</div>
+        </div>
 
         <div class="box-container">
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
@@ -175,11 +176,13 @@
                     <div class="card-field"><button type="submit" name="login_submit"><?php echo $content["login__sign_in_header_text_bold"]; ?></button></div>
                 </div>
         </div>
-
-    <div class="divider">
-        <div class="grade">sign up</div>
-        <div class="date">personal account</div>
     </div>
+
+    <div class="right-container">
+        <div class="divider">
+            <div class="grade">sign up</div>
+            <div class="date">personal account</div>
+        </div>
 
         <div class="box-container">
                 <div class="card-row-header" style="padding-top: 20px;">
@@ -190,6 +193,7 @@
             </div>
             </form>
         </div>
+    </div>
 
 </main>
 
