@@ -157,12 +157,17 @@
 
 <main>
     <div class="two-column-container">
+
+    <div class="divider">
+        <div class="grade">log in</div>
+        <div class="date">your personal account</div>
+    </div>
+
         <div class="box-container">
             <div class="text"><?php echo $content["login__sign_in_account"]; ?></div>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="card-row-header">
-                <div class="card-field"><input id ="input-user" type="text" name="email" placeholder="Enter your email"></div>
-                <div class="card-field"><br><span class="help-block"><?php echo $emailErr; ?></span><br>email</div>
+                <div class="card-field"><input id ="input-user" type="text" name="email" placeholder="Enter your email"><span class="help-block"><?php echo $emailErr; ?></span><br>email</div>
             </div>
             <div class="card-row-header">
                 <div class="card-field"><input id="input-lock" type="password" name="password" placeholder="Enter your password"></div>
