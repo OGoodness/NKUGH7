@@ -186,7 +186,10 @@
             color: lightgray;
         }
         .card-field {
-            margin: 0px auto 10px auto;
+            margin: 0 auto;
+            padding-bottom: 20px;
+            width: 33.33%;
+            flex-grow: 1;
         }
         .card-row-header input {
             border: none;
