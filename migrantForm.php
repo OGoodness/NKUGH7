@@ -28,7 +28,7 @@
     if(isset($_GET['id'])){
         $id = $_GET['id'];
         $getUser = getUser($conn, $id);
-        $firstname = $getUser[0]->user_first_name;
+        $firstName = $getUser[0]->user_first_name;
         $lastName = $getUser[0]->user_last_name;
     }
     
@@ -191,13 +191,13 @@
             <div class="input-picture"><img src=""></div>
         </div>
         <div class="card-row-header">
-            <div class="card-field"><input required type="text" name="fname" value="<?php echo $firstName; ?>"><br><?php echo strtolower($content["migrant_account__first_name_text"]); ?><span class="red">*</span></input></div>
-            <div class="card-field"><input required type="text" name="lname" value="<?php echo  $lastName; ?>"><br><?php echo strtolower($content["migrant_account__last_name_text"]); ?><span class="red">*</span></input></div>
-            <div class="card-field"><input type="text" name="gender" placeholder="<?php echo $content["migrant_account__gender_text"]; ?>"><br><?php echo strtolower($content["migrant_account__gender_text"]); ?></input></div>
+            <div class="card-field"><div><?php echo $firstName; ?></div><br><?php echo strtolower($content["migrant_account__first_name_text"]); ?><span class="red">*</span></div>
+            <div class="card-field"><div><?php echo $lastName; ?></div><br><?php echo strtolower($content["migrant_account__last_name_text"]); ?><span class="red">*</span></div>
+            <div class="card-field"><input type="text" name="gender" placeholder="<?php echo $content["migrant_account__gender_text"]; ?>"><br><?php echo strtolower($content["migrant_account__gender_text"]); ?></div>
         </div>
         <div class="card-row-header">
             <div class="card-field"><input required type="text" name="nationality" placeholder="<?php echo $content["migrant_account__nationality_text"]; ?>"><br><?php echo strtolower($content["migrant_account__nationality_text"]); ?><span class="red">*</span></input></div>
-            <div class="card-field"><input type="text" name="Religion"placeholder="<?php echo $content["migrant_account__religion_text"]; ?>"><br><?php echo $content["migrant_account__religion_text"]; ?></input></div>
+            <div class="card-field"><input type="text" name="Religion"placeholder="<?php echo $content["migrant_account__religion_text"]; ?>"><br><?php echo $content["migrant_account__religion_text"]; ?></div>
             <div class="card-field">
             <select>
                 <option value = "Select"> <?php echo $content["migrant_account__select_select"]; ?></option>
@@ -218,8 +218,8 @@
             <div class="card-field"><input style="width: 50%;" type="text" name="secondary_language" placeholder="<?php echo $content["migrant_account__language_text"]; ?>"><br><?php echo strtolower($content["migrant_account__secondary_language_text"]); ?></input></div>
         </div>
         <div class="card-row-header">
-            <div class="card-field"><input style="width: 50%;" type="text" name="hobby1" placeholder="<?php echo $content["migrant_account__hobby_text"];?>"><br><?php echo strtolower($content["migrant_account__hobby_text"]); ?></input></div>
-            <div class="card-field"><input style="width: 50%;" type="text" name="hobby2" placeholder="<?php echo $content["migrant_account__hobby_text"]; ?>"><br><?php echo strtolower($content["migrant_account__hobby_text"]); ?></input></div>
+            <div class="card-field"><input style="width: 50%;" type="text" name="hobby1" placeholder="<?php echo $content["migrant_account__hobby_text"];?>"><br><?php echo strtolower($content["migrant_account__hobby_text"]); ?></div>
+            <div class="card-field"><input style="width: 50%;" type="text" name="hobby2" placeholder="<?php echo $content["migrant_account__hobby_text"]; ?>"><br><?php echo strtolower($content["migrant_account__hobby_text"]); ?></div>
         </div>
         <div class="card-row-header">
             <textarea rows="4" cols="50" name="family" placeholder="<?php echo $content["migrant_account__family_textarea"]; ?>"></textarea>
