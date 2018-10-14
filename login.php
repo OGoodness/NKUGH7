@@ -90,12 +90,12 @@
     $content["login__login_general_use_description"]= "This website will allow you to either help guide an immagrant family or if you are an immagrant family you can find a resdient family to help make your transtion to your new home smoother. we ensure a smooth and safe transition into your new friendship family, so don't worry, your information is confidential and secure";
     $content["login__sign_in_header_text_bold"]= "choose";
     $content["login__login"] = "Login";
-    $content["login__create_account_button"]= "Create Account";
+    $content["login__create_account_button"]= "sign up";
     $content["login__sign_in_header_text"]= "your account";
     $content["login__sign_in_button"]= "sign in";
     $content["login__create_account"]="If you are new to this website, click the button below to get started on your personal profile and become one step closer to finding your future friendship family";
 
-    $content["login__grade_log_in"] = "log in";
+    $content["login__grade_log_in"] = "Sign in";
     $content["login__log_personal_acct"] = "personal account";
 
     $content["login__email"] = "email";
@@ -123,65 +123,14 @@
         <link rel="stylesheet" type="text/css" href="css/theme.css">
         <script src="js/main.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-    <style>
-        .box-container {
-            background-color: white;
-            margin-bottom: 25px;
-            margin: auto;
-            margin-top: 10px;
-            width: 50%;
-            box-shadow: 0px 0px 15px lightgray;
-        }
-        .card-row-header {
-            font-size: 13px;
-            color: gray;
-            margin-bottom: 25px;
-            overflow: auto;
-            padding: 0px 20px;
-            display: flex;
-            flex-wrap: wrap;
-            text-align: center;
-            text-align-last: center;
-        }
-        .card-row-header input::placeholder {
-            font-family: 'Open Sans', sans-serif;
-            text-transform: uppercase;
-            color: lightgray;
-        }
-        .card-field {
-            margin: 0 auto;
-            padding-bottom: 20px;
-            width: 33.33%;
-            flex-grow: 1;
-        }
-        .card-row-header input {
-            border: none;
-            background-color: #fff;
-            padding: 0px;
-            color: black;
-            font-weight: 700;
-            width: 100%;
-        }
-        .divider {
-            width: 50%;
-            margin: 0 auto;
-        }
-        button {
-            cursor: pointer;
-        }
-        button:focus {
-            outline: 0;
-        }
-    </style>
     </head>
 
 <body>
-
 <header>
     <nav>
         <ul>
             <li style="float: left; font-size: 20px;"><a href="index.php"><b>Jump</b>Start</a></li>
-            <li style="float: right; font-size: 20px;"><a href=""><i class="fas fa-map-marked-alt"></i></a></li>
+            <li style="float: right; font-size: 20px;"><a href="map.php"><i class="fas fa-map-marked-alt"></i></a></li>
             <li style="float: right; font-size: 20px;"><a href="browse.php"><i class="fas fa-list"></i></a></li>
             <li style="float: right; font-size: 20px;" class="dropdown"><a href="javascript:void(0)" class="dropbtn"><i class="fas fa-user-cog"></i></a>
             <div class="dropdown-content">
@@ -197,25 +146,23 @@
 </header>
 
 <main>
-        <div class="divider">
-            <div class="grade"><?php echo  $content["login__grade_log_in"]; ?></div>
-            <div class="date"><?php echo  $content["login__log_personal_acct"]; ?></div>
-        </div>
-
-        <div class="box-container">
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                <div class="card-row-header" style="padding-top: 20px;">
-                    <div class="card-field"><input id ="input-user" type="text" name="email" placeholder="johnsmith@gmail.com"><?php echo $emailErr; ?><br><?php echo  $content["login__email"]; ?></div>
-                    <div class="card-field"><input id="input-lock" type="password" name="password" placeholder="●●●●●●●●●●●"><?php echo $passwordErr; ?><br><?php echo  $content["login__password"]; ?></div>
-                </div>
-                <div class="card-row-header">
-                    <div class="card-field"><button type="submit" name="login_submit"><?php echo $content["login__sign_in_button"]; ?></button></div>
-                </div>
-
-        </form>
-    </div>
-
     <div class="divider">
+        <div class="grade"><?php echo  $content["login__grade_log_in"]; ?></div>
+        <div class="date"><?php echo  $content["login__log_personal_acct"]; ?></div>
+    </div>
+    <div class="box-container">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <div class="card-row-header">
+                <div class="card-field"><input id ="input-user" type="text" name="email"><?php echo $emailErr; ?><br><?php echo  $content["login__email"]; ?></div>
+                <div class="card-field"><input id="input-lock" type="password" name="password"><?php echo $passwordErr; ?><br><?php echo  $content["login__password"]; ?></div>
+            </div>
+            <div class="card-row-header">
+                <div class="card-field" style="padding-bottom: 0px;"><button type="submit" name="login_submit"><?php echo $content["login__sign_in_button"]; ?></button></div>
+            </div>
+    </form>
+</div>
+
+    <div class="divider" style="margin-top: 50px;">
         <div class="grade"><?php echo  $content["login__grade_sign_up"]; ?></div>
         <div class="date"><?php echo  $content["login__sign_personal_acct"]; ?></div>
     </div>
@@ -224,7 +171,7 @@
             <div class="card-field"><?php echo $content["login__create_account"]; ?></div>
         </div>
         <div class="card-row-header">
-            <div class="card-field"> <a href="signup.php"><button><?php echo $content["login__create_account_button"]; ?></button></a></div>
+            <div class="card-field" style="padding-bottom: 0px;"><a href="signup.php"><button><?php echo $content["login__create_account_button"]; ?></button></a></div>
         </div>
     </div>
 
