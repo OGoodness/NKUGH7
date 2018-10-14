@@ -5,7 +5,7 @@
     $emailErr = $passwordErr = "";
 
 
-    if(!empty($_POST)){
+    if(isset($_POST['login_submit'])){
         // Check if username is empty
         if(empty(trim($_POST["email"]))){
             $emailErr = 'Please enter your email.';
@@ -125,7 +125,7 @@
                 <br><span class="help-block"><?php echo $emailErr; ?></span><br>
                 <input id="input-lock" type="password" name="password" placeholder="Enter your password">
                 <br><span class="help-block"><?php echo $passwordErr; ?></span><br>
-                <button type="submit"><?php echo $content["login__sign_in_header_text_bold"]; ?></button>
+                <button type="submit" name="login_submit"><?php echo $content["login__sign_in_header_text_bold"]; ?></button>
             </form>
 
             

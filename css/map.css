@@ -1,7 +1,16 @@
-#google-map{
-    color: green;
-    height: 30;
+.map-container{
+    margin-top: 200px;
 }
-#info{
-    background-color: aqua
+.row{
+    width: 100%;
+    
+}
+#googleMap{
+    width: 100%;
+    height: 400px;
+}
+.info{
+    
+    width: 50%;
+    height: 400px;
 }

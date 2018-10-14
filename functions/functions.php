@@ -14,3 +14,19 @@ function get_user_type($conn){
     $result->free();
     return $response;
 }
+
+
+function get_migrant($conn){
+    $response = NULL;
+    $sql = "SELECT *
+    FROM guide m LEFT JOIN users u ON u.user_id  = m.users_id";
+    if($result = $conn->query($sql)){
+        if($result->num_rows > 0){
+            while($row = $result->fetch_object()){
+                $response[] = $row;
+            }
+        }
+    }
+    $result->free();
+    return $response;
+}
