@@ -148,6 +148,16 @@
             text-transform: lowercase;
             font-weight: 700;
         }
+        .button {
+            border: 1px solid lightgray;
+            border-radius: 3px;
+            width: 100%;
+            padding: 10px;
+            font-family: 'Open Sans', sans-serif;
+            text-transform: lowercase;
+            font-weight: 700;
+            text-decoration: none;
+        }
         #input-lock {
             background-size: 17px;
             background-repeat: no-repeat;
