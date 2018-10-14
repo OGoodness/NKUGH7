@@ -1,5 +1,6 @@
 <?php
 
+//Test One
         $hostLatitude = 38.562579;
         $hostLongitude = -84.401139; //union ky
         $migrantLatitude = 39.14300;
@@ -11,6 +12,17 @@
         $migrantLike1 = "movies";
         $migrantLike2 = "concert";
         $migrantEthnicity = "Italian";
+       /* $hostLatitude = 41.878;
+        $hostLongitude = -87.6298;
+        $migrantLatitude = 42.0451;
+        $migrantLongitude = 87.6877;
+        $centerLatitude = ($ho-stLatitude + $migrantLatitude) /2;
+        $centerLongitude = ($hostLongitude + $migrantLongitude)/ 2;
+        $hostLike1 = "restraunt";
+        $hostLike2 = "golf";
+        $migrantEthnicity = "Bulgrian";
+        $migrantLike1 = "BasketBall";
+        $migrantLike2 = "Boardgames";*/
         $likesHostArray = array($hostLike1, $hostLike2, $migrantLike1, $migrantLike2, $migrantEthnicity);
         $ideasArray = array();
     ?>
@@ -56,7 +68,7 @@
                      var hostLocation = {lat: <?php echo $hostLatitude; ?>,lng: <?php echo $hostLongitude; ?>};
                      var migrantLocation =  {lat: <?php echo $migrantLatitude; ?>,lng: <?php echo $migrantLongitude; ?>};
                      var centerLocation = {lat: <?php echo $centerLatitude; ?>,lng: <?php echo $centerLongitude; ?>};
-                     var map = new google.maps.Map(document.getElementById("googleMap"), {zoom: 4, center: centerLocation});
+                     var map = new google.maps.Map(document.getElementById("googleMap"), {zoom: 8, center: centerLocation});
                      var likeMarkers = [-2000];
                      geocoder = new google.maps.Geocoder();
                      var array = JSON.parse('<?php echo json_encode($ideasArray); ?>')
