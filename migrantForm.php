@@ -99,16 +99,6 @@
             border-radius: 50px;
             margin-bottom: 50px;
         }
-
-        .card-row-header select {
-            border: none;
-            text-transform: uppercase;
-            background-color: #fff;
-            padding: 0px;
-            color: black;
-            font-weight: 700;
-            width: 100%;
-        }
         .card-row-header textarea {
             border: 1px solid lightgray;
             resize: none;
@@ -187,8 +177,8 @@
             <div class="card-field"><input type="text" name="gender"><?php echo strtolower($content["migrant_account__gender_text"]); ?></input></div>
         </div>
         <div class="card-row-header">
-            <div class="card-field"><input required type="text" name="nationality" placeholder="<?php echo $content["migrant_account__nationality_text"]; ?>"><br><?php echo strtolower($content["migrant_account__nationality_text"]); ?><span class="red">*</span></input></div>
-            <div class="card-field"><input type="text" name="Religion"placeholder="<?php echo $content["migrant_account__religion_text"]; ?>"><br><?php echo $content["migrant_account__religion_text"]; ?></input></div>
+            <div class="card-field"><input required type="text" name="nationality"><?php echo strtolower($content["migrant_account__nationality_text"]); ?><span class="red">*</span></input></div>
+            <div class="card-field"><input type="text" name="Religion"><?php echo $content["migrant_account__religion_text"]; ?></input></div>
             <div class="card-field">
             <select name="maritalStat">
                 <option name="maritalStat" value = "Select"> <?php echo $content["migrant_account__select_select"]; ?></option>
@@ -200,17 +190,17 @@
             <br>maritial status</div>
         </div>
         <div class="card-row-header">
-            <div class="card-field"><input required type="text" name="location"placeholder="<?php echo $content["migrant_account__location_city"]; ?>"><br><?php echo strtolower($content["migrant_account__location_city"]); ?><span class="red">*</span></input></div>
-            <div class="card-field"><input required type="text" name="location"placeholder="<?php echo $content["migrant_account__location_state"]; ?>"><br><?php echo strtolower($content["migrant_account__location_state"]); ?><span class="red">*</span></input></div>
-            <div class="card-field"><input style="scroll: hidden;" required type="number" min="1" name="age" placeholder="<?php echo $content["migrant_account__age_text"]; ?>"><br><?php echo strtolower($content["migrant_account__age_text"]); ?><span class="red">*</span></input></div>
+            <div class="card-field"><input required type="text" name="location"><?php echo strtolower($content["migrant_account__location_city"]); ?><span class="red">*</span></input></div>
+            <div class="card-field"><input required type="text" name="location"><?php echo strtolower($content["migrant_account__location_state"]); ?><span class="red">*</span></input></div>
+            <div class="card-field"><input style="scroll: hidden;" required type="number" min="1" name="age"><?php echo strtolower($content["migrant_account__age_text"]); ?><span class="red">*</span></input></div>
         </div>
         <div class="card-row-header">
-            <div class="card-field"><input required style="width: 50%;" type="text" name="primary_language" placeholder="<?php echo $content["migrant_account__language_text"];?>"><br><?php echo strtolower($content["migrant_account__primary_language_text"]); ?><span class="red">*</span></input></div>
-            <div class="card-field"><input style="width: 50%;" type="text" name="secondary_language" placeholder="<?php echo $content["migrant_account__language_text"]; ?>"><br><?php echo strtolower($content["migrant_account__secondary_language_text"]); ?></input></div>
+            <div class="card-field"><input required type="text" name="primary_language"><?php echo strtolower($content["migrant_account__primary_language_text"]); ?><span class="red">*</span></input></div>
+            <div class="card-field"><input type="text" name="secondary_language"><?php echo strtolower($content["migrant_account__secondary_language_text"]); ?></input></div>
         </div>
         <div class="card-row-header">
-            <div class="card-field"><input style="width: 50%;" type="text" name="hobby1" placeholder="<?php echo $content["migrant_account__hobby_text"];?>"><br><?php echo strtolower($content["migrant_account__hobby_text"]); ?></input></div>
-            <div class="card-field"><input style="width: 50%;" type="text" name="hobby2" placeholder="<?php echo $content["migrant_account__hobby_text"]; ?>"><br><?php echo strtolower($content["migrant_account__hobby_text"]); ?></input></div>
+            <div class="card-field"><input type="text" name="hobby1"><?php echo strtolower($content["migrant_account__hobby_text"]); ?></input></div>
+            <div class="card-field"><input type="text" name="hobby2"><?php echo strtolower($content["migrant_account__hobby_text"]); ?></input></div>
         </div>
         <div class="card-row-header">
             <textarea rows="4" cols="50" name="family" placeholder="<?php echo $content["migrant_account__family_textarea"]; ?>"></textarea>
