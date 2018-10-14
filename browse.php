@@ -158,8 +158,8 @@
         <div class="card-container-left">
             <div class="card-picture"><img src=""></div>
             <div class="card-container-title">
-                <div class="card-title"><b><?php echo $trans->translate("en", $language, $person->user_first_name . " " . $person->user_last_name); ?></b>, <?php echo $trans->translate($person->age); ?></div>
                 <div class="card-subtitle"><?php echo $trans->translate("en", $language, $person->city . ", " . $person->state);?></div>
+                <div class="card-title"><b><?php echo $trans->translate("en", $language, $person->user_first_name . " " . $person->user_last_name); ?></b>, <?php echo $trans->translate($person->age); ?></div>
             </div>
         </div>
         <div class="card-container-right">
