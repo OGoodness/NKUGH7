@@ -52,6 +52,7 @@
     }
 
     $guides = get_guides($conn);
+    print_r($guides);
 ?>
 
 <!DOCTYPE html>
