@@ -37,7 +37,7 @@
                      
                      //place predictions
                      
-                      var activity = 'amc';
+                      var activity = 'climbing';
                     var location = 'Ohio';
         var displaySuggestions = function(predictions, status) {
           if (status != google.maps.places.PlacesServiceStatus.OK) {
@@ -57,7 +57,7 @@
         };
 
         var service = new google.maps.places.AutocompleteService();
-        service.getPlacePredictions({ input: activity+' near '+location }, displaySuggestions);
+        service.getPlacePredictions({ input: activity }, displaySuggestions);
       
                  }
 			</script> 
