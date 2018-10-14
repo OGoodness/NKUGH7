@@ -12,9 +12,6 @@
     use \Statickidz\GoogleTranslate;
     $id = $_GET['id'];
     $sql = "SELECT * From users where user_id = $id";
-    echo $sql;
-echo "<br>";
-echo $id;
     $result = mysqli_query($conn,$sql);
     $row = mysqli_fetch_assoc($result);
     $firstname = $row['user_first_name'];
