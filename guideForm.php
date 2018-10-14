@@ -2,14 +2,17 @@
     if(isset($_POST["language"])){
         $language = $_POST["language"];
         setcookie("language", $language, time() + (86400 * 30), "/");
-        setcookie("type", "guide", time() + (86400 * 30), "/");
+        setcookie("type", "guide", time() + (60 * 5), "/");
+        $_SESSION['type'] = "guide";
     }elseif(!isset($_COOKIE["language"])) {
         $language = "en";
         setcookie("language", $language, time() + (86400 * 30), "/");
-        setcookie("type", "guide", time() + (86400 * 30), "/");
+        setcookie("type", "guide", time() + (60 * 5), "/");
+        $_SESSION['type'] = "guide";
     }else{
         $language=$_COOKIE["language"];
-        setcookie("type", "guide", time() + (86400 * 30), "/");
+        setcookie("type", "guide", time() + (60 * 5), "/");
+        $_SESSION['type'] = "guide";
     }
 
     require_once ('vendor/autoload.php');
@@ -200,8 +203,8 @@
             <br>maritial status</div>
         </div>
         <div class="card-row-header">
-            <div class="card-field"><input required type="text" name="location"placeholder="<?php echo $content["migrant_account__location_city"]; ?>"><br><?php echo strtolower($content["migrant_account__location_city"]); ?><span class="red">*</span></input></div>
-            <div class="card-field"><input required type="text" name="location"placeholder="<?php echo $content["migrant_account__location_state"]; ?>"><br><?php echo strtolower($content["migrant_account__location_state"]); ?><span class="red">*</span></input></div>
+            <div class="card-field"><input required type="text" name="city"placeholder="<?php echo $content["migrant_account__location_city"]; ?>"><br><?php echo strtolower($content["migrant_account__location_city"]); ?><span class="red">*</span></input></div>
+            <div class="card-field"><input required type="text" name="state"placeholder="<?php echo $content["migrant_account__location_state"]; ?>"><br><?php echo strtolower($content["migrant_account__location_state"]); ?><span class="red">*</span></input></div>
             <div class="card-field"><input style="scroll: hidden;" required type="number" min="1" name="age" placeholder="<?php echo $content["migrant_account__age_text"]; ?>"><br><?php echo strtolower($content["migrant_account__age_text"]); ?><span class="red">*</span></input></div>
         </div>
         <div class="card-row-header">
@@ -210,6 +213,7 @@
         </div>
         <div class="card-row-header">
             <div class="card-field"><input style="width: 50%;" type="text" name="hobby1" placeholder="<?php echo $content["migrant_account__hobby_text"];?>"><br><?php echo strtolower($content["migrant_account__hobby_text"]); ?></input></div>
+            <div class="card-field"><input style="width: 50%;" type="text" name="occupation" placeholder="<?php echo $content["migrant_account__occupation_text"];?>"><br><?php echo strtolower($content["migrant_account__occupation_text"]); ?></input></div>
             <div class="card-field"><input style="width: 50%;" type="text" name="hobby2" placeholder="<?php echo $content["migrant_account__hobby_text"]; ?>"><br><?php echo strtolower($content["migrant_account__hobby_text"]); ?></input></div>
         </div>
         <div class="card-row-header">

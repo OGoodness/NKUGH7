@@ -19,8 +19,10 @@
     }else if(isset($_SESSION["insert_id"])){
         $user_id=$_SESSION["insert_id"];
     }
-    print_r($user_id);
-    if(  $_COOKIE["type"] == "guide" || $_POST["type"] == "guide"){
+    print_r($_POST);
+
+
+    if( isset($_COOKIE["type"]) && $_COOKIE["type"] == "guide" || isset($_POST["type"]) && $_POST["type"] == "guide"){
         $insert = $conn->prepare("INSERT INTO guide
             SET users_id=?,
                 age=?,
@@ -38,18 +40,19 @@
                 hobby_2=?,
                 family_desc=?");
     $insert->bind_param("iisssssssssssss", $user_id, $_POST["age"], $_POST["gender"], $_POST["occupation"], $_POST["self"], $_POST["religion"], $_POST["maritalStat"], 
-                                           $_POST["city"], $_POST["state"], $_POST["nationality"], $_POST["primLanguages"], 
-                                           $_POST["secLanguages"], $_POST["hobby1"], $_POST["hobby2"], $_POST["family"]);
-        print_r($insert);
+                                           $_POST["city"], $_POST["state"], $_POST["nationality"], $_POST["primary_language"], 
+                                           $_POST["secondary_language"], $_POST["hobby1"], $_POST["hobby2"], $_POST["family"]);
     if (!$insert->execute()) {
         print_r($insert->error); 
         echo "Error, could not insert into users";
     } else {
+        echo "Guide Success";
         $insert_id = $conn->insert_id;
     }
 
     $insert->close();
-    }elseif($_COOKIE["type"] == "migrant" || $_POST["type"] == "migrant"){
+    }
+    if(isset($_COOKIE["type"]) &&  $_COOKIE["type"] == "migrant" ||  isset($_POST["type"]) && $_POST["type"] == "migrant"){
         $insert = $conn->prepare("INSERT INTO migrant
             SET users_id=?,
                 age=?,
@@ -67,21 +70,21 @@
                 family_desc=?,
                 end_goal=?");
         $insert->bind_param("iisssssssssssss", $user_id, $_POST["age"], $_POST["gender"], $_POST["self"], $_POST["religion"], $_POST["maritalStat"], 
-                                           $_POST["city"], $_POST["state"], $_POST["nationality"], $_POST["primLanguages"], 
-                                           $_POST["secLanguages"], $_POST["hobby1"], $_POST["hobby2"], $_POST["family"], $_POST["outcome"]);
+                                           $_POST["city"], $_POST["state"], $_POST["nationality"], $_POST["primary_language"], 
+                                           $_POST["secondary_language"], $_POST["hobby1"], $_POST["hobby2"], $_POST["family"], $_POST["outcome"]);
             print_r($insert);
         if (!$insert->execute()) {
             print_r($insert->error); 
             echo "Error, could not insert into users";
         } else {
+            echo "Mig Success";
             $insert_id = $conn->insert_id;
         }
-
-        $insert->close();
     }
 
-
+    print_r($_FILES);
     foreach($_FILES as $key => $file){
+
         if(isset($_FILES[$key])) {
             // Make sure the file was sent without errors
             if($_FILES[$key]['error'] == 0) {
@@ -134,7 +137,7 @@
 
      header("Location: ../browse.php");
 
-
+ 
  /*     
     // Query for a list of all existing files
     $sql = 'SELECT `id`, `name`, `mime`, `size`, `created` FROM `file`';

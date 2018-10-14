@@ -4,14 +4,17 @@
     if(isset($_POST["language"])){
         $language = $_POST["language"];
         setcookie("language", $language, time() + (86400 * 30), "/");
-        setcookie("type", "migrant", time() + (86400 * 30), "/");
+        setcookie("type", "migrant", time() + (60 * 5), "/");
+        $_SESSION['type'] = "migrant";
     }elseif(!isset($_COOKIE["language"])) {
         $language = "en";
         setcookie("language", $language, time() + (86400 * 30), "/");
-        setcookie("type", "migrant", time() + (86400 * 30), "/");
+        setcookie("type", "migrant", time() + (60 * 5), "/");
+        $_SESSION['type'] = "migrant";
     }else{
         $language=$_COOKIE["language"];
-        setcookie("type", "migrant", time() + (86400 * 30), "/");
+        setcookie("type", "migrant", time() + (60 * 5), "/");
+        $_SESSION['type'] = "migrant";
     }
     
 

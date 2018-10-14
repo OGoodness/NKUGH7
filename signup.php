@@ -106,7 +106,12 @@
                     $_SESSION['user_email'] = $email;
                     setcookie("insert_id", $insert_id , time() + (86400 * 30), "/");
 
-                    header("location: migrantForm.php?id=".$_SESSION['user_id']);
+                    if($type == 1){
+                        header("location: migrantForm.php?id=".$_SESSION['user_id']);
+                    }else{
+                        header("location: guideForm.php?id=".$_SESSION['user_id']);
+                    }
+                    
 
 
                 } else{
@@ -119,13 +124,17 @@
         
     }
 
+    if (isset($_COOKIE['type'])) {
+        unset($_COOKIE['type']);
+        setcookie('type', null, -1, '/');
+    } 
 
     if(isset($_POST["language"])){
         $language = $_POST["language"];
-        setcookie("language", $language, time() + (86400 * 30), "/");
+        setcookie("language", $language, time() + (60 * 5), "/");
     }elseif(!isset($_COOKIE["language"])) {
         $language = "en";
-        setcookie("language", $language, time() + (86400 * 30), "/");
+        setcookie("language", $language, time() + (60 * 5), "/");
     }else{
         $language=$_COOKIE["language"];
     }
