@@ -116,35 +116,6 @@
             width: 50%;
             box-shadow: 0px 0px 15px lightgray;
         }
-        .card-row-header {
-            font-size: 13px;
-            color: gray;
-            margin-bottom: 25px;
-            overflow: auto;
-            padding: 0px 20px;
-            display: flex;
-            flex-wrap: wrap;
-            text-align: center;
-            text-align-last: center;
-        }
-        .card-row-header input::placeholder {
-            font-family: 'Open Sans', sans-serif;
-            text-transform: uppercase;
-            color: black;
-        }
-        .card-field {
-            flex-grow: 1;
-            margin: 0px auto 10px auto;
-            width: 33.33%;
-        }
-        .card-row-header input {
-            border: none;
-            background-color: #fff;
-            padding: 0px;
-            color: black;
-            font-weight: 700;
-            width: 100%;
-        }
     </style>
     </head>
 
@@ -171,7 +142,6 @@
             <div class="card-row-header">
                 <button type="submit" name="login_submit"><?php echo $content["login__sign_in_header_text_bold"]; ?></button>
             </div>
-    </div>
             </form>
 
             
