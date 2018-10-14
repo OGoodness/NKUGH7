@@ -241,15 +241,16 @@
                 </div>
                 <div class="card-row-header">
                 <div class="card-field"><input  type="text" name="email" placeholder="johnsmith@email.com"><?php echo $emailErr; ?><br>email</div>
-                <div class="card-field"><select name="user-type">
+                <div class="card-field">
+                    <select name="user-type">
                     <?php
                         foreach($user_type as $data)
                         {
                                   	echo '<option value="'. $data->id.'">'. $data->user_type.'</option>';
                           }
                         ?>
-                    </select>
-                    <br>citizenship status</div>
+                    </select><br>citizenship status</div>
+                        </div>
                 <div class="card-row-header">
                     <div class="card-field"><input  type="password" name="password" placeholder="password"><?php echo $passwordErr; ?><br>password</div>
                     <div class="card-field"><input  type="password" name="confirm_password" placeholder="confirm password"><?php echo $confirmPasswordErr; ?><br>retype password</div>
