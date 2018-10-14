@@ -256,6 +256,7 @@
     padding: 0px 20px;
     text-decoration: none;
     }
+
     .dropdown-content a {
         padding: 10px;
         font-size: 13px;
@@ -290,8 +291,7 @@
     </head>
 
 <body>
-
-<header>
+    
     <nav>
         <ul>
             <li style="float: left; font-size: 20px;"><a href="index.php"><b>Jump</b>Start</a></li>
@@ -306,6 +306,7 @@
         </ul>
     </nav>
 
+<header>
     <div class="title"><b><?php echo  $content["login__sign_in_header_text_bold"]; ?></b> <?php echo $content["login__sign_in_header_text"]; ?></div>
     <div class="sub-title"><?php echo  $content["login__login_general_use_description"]; ?></div>
 </header>
