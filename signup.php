@@ -195,14 +195,10 @@
             color: lightgray;
         }
         .card-field {
-            margin: 0 auto;
             padding-bottom: 20px;
             width: 50%;
-            flex-grow: 1;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            text-transform: lowercase;
             font-size: 12px;
-            text-align: left;
             text-align-last: left;
         }
         .card-row-header input {
@@ -245,6 +241,7 @@
         }
             nav {
        font-family: 'Open Sans', sans-serif;
+       margin-bottom: 25px;
     }
     ul {
        list-style-type: none;
