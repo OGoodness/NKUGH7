@@ -10,7 +10,7 @@
     use \Statickidz\GoogleTranslate;
     $id = $_GET['id'];
     $sql = "SELECT * From users where user_id = $id";
-    $result = mysqli_query($sql, $conn);
+    $result = mysqli_query($conn,$sql);
     $row = mysqli_fetch_assoc($result);
     $firstname = $row['user_first_name'];
     $lastname = $row['user_last_name'];
