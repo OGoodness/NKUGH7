@@ -241,7 +241,7 @@
                 </div>
                 <div class="card-row-header">
                 <div class="card-field"><input  type="text" name="email" placeholder="johnsmith@email.com"><?php echo $emailErr; ?><br>email</div>
-                    <select name="user-type">
+                <div class="card-field"><select name="user-type">
                     <?php
                         foreach($user_type as $data)
                         {
