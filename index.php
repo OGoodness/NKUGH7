@@ -40,7 +40,7 @@ if(isset($_COOKIE["language"])) {
     </ul>
 </header>
 
-<main style="margin-top: 0%;">
+<main style="margin-top: 0%; width: 100%;">
     <div class="container">
         <div class="card-row-header">
             <div class="card-field;"><img id="flag-spanish" src="images/flag-spanish.png" alt="Spanish Flag" data="es" onclick="languageSelect('flag-spanish')"></div>  

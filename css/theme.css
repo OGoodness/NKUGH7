@@ -13,7 +13,7 @@
         }
         main {
             margin-top: 5%;
-            width: 75%;
+            width: 40%;
             margin: 0px auto;
         }
         .center {
@@ -129,7 +129,6 @@
         }
         select {
             padding: 10px 5px;
-            color: gray;
         }
         button {
             border: 1px solid lightgray;
@@ -139,27 +138,8 @@
             font-family: 'Open Sans', sans-serif;
             text-transform: lowercase;
             font-weight: 700;
-        }
-        .button {
-            border: 1px solid lightgray;
-            border-radius: 3px;
-            width: 100%;
-            padding: 10px;
-            font-family: 'Open Sans', sans-serif;
-            text-transform: lowercase;
-            font-weight: 700;
-            text-decoration: none;
-        }
-        #input-lock {
-            background-size: 17px;
-            background-repeat: no-repeat;
-            
-        }
-        #input-user {
-            width: 100%;
-            background-size: 17px;
-            background-position: 7px 7px;
-            background-repeat: no-repeat;
+            text-align-last: center;
+            cursor: pointer;
         }
         .help-block{
             color:red;
@@ -207,11 +187,64 @@
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         z-index: 1;
         top: 28px;
-        right: 25px;
+        right: 10px;
     }
     .dropdown:hover .dropdown-content {
         display: inline-block;
     }
     .dropdown-content a:hover {
         background-color: transparent;
+    }
+
+    .box-container {
+        background-color: white;
+        margin-bottom: 25px;
+        margin: auto;
+        margin-top: 10px;
+        box-shadow: 0px 0px 15px lightgray;
+    }
+    .card-row-header {
+        font-size: 13px;
+        color: gray;
+        padding: 20px 20px;
+        display: inline-flex;
+        box-sizing: border-box;
+        width: 100%;
+    }
+    .card-row-header input::placeholder {
+        font-family: 'Open Sans', sans-serif;
+        text-transform: uppercase;
+        color: lightgray;
+    }
+    .card-field {
+        padding-bottom: 20px;
+        text-transform: lowercase;
+        font-size: 12px;
+        text-align-last: left;
+        width: 100%;
+    }
+    .card-row-header input {
+        border: none;
+        border-bottom: 1px solid black;
+        background-color: #fff;
+        color: black;
+        font-weight: 700;
+        font-size: 16px;
+        width: 100%;
+    }
+    .card-row-header select {
+        border: none;
+        border-bottom: 1px solid black;
+        text-transform: uppercase;
+        background-color: #fff;
+        padding: 0px;
+        color: lightgray;
+        font-weight: 700;
+        width: 100%;
+    }
+    button:focus {
+        outline:0;
+    }
+    .small-nav {
+    width: 30px;
     }

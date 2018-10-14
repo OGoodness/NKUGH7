@@ -18,7 +18,8 @@
     require_once ('vendor/autoload.php');
     use \Statickidz\GoogleTranslate;
 
-    $content["migrant_account__header_text"] = 'Create Profile';
+    $content["migrant_account__header_text_bold"] = 'Create';
+    $content["migrant_account__header_text"] = 'your profile';
     $content["migrant_account__title_text"] = 'Guide Profile';
     $content["migrant_account__edit_text"] = 'edit';
     $content["migrant_account__personal_text"] = 'personal information';
@@ -74,13 +75,9 @@
             background-color: white;
             margin-bottom: 25px;
             margin: auto;
+            width: 100%;
             margin-top: 15px;
-            width: 50%;
             box-shadow: 0px 0px 15px lightgray;
-        }
-        .divider {
-            width: 50%;
-            margin: 0 auto;
         }
         .input-picture {
             margin: 0 auto;
@@ -89,22 +86,6 @@
             background-color: lightgray;
             border-radius: 50px;
             margin-bottom: 50px;
-        }
-        .card-row-header input {
-            border: none;
-            background-color: #fff;
-            padding: 0px;
-            color: black;
-            font-weight: 700;
-            width: 100%;
-        }
-        .card-row-header select {
-            border: none;
-            background-color: #fff;
-            padding: 0px;
-            color: black;
-            font-weight: 700;
-            width: 100%;
         }
         .card-row-header textarea {
             border: 1px solid lightgray;
@@ -166,7 +147,8 @@
 <body>
 
 <header>
-    <div class="title"><?php echo $content["migrant_account__header_text"]; ?></div>
+    <div class="title"><b><?php echo $content["migrant_account__header_text_bold"]; ?></b> <?php echo $content["migrant_account__header_text"]; ?></div>
+    
 </header>
 
 <main>

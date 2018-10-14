@@ -38,6 +38,10 @@
     $content["migrant_account__edit_text"] = 'edit';
     $content["migrant_account__personal_text"] = 'personal information';
     
+    $content["login__sign_in_header_text_bold"] = 'design';
+    $content["login__sign_in_header_text"] = 'your profile';
+    $content["login__login_general_use_description"] = "your profile will become the social community of friendship families, mentors, and guides that are willing to help you adapt to the new society";
+
     $content["migrant_account__first_name_text"] = 'First Name';
     $content["migrant_account__last_name_text"] = 'Last Name';
     $content["migrant_account__age_text"] = 'Age';
@@ -85,12 +89,7 @@
             margin-bottom: 25px;
             margin: auto;
             margin-top: 15px;
-            width: 50%;
             box-shadow: 0px 0px 15px lightgray;
-        }
-        .divider {
-            width: 50%;
-            margin: 0 auto;
         }
         .input-picture {
             margin: 0 auto;
@@ -100,47 +99,11 @@
             border-radius: 50px;
             margin-bottom: 50px;
         }
-        .card-row-header input {
-            border: none;
-            background-color: #fff;
-            padding: 0px;
-            color: black;
-            font-weight: 700;
-            width: 100%;
-        }
-        .card-row-header select {
-            border: none;
-            text-transform: uppercase;
-            background-color: #fff;
-            padding: 0px;
-            color: black;
-            font-weight: 700;
-            width: 100%;
-        }
         .card-row-header textarea {
             border: 1px solid lightgray;
             resize: none;
             border-radius: 5px;
             width: 100%;
-        }
-        .card-row-header textarea::placeholder {
-            font-family: 'Open Sans', sans-serif;
-            text-transform: lowercase;
-            color: gray;
-        }
-        .card-row-header .input-photo {
-            width: 33.33%;
-        }
-        .card-row-header {
-            font-size: 13px;
-            color: gray;
-            margin-bottom: 25px;
-            overflow: auto;
-            padding: 0px 20px;
-            display: flex;
-            flex-wrap: wrap;
-            text-align: center;
-            text-align-last: center;
         }
         .card-row-header input::placeholder {
             font-family: 'Open Sans', sans-serif;
@@ -156,6 +119,7 @@
             background-image: url("images/map.jpg");
             background-size: cover;
             height: 100px;
+            padding-bottom: 25px;
         }
         .red {
             color: #cc0000;
@@ -175,7 +139,25 @@
         }
     </style>
 <body>
+    <header>
+    <nav>
+        <ul>
+            <li style="float: left; font-size: 20px;"><a href="index.php"><b>CIP</b></a></li>
+            <li style="float: right; font-size: 20px;"><a href="map.php"><i class="fas fa-map-marked-alt"></i></a></li>
+            <li style="float: right; font-size: 20px;"><a href="browse.php"><i class="fas fa-list"></i></a></li>
+            <li style="float: right; font-size: 20px;" class="dropdown"><a href="javascript:void(0)" class="dropbtn"><i class="fas fa-user-cog"></i></a>
+            <div class="dropdown-content">
+                <a href="#">Account</a>
+                <a href="#">Sign Out</a>
+            </div>
+            </li>
+        </ul>
+    </nav>
 
+    <div class="title"><b><?php echo  $content["login__sign_in_header_text_bold"]; ?></b> <?php echo $content["login__sign_in_header_text"]; ?></div>
+    <div class="sub-title"><?php echo  $content["login__login_general_use_description"]; ?></div>
+
+    </header>
 <main>
 <div class="divider">
         <div class="grade"><?php echo $content["migrant_account__edit_text"]; ?></div>
@@ -187,17 +169,16 @@
              <!-- DONT REMOVE THIS AGAIN!! -->
              <input type="hidden" name="type" value="migrant">
             <div class="input-header"></div>
-        <div class="card-row-header" style="margin-bottom: 0px;">
-            <div class="input-picture"><img src=""></div>
+        <div class="card-row-header">
         </div>
         <div class="card-row-header">
             <div class="card-field"><input required type="text" name="fname" value="<?php echo $firstName; ?>"><br><?php echo strtolower($content["migrant_account__first_name_text"]); ?><span class="red">*</span></input></div>
             <div class="card-field"><input required type="text" name="lname" value="<?php echo  $lastName; ?>"><br><?php echo strtolower($content["migrant_account__last_name_text"]); ?><span class="red">*</span></input></div>
-            <div class="card-field"><input type="text" name="gender" placeholder="<?php echo $content["migrant_account__gender_text"]; ?>"><br><?php echo strtolower($content["migrant_account__gender_text"]); ?></input></div>
+            <div class="card-field"><input type="text" name="gender"><?php echo strtolower($content["migrant_account__gender_text"]); ?></input></div>
         </div>
         <div class="card-row-header">
-            <div class="card-field"><input required type="text" name="nationality" placeholder="<?php echo $content["migrant_account__nationality_text"]; ?>"><br><?php echo strtolower($content["migrant_account__nationality_text"]); ?><span class="red">*</span></input></div>
-            <div class="card-field"><input type="text" name="Religion"placeholder="<?php echo $content["migrant_account__religion_text"]; ?>"><br><?php echo $content["migrant_account__religion_text"]; ?></input></div>
+            <div class="card-field"><input required type="text" name="nationality"><?php echo strtolower($content["migrant_account__nationality_text"]); ?><span class="red">*</span></input></div>
+            <div class="card-field"><input type="text" name="Religion"><?php echo $content["migrant_account__religion_text"]; ?></input></div>
             <div class="card-field">
             <select name="maritalStat">
                 <option name="maritalStat" value = "Select"> <?php echo $content["migrant_account__select_select"]; ?></option>
@@ -209,17 +190,17 @@
             <br>maritial status</div>
         </div>
         <div class="card-row-header">
-            <div class="card-field"><input required type="text" name="location"placeholder="<?php echo $content["migrant_account__location_city"]; ?>"><br><?php echo strtolower($content["migrant_account__location_city"]); ?><span class="red">*</span></input></div>
-            <div class="card-field"><input required type="text" name="location"placeholder="<?php echo $content["migrant_account__location_state"]; ?>"><br><?php echo strtolower($content["migrant_account__location_state"]); ?><span class="red">*</span></input></div>
-            <div class="card-field"><input style="scroll: hidden;" required type="number" min="1" name="age" placeholder="<?php echo $content["migrant_account__age_text"]; ?>"><br><?php echo strtolower($content["migrant_account__age_text"]); ?><span class="red">*</span></input></div>
+            <div class="card-field"><input required type="text" name="location"><?php echo strtolower($content["migrant_account__location_city"]); ?><span class="red">*</span></input></div>
+            <div class="card-field"><input required type="text" name="location"><?php echo strtolower($content["migrant_account__location_state"]); ?><span class="red">*</span></input></div>
+            <div class="card-field"><input style="scroll: hidden;" required type="number" min="1" name="age"><?php echo strtolower($content["migrant_account__age_text"]); ?><span class="red">*</span></input></div>
         </div>
         <div class="card-row-header">
-            <div class="card-field"><input required style="width: 50%;" type="text" name="primary_language" placeholder="<?php echo $content["migrant_account__language_text"];?>"><br><?php echo strtolower($content["migrant_account__primary_language_text"]); ?><span class="red">*</span></input></div>
-            <div class="card-field"><input style="width: 50%;" type="text" name="secondary_language" placeholder="<?php echo $content["migrant_account__language_text"]; ?>"><br><?php echo strtolower($content["migrant_account__secondary_language_text"]); ?></input></div>
+            <div class="card-field"><input required type="text" name="primary_language"><?php echo strtolower($content["migrant_account__primary_language_text"]); ?><span class="red">*</span></input></div>
+            <div class="card-field"><input type="text" name="secondary_language"><?php echo strtolower($content["migrant_account__secondary_language_text"]); ?></input></div>
         </div>
         <div class="card-row-header">
-            <div class="card-field"><input style="width: 50%;" type="text" name="hobby1" placeholder="<?php echo $content["migrant_account__hobby_text"];?>"><br><?php echo strtolower($content["migrant_account__hobby_text"]); ?></input></div>
-            <div class="card-field"><input style="width: 50%;" type="text" name="hobby2" placeholder="<?php echo $content["migrant_account__hobby_text"]; ?>"><br><?php echo strtolower($content["migrant_account__hobby_text"]); ?></input></div>
+            <div class="card-field"><input type="text" name="hobby1"><?php echo strtolower($content["migrant_account__hobby_text"]); ?></input></div>
+            <div class="card-field"><input type="text" name="hobby2"><?php echo strtolower($content["migrant_account__hobby_text"]); ?></input></div>
         </div>
         <div class="card-row-header">
             <textarea rows="4" cols="50" name="family" placeholder="<?php echo $content["migrant_account__family_textarea"]; ?>"></textarea>
@@ -228,13 +209,7 @@
             <textarea required rows="4" cols="50" name="outcome" placeholder="<?php echo $content["migrant_account__outcome_textarea"]; ?>"></textarea>
         </div>
         <div class="card-row-header" style="color: black;"><?php echo strtolower($content["migrant_account__must_complete"]); ?><span class="red">*</span></div>
-        <div class="card-row-header">
-            <?php echo $content["migrant_account__picture_text"]; ?>
-            <input class="input-photo" type="file" name="pic1" accept="image/*">
-            <input class="input-photo" type="file" name="pic2" accept="image/*">
-            <input class="input-photo"type="file" name="pic3" accept="image/*">
-        </div>
-            <input id="input-save" type="submit" value="save changes">
+        <div class="card-field" sthle="width: 100%;"><input type="submit" value="save changes"></div>
         </form>
     </div>
 </main>
