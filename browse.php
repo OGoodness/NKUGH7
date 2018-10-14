@@ -11,6 +11,8 @@
     
 
     require_once ('vendor/autoload.php');
+    include 'include/db_connect.php';
+    include 'functions/functions.php';
     use \Statickidz\GoogleTranslate;
     $content["login__sign_in_account"]="If you have previously created a profile and are a registered guide, please sign in below";
     $content["login__login_general_use_description"]= "This website will allow you to either help guide an immagrant family or if you are an immagrant family you can find resdients help make your transtion to your new home smoother. Don't worry, your information is confidential and secure";
@@ -20,8 +22,8 @@
     $content["login__sign_in_header_text"]= "to your account";
     $content["login__create_account"]="If you are new to this website, click the button below to get started on your personal profile and make one step closer to finding your future guide";
 
-    $content["c1t__first_name"] = "";
     $content["c1t__last_name"] = "";
+    $content["c1t__first_name"] = "";
     $content["c1t__age"] = "";
     $content["c1st__city"] = "";
     $content["c1st__state"] = "";
@@ -40,8 +42,7 @@
     foreach($content as $key => $text){
         $content["$key"] = $trans->translate("en", $language, $text);
     }
-
-    
+    $migrants = get_migrant($conn);
 ?>
 
 <!DOCTYPE html>
@@ -148,6 +149,42 @@
 </header>
 
 <main>
+
+<?php  foreach($migrants as $person){
+        ?>
+<div class="card-container">
+        <div class="card-container-left">
+            <div class="card-picture"><img src=""></div>
+            <div class="card-container-title">
+                <div class="card-title"><b><?php echo $person->user_first_name . " " . $person->user_last_name; ?></b>, <?php echo $person->age; ?></div>
+                <div class="card-subtitle"><?php echo $person->city . ", " . $person->state;?></div>
+            </div>
+        </div>
+        <div class="card-container-right">
+            <div class="card-container-content">
+                <div class="card-row">
+                    <div class="card-field"><b><?php echo $person->primary_language; ?></b><br>primary language</div>
+                    <div class="card-field"><b><?php echo $person->nationality; ?></b><br>nationality</div>
+                    <div class="card-field"><b><?php echo $person->religion; ?></b><br>religion</div>
+                    <div class="card-field"><b><?php echo $person->gender; ?></b><br>gender</div>
+                    <div class="card-field"><b><?php echo $person->occupation; ?></b><br>field of study</div>
+                </div>
+                <div class="card-row">
+                    <div class="card-paragraph"><?php echo $person->self_desc; ?></div>
+                </div>
+               <!--  <div class="card-row">
+                    <div class="card-verified" style="color: #008F95;"><i class="fas fa-users"></i> &nbsp;Involved in Community</div>
+                    <div class="card-verified" style="color: #E24E42;"><i class="fas fa-clock"></i> &nbsp;Previous Refugee</div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+<?php      
+    }?>
+
+<!-- BEGIN HARD CODED --> 
+
     <div class="card-container">
         <div class="card-container-left">
             <div class="card-picture"><img src=""></div>
