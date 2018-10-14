@@ -258,7 +258,7 @@
                     <div class="card-field"><input  type="text" name="lname"><?php echo $userLastNameErr; ?><br>last name</div>
                 </div>
                 <div class="card-row-header">
-                <div class="card-field"><input  type="text" name="email" placeholder="johnsmith@email.com"><?php echo $emailErr; ?><br>email</div>
+                <div class="card-field"><input  type="text" name="email"><?php echo $emailErr; ?><br>email</div>
                 <div class="card-field">
                     <select name="user-type">
                     <?php
@@ -270,8 +270,8 @@
                     </select><br>citizenship status</div>
                         </div>
                 <div class="card-row-header">
-                    <div class="card-field"><input  type="password" name="password" placeholder="password"><?php echo $passwordErr; ?><br>password</div>
-                    <div class="card-field"><input  type="password" name="confirm_password" placeholder="confirm password"><?php echo $confirmPasswordErr; ?><br>retype password</div>
+                    <div class="card-field"><input  type="password" name="password"><?php echo $passwordErr; ?><br>password</div>
+                    <div class="card-field"><input  type="password" name="confirm_password"><?php echo $confirmPasswordErr; ?><br>retype password</div>
                 </div>
                 <div class="card-row-header">
                     <div class="card-field"><button type="submit" name="signup_submit"><?php echo $content["login__sign_up_button"]; ?></button></div>
