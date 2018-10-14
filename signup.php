@@ -201,7 +201,7 @@
             text-transform: uppercase;
             background-color: #fff;
             padding: 0px;
-            color: black;
+            color: gray;
             font-weight: 700;
             width: 100%;
         }
