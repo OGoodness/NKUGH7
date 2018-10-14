@@ -197,16 +197,22 @@
         .card-field {
             margin: 0 auto;
             padding-bottom: 20px;
-            width: 33.33%;
+            width: 50%;
             flex-grow: 1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 12px;
+            text-align: left;
+            text-align-last: left;
         }
         .card-row-header input {
             border: none;
+            border-bottom: 1px solid black;
             background-color: #fff;
-            padding: 0px;
             color: black;
             font-weight: 700;
-            width: 100%;
+            width: 95%;
+            font-size: 16px;
         }
         .card-row-header select {
             border: none;
@@ -237,12 +243,79 @@
             display: inline-block;
             padding: 0px 5px;
         }
+            nav {
+       font-family: 'Open Sans', sans-serif;
+    }
+    ul {
+       list-style-type: none;
+       margin: 0;
+       padding: 0;
+       overflow: hidden;
+    }
+    ul li {
+       list-style: none;
+    }
+
+    .dropdown-content a:hover {background-color: #f1f1f1}
+
+    li a, .dropbtn {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 0px 20px;
+    text-decoration: none;
+    }
+
+    .dropdown-content a {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    li a:hover, .dropdown:hover .dropbtn {
+        color: darkgray;
+    }
+
+    li.dropdown {
+        display: block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        border-radius: 50px;
+        padding: 0px 10px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        top: 25px;
+        right: 20px;
+    }
+    .dropdown:hover .dropdown-content {
+        display: inline-block;
+    }
+    .dropdown-content a:hover {
+        background-color: transparent;
+    }
     </style>
     </head>
 
 <body>
+    
+    <nav>
+        <ul>
+            <li style="float: left; font-size: 20px;"><a href="index.php"><b>Jump</b>Start</a></li>
+            <li style="float: right; font-size: 20px;"><a href=""><i class="fas fa-map-marked-alt"></i></a></li>
+            <li style="float: right; font-size: 20px;"><a href="browse.php"><i class="fas fa-list"></i></a></li>
+            <li style="float: right; font-size: 20px; margin-top: 2px;" class="dropdown"><a href="javascript:void(0)" class="dropbtn"><i class="fas fa-user-cog"></i></a>
+            <div class="dropdown-content">
+                <a href="#">Account</a>
+                <a href="#">Sign Out</a>
+            </div>
+        </li>
+        </ul>
+    </nav>
 
-<header style="margin-top: 7%;">
+<header>
     <div class="title"><b><?php echo  $content["login__sign_in_header_text_bold"]; ?></b> <?php echo $content["login__sign_in_header_text"]; ?></div>
     <div class="sub-title"><?php echo  $content["login__login_general_use_description"]; ?></div>
 </header>
@@ -257,11 +330,11 @@
         <div class="box-container">
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <div class="card-row-header" style="padding-top: 20px;">
-                    <div class="card-field"><input  type="text" name="fname" placeholder="first name"><?php echo $userFirstNameErr; ?><br>first name</div>
-                    <div class="card-field"><input  type="text" name="lname" placeholder="last name"><?php echo $userLastNameErr; ?><br>first name</div>
+                    <div class="card-field"><input  type="text" name="fname"><?php echo $userFirstNameErr; ?><br>first name</div>
+                    <div class="card-field"><input  type="text" name="lname"><?php echo $userLastNameErr; ?><br>last name</div>
                 </div>
                 <div class="card-row-header">
-                <div class="card-field"><input  type="text" name="email" placeholder="johnsmith@email.com"><?php echo $emailErr; ?><br>email</div>
+                <div class="card-field"><input  type="text" name="email"><?php echo $emailErr; ?><br>email</div>
                 <div class="card-field">
                     <select name="user-type">
                     <?php
@@ -273,8 +346,8 @@
                     </select><br>citizenship status</div>
                         </div>
                 <div class="card-row-header">
-                    <div class="card-field"><input  type="password" name="password" placeholder="password"><?php echo $passwordErr; ?><br>password</div>
-                    <div class="card-field"><input  type="password" name="confirm_password" placeholder="confirm password"><?php echo $confirmPasswordErr; ?><br>retype password</div>
+                    <div class="card-field"><input  type="password" name="password"><?php echo $passwordErr; ?><br>password</div>
+                    <div class="card-field"><input  type="password" name="confirm_password"><?php echo $confirmPasswordErr; ?><br>retype password</div>
                 </div>
                 <div class="card-row-header">
                     <div class="card-field"><button type="submit" name="signup_submit"><?php echo $content["login__sign_up_button"]; ?></button></div>
@@ -287,16 +360,16 @@
 <footer>
     <div id="language-footer">
         <ul style="list-style: none;">
-            <li><div class="card-field;"><img class="small-nav" id="flag-india" src="images/flag-india.png" alt="Indian Flag" data="hi" onclick="languageSelect('flag-india')"></div></li>
-            <li><div class="card-field;"><img class="small-nav" id="flag-vietnam" src="images/flag-vietnam.png" alt="Vietnam Flag" data="vi" onclick="languageSelect('flag-vietnam')"></div></li>
-            <li><div class="card-field;"><img class="small-nav" id="flag-arabic" src="images/flag-arabic.png" alt="Arabic Flag" data="ar" onclick="languageSelect('flag-arabic')"></div></li>
-            <li><div class="card-field;"><img class="small-nav" id="flag-usa" src="images/flag-usa.png" alt="USA Flag" data="en" onclick="languageSelect('flag-usa')"></div></li>
-            <li><div class="card-field;"><img class="small-nav" id="flag-spanish" src="images/flag-spanish.png" alt="Spanish Flag" data="es" onclick="languageSelect('flag-spanish')"></div></li>
-            <li><div class="card-field;"><img class="small-nav" id="flag-ethiopia" src="images/flag-ethiopia.png" alt="Ethiopia Flag" data="am" onclick="languageSelect('flag-ethiopia')"></div></li>
-            <li><div class="card-field;"><img class="small-nav" id="flag-bulgaria" src="images/flag-bulgaria.png" alt="Bulgaria Flag" data="bg" onclick="languageSelect('flag-bulgaria')"></div></li>
-            <li><div class="card-field;"><img class="small-nav" id="flag-france" src="images/flag-france.png" alt="France Flag" data="fr" onclick="languageSelect('flag-france')"></div></li>
-            <li><div class="card-field;"><img class="small-nav" id="flag-turkey" src="images/flag-turkey.png" alt="Turkey Flag" data="tr" onclick="languageSelect('flag-turkey')"></div></li>
-            <li><div class="card-field;"><img class="small-nav" id="flag-filipino" src="images/flag-filipino.png" alt="Filipino Flag" data="tr" onclick="languageSelect('flag-filipino')"></div></li>
+            <li><div class="card-field;"><img class="small-nav" id="flag-india" src="images/flag-india.png" alt="Indian Flag" data="hi" onclick="languageRestOfTheStuff('flag-india')"></div></li>
+            <li><div class="card-field;"><img class="small-nav" id="flag-vietnam" src="images/flag-vietnam.png" alt="Vietnam Flag" data="vi" onclick="languageRestOfTheStuff('flag-vietnam')"></div></li>
+            <li><div class="card-field;"><img class="small-nav" id="flag-arabic" src="images/flag-arabic.png" alt="Arabic Flag" data="ar" onclick="languageRestOfTheStuff('flag-arabic')"></div></li>
+            <li><div class="card-field;"><img class="small-nav" id="flag-usa" src="images/flag-usa.png" alt="USA Flag" data="en" onclick="languageRestOfTheStuff('flag-usa')"></div></li>
+            <li><div class="card-field;"><img class="small-nav" id="flag-spanish" src="images/flag-spanish.png" alt="Spanish Flag" data="es" onclick="languageRestOfTheStuff('flag-spanish')"></div></li>
+            <li><div class="card-field;"><img class="small-nav" id="flag-ethiopia" src="images/flag-ethiopia.png" alt="Ethiopia Flag" data="am" onclick="languageRestOfTheStuff('flag-ethiopia')"></div></li>
+            <li><div class="card-field;"><img class="small-nav" id="flag-bulgaria" src="images/flag-bulgaria.png" alt="Bulgaria Flag" data="bg" onclick="languageRestOfTheStuff('flag-bulgaria')"></div></li>
+            <li><div class="card-field;"><img class="small-nav" id="flag-france" src="images/flag-france.png" alt="France Flag" data="fr" onclick="languageRestOfTheStuff('flag-france')"></div></li>
+            <li><div class="card-field;"><img class="small-nav" id="flag-turkey" src="images/flag-turkey.png" alt="Turkey Flag" data="tr" onclick="languageRestOfTheStuff('flag-turkey')"></div></li>
+            <li><div class="card-field;"><img class="small-nav" id="flag-filipino" src="images/flag-filipino.png" alt="Filipino Flag" data="tr" onclick="languageRestOfTheStuff('flag-filipino')"></div></li>
         </ul>
     </div>
 </footer>

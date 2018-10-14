@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
      html {
             font-family: 'Open Sans', sans-serif;
-            width: 75%;
-            margin: 0px auto;
         }
         body {
             margin: 0px;
@@ -11,10 +9,13 @@
         }
         header {
             text-align: center;
+            width: 75%;
+            margin: 0px auto;
         }
         main {
             margin-top: 5%;
-            margin-bottom: 5%;
+            width: 75%;
+            margin: 0px auto;
         }
         .center {
             margin: 0;
@@ -168,8 +169,3 @@
         .help-block{
             color:red;
         }
-footer{
-    position: relative;
-    margin-top: 150px;
-    height: 150px;
-}

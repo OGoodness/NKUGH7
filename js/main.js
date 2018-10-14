@@ -14,6 +14,25 @@ function languageSelect(id) {
     document.body.appendChild(form);
     form.submit();
 }
+
+function languageRestOfTheStuff(id) {
+    var languageFlag = document.getElementById(id).src;
+    var languageAlt = document.getElementById(id).alt;
+    var languageData = document.getElementById(id).getAttribute("data");
+    console.log(languageFlag, languageAlt, languageData);
+    form = document.createElement('form');
+    form.setAttribute('method', 'POST');
+    myvar = document.createElement('input');
+    myvar.setAttribute('name', 'language');
+    myvar.setAttribute('type', 'hidden');
+    myvar.setAttribute('value', languageData);
+    myvar.setAttribute('action', 'history.go(0)')
+    form.appendChild(myvar);
+    document.body.appendChild(form);
+    form.submit();
+    location.reload();
+}
+
 function displayLanguage(lang){
     var language;
     switch(lang){

@@ -1,27 +1,73 @@
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
 <style>
-    .small-nav {
-        width: 30px;
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+    nav {
+       font-family: 'Open Sans', sans-serif;
     }
     ul {
-        padding: 0px;
+       list-style-type: none;
+       margin: 0;
+       padding: 0;
+       overflow: hidden;
     }
     ul li {
-        display: inline-block;
-        padding: 0px 5px;
+       list-style: none;
     }
+
+    .dropdown-content a:hover {background-color: #f1f1f1}
+
+    li a, .dropbtn {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 0px 20px;
+    text-decoration: none;
+}
+.dropdown-content a {
+    padding: 10px;
+    font-size: 13px;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    color: darkgray;
+}
+
+li.dropdown {
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    border-radius: 50px;
+    padding: 0px 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 25px;
+    right: 20px;
+}
+.dropdown:hover .dropdown-content {
+    display: inline-block;
+}
+.dropdown-content a:hover {
+    background-color: transparent;
+}
 </style>
 
-<div id="language-footer">
-    <ul style="list-style: none;">
-        <li><div class="card-field;"><img class="small-nav" id="flag-india" src="images/flag-india.png" alt="Indian Flag" data="hi" onclick="languageSelect('flag-india')"></div></li>
-        <li><div class="card-field;"><img class="small-nav" id="flag-vietnam" src="images/flag-vietnam.png" alt="Vietnam Flag" data="vi" onclick="languageSelect('flag-vietnam')"></div></li>
-        <li><div class="card-field;"><img class="small-nav" id="flag-arabic" src="images/flag-arabic.png" alt="Arabic Flag" data="ar" onclick="languageSelect('flag-arabic')"></div></li>
-        <li><div class="card-field;"><img class="small-nav" id="flag-usa" src="images/flag-usa.png" alt="USA Flag" data="en" onclick="languageSelect('flag-usa')"></div></li>
-        <li><div class="card-field;"><img class="small-nav" id="flag-spanish" src="images/flag-spanish.png" alt="Spanish Flag" data="es" onclick="languageSelect('flag-spanish')"></div></li>
-        <li><div class="card-field;"><img class="small-nav" id="flag-ethiopia" src="images/flag-ethiopia.png" alt="Ethiopia Flag" data="am" onclick="languageSelect('flag-ethiopia')"></div></li>
-        <li><div class="card-field;"><img class="small-nav" id="flag-bulgaria" src="images/flag-bulgaria.png" alt="Bulgaria Flag" data="bg" onclick="languageSelect('flag-bulgaria')"></div></li>
-        <li><div class="card-field;"><img class="small-nav" id="flag-france" src="images/flag-france.png" alt="France Flag" data="fr" onclick="languageSelect('flag-france')"></div></li>
-        <li><div class="card-field;"><img class="small-nav" id="flag-turkey" src="images/flag-turkey.png" alt="Turkey Flag" data="tr" onclick="languageSelect('flag-turkey')"></div></li>
-        <li><div class="card-field;"><img class="small-nav" id="flag-filipino" src="images/flag-filipino.png" alt="Filipino Flag" data="tr" onclick="languageSelect('flag-filipino')"></div></li>
+</head>
+<nav>
+    <ul>
+        <li style="float: left; font-size: 20px;"><a href="index.php"><b>Jump</b>Start</a></li>
+        <li style="float: right; font-size: 20px;"><a href=""><i class="fas fa-map-marked-alt"></i></a></li>
+        <li style="float: right; font-size: 20px;"><a href="browse.php"><i class="fas fa-list"></i></a></li>
+        <li style="float: right; font-size: 20px; margin-top: 2px;" class="dropdown"><a href="javascript:void(0)" class="dropbtn"><i class="fas fa-user-cog"></i></a>
+        <div class="dropdown-content">
+            <a href="#">Account</a>
+            <a href="#">Sign Out</a>
+        </div>
+    </li>
     </ul>
-</div>
+</nav>
