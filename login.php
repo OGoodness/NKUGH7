@@ -153,7 +153,9 @@
         button {
             cursor: pointer;
         }
-        button:focus {outline:0;}
+        button:focus {
+            outline:0;
+        }
     </style>
     </head>
 

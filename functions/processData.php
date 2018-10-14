@@ -123,7 +123,7 @@
         echo '<p>Click <a href="index.html">here</a> to go back</p>';
     }
 
-     header("Location: ../browse.php");
+     /*header("Location: ../browse.php");*/
 
 
  /*     

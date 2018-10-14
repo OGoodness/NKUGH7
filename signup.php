@@ -171,34 +171,38 @@
 </header>
 
 <main>
-        <div class="content" style="margin: 0 auto;">
-            <div class="text"><?php echo $content["login__sign_in_account"]; ?></div>
+
+        <div class="divider">
+            <div class="grade">sign up</div>
+            <div class="date">personal account</div>
+        </div>
+
+        <div class="box-container">
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                <input  type="text" name="fname" placeholder="first name">
-                <br><span class="help-block"><?php echo $userFirstNameErr; ?></span><br><br>
-                <input  type="text" name="lname" placeholder="last name">
-                <br><span class="help-block"><?php echo $userLastNameErr; ?></span><br><br>
-                <input  type="text" name="email" placeholder="johnsmith@email.com">
-                <br><span class="help-block"><?php echo $emailErr; ?></span><br>
-                <select name="user-type">
+                <div class="card-row-header" style="padding-top: 20px;">
+                    <div class="card-field"><input  type="text" name="fname" placeholder="first name"><?php echo $userFirstNameErr; ?><br>first name</div>
+                    <div class="card-field"><input  type="text" name="lname" placeholder="last name"><?php echo $userLastNameErr; ?><br>first name</div>
+                    <div class="card-field"><input  type="text" name="email" placeholder="johnsmith@email.com"><?php echo $emailErr; ?><br>email</div>
+                </div>
+                <div class="card-row-header">
+                    <select name="user-type">
                     <?php
                         foreach($user_type as $data)
                         {
                                   	echo '<option value="'. $data->id.'">'. $data->user_type.'</option>';
                           }
-                    ?>
-                </select><br>
-                <input  type="password" name="password" placeholder="password">
-                <br><span class="help-block"><?php echo $passwordErr; ?></span><br>
-                <input  type="password" name="confirm_password" placeholder="confirm_password">
-                <br><span class="help-block"><?php echo $confirmPasswordErr; ?></span><br>
-                <button type="submit" name="signup_submit"><?php echo $content["login__sign_up_button"]; ?></button>
+                        ?>
+                    </select>
+                </div>
+                <div class="card-row-header">
+                    <div class="card-field"><input  type="password" name="password" placeholder="password"><?php echo $passwordErr; ?><br>password</div>
+                    <div class="card-field"><input  type="password" name="confirm_password" placeholder="confirm_password"><?php echo $confirmPasswordErr; ?><br>retype password</div>
+                </div>
+                <div class="card-row-header">
+                    <div class="card-field"><button type="submit" name="signup_submit"><?php echo $content["login__sign_up_button"]; ?></button></div>
+                </div>
             </form>
-
-            
-        </div>
     </div>
-</div>
 </main>
 
 </body>
@@ -206,7 +210,7 @@
     <div id="language-footer">
         <div id = "language-display" class="languages"><script>displayLanguage('<?php echo $language?>');</script></div>
         <img src="" alt="">
-</div>
+    </div>
 
 </footer>
 </html>
