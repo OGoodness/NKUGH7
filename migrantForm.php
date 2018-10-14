@@ -10,13 +10,18 @@
 
     require_once ('vendor/autoload.php');
     use \Statickidz\GoogleTranslate;
-    $id = $_GET['id'];
-    $sql = "SELECT * From users where user_id = $id";
-    $result = mysqli_query($conn,$sql);
-    $row = mysqli_fetch_assoc($result);
-    $firstname = $row['user_first_name'];
-    $lastname = $row['user_last_name'];
 
+    $id = null;
+    $firstName = null;
+    $lastName = null;
+    if(isset($_GET['id'])){
+        $id = $_GET['id'];
+        $getUser = getUser($conn, $id);
+        $firstname = $getUser->user_first_name;
+        $lastName = $getUser->user_last_name;
+    }
+    
+    
     $content["migrant_account__header_text"] = 'Create Profile';
     $content["migrant_account__title_text"] = 'Migrant Profile';
     $content["migrant_account__edit_text"] = 'edit';

@@ -46,3 +46,18 @@ function get_guides($conn){
     $result->free();
     return $response;
 }
+
+function getUser($conn, $id){
+    $response = NULL;
+    $sql = "SELECT * From users where user_id = $id";
+    if($result = $conn->query($sql)){
+        if($result->num_rows > 0){
+            while($row = $result->fetch_object()){
+                $response[] = $row;
+            }
+        }
+        $result->free();
+    }
+    
+    return $response;
+}
