@@ -234,12 +234,78 @@
             display: inline-block;
             padding: 0px 5px;
         }
+            nav {
+       font-family: 'Open Sans', sans-serif;
+    }
+    ul {
+       list-style-type: none;
+       margin: 0;
+       padding: 0;
+       overflow: hidden;
+    }
+    ul li {
+       list-style: none;
+    }
+
+    .dropdown-content a:hover {background-color: #f1f1f1}
+
+    li a, .dropbtn {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 0px 20px;
+    text-decoration: none;
+    }
+    .dropdown-content a {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    li a:hover, .dropdown:hover .dropbtn {
+        color: darkgray;
+    }
+
+    li.dropdown {
+        display: block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        border-radius: 50px;
+        padding: 0px 10px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        top: 25px;
+        right: 20px;
+    }
+    .dropdown:hover .dropdown-content {
+        display: inline-block;
+    }
+    .dropdown-content a:hover {
+        background-color: transparent;
+    }
     </style>
     </head>
 
 <body>
 
-<header style="margin-top: 7%;">
+<header>
+    <nav>
+        <ul>
+            <li style="float: left; font-size: 20px;"><a href="index.php"><b>Jump</b>Start</a></li>
+            <li style="float: right; font-size: 20px;"><a href=""><i class="fas fa-map-marked-alt"></i></a></li>
+            <li style="float: right; font-size: 20px;"><a href="browse.php"><i class="fas fa-list"></i></a></li>
+            <li style="float: right; font-size: 20px; margin-top: 2px;" class="dropdown"><a href="javascript:void(0)" class="dropbtn"><i class="fas fa-user-cog"></i></a>
+            <div class="dropdown-content">
+                <a href="#">Account</a>
+                <a href="#">Sign Out</a>
+            </div>
+        </li>
+        </ul>
+    </nav>
+
     <div class="title"><b><?php echo  $content["login__sign_in_header_text_bold"]; ?></b> <?php echo $content["login__sign_in_header_text"]; ?></div>
     <div class="sub-title"><?php echo  $content["login__login_general_use_description"]; ?></div>
 </header>
