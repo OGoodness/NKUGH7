@@ -54,18 +54,14 @@
         .title {
             text-transform: lowercase;
             font-size: 36px;
-            letter-spacing: 2px;
         }
         .sub-title {
             margin: 10px auto;
             text-decoration: none;
             text-transform: lowercase;
             text-align: justify;
-            text-align-last: justify;
             font-size: 12px;
-            font-weight: 400;
-            letter-spacing: 1px;
-            width: 50%;
+            width: 40%;
             color: gray;
         }
         .text {
