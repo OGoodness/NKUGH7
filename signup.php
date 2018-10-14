@@ -187,7 +187,6 @@
         }
         .card-field {
             margin: 0px auto 10px auto;
-            width: 33.33%;
         }
         .card-row-header input {
             border: none;
