@@ -202,7 +202,7 @@
 <header>
     <nav>
         <ul>
-            <li style="float: left; font-size: 20px;"><a href="index.php"><b>Jump</b>Start</a></li>
+            <li style="float: left; font-size: 20px;"><a href="index.php"><b>CIP</b></a></li>
             <li style="float: right; font-size: 20px;"><a href="map.php"><i class="fas fa-map-marked-alt"></i></a></li>
             <li style="float: right; font-size: 20px;"><a href="browse.php"><i class="fas fa-list"></i></a></li>
             <li style="float: right; font-size: 20px;" class="dropdown"><a href="javascript:void(0)" class="dropbtn"><i class="fas fa-user-cog"></i></a>
@@ -257,20 +257,4 @@
 </main>
 
 </body>
-<footer>
-    <div id="language-footer">
-        <ul style="list-style: none;">
-            <li style="float: left; padding: 2px;"><div class="card-field;"><img class="small-nav" id="flag-india" src="images/flag-india.png" alt="Indian Flag" data="hi" onclick="languageRestOfTheStuff('flag-india')"></div></li>
-            <li style="float: left; padding: 2px;"><div class="card-field;"><img class="small-nav" id="flag-vietnam" src="images/flag-vietnam.png" alt="Vietnam Flag" data="vi" onclick="languageRestOfTheStuff('flag-vietnam')"></div></li>
-            <li style="float: left; padding: 2px;"><div class="card-field;"><img class="small-nav" id="flag-arabic" src="images/flag-arabic.png" alt="Arabic Flag" data="ar" onclick="languageRestOfTheStuff('flag-arabic')"></div></li>
-            <li style="float: left; padding: 2px;"><div class="card-field;"><img class="small-nav" id="flag-usa" src="images/flag-usa.png" alt="USA Flag" data="en" onclick="languageRestOfTheStuff('flag-usa')"></div></li>
-            <li style="float: left; padding: 2px;"><div class="card-field;"><img class="small-nav" id="flag-spanish" src="images/flag-spanish.png" alt="Spanish Flag" data="es" onclick="languageRestOfTheStuff('flag-spanish')"></div></li>
-            <li style="float: left; padding: 2px;"><div class="card-field;"><img class="small-nav" id="flag-ethiopia" src="images/flag-ethiopia.png" alt="Ethiopia Flag" data="am" onclick="languageRestOfTheStuff('flag-ethiopia')"></div></li>
-            <li style="float: left; padding: 2px;"><div class="card-field;"><img class="small-nav" id="flag-bulgaria" src="images/flag-bulgaria.png" alt="Bulgaria Flag" data="bg" onclick="languageRestOfTheStuff('flag-bulgaria')"></div></li>
-            <li style="float: left; padding: 2px;"><div class="card-field;"><img class="small-nav" id="flag-france" src="images/flag-france.png" alt="France Flag" data="fr" onclick="languageRestOfTheStuff('flag-france')"></div></li>
-            <li style="float: left; padding: 2px;"><div class="card-field;"><img class="small-nav" id="flag-turkey" src="images/flag-turkey.png" alt="Turkey Flag" data="tr" onclick="languageRestOfTheStuff('flag-turkey')"></div></li>
-            <li style="float: left; padding: 2px;"><div class="card-field;"><img class="small-nav" id="flag-filipino" src="images/flag-filipino.png" alt="Filipino Flag" data="tr" onclick="languageRestOfTheStuff('flag-filipino')"></div></li>
-        </ul>
-    </div>
-</footer>
 </html>

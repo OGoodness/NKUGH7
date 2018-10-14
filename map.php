@@ -24,7 +24,12 @@
 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
 	</script>
-	<title></title>
+    <title></title>
+    <style>
+        html {
+            background-color: ;
+        }
+        </style>
 </head>
 <body>
 <?php 

@@ -142,7 +142,7 @@
     <header>
     <nav>
         <ul>
-            <li style="float: left; font-size: 20px;"><a href="index.php"><b>Cultural</b> Inclusiveness Project</a></li>
+            <li style="float: left; font-size: 20px;"><a href="index.php"><b>CIP</b></a></li>
             <li style="float: right; font-size: 20px;"><a href="map.php"><i class="fas fa-map-marked-alt"></i></a></li>
             <li style="float: right; font-size: 20px;"><a href="browse.php"><i class="fas fa-list"></i></a></li>
             <li style="float: right; font-size: 20px;" class="dropdown"><a href="javascript:void(0)" class="dropbtn"><i class="fas fa-user-cog"></i></a>
@@ -209,7 +209,7 @@
             <textarea required rows="4" cols="50" name="outcome" placeholder="<?php echo $content["migrant_account__outcome_textarea"]; ?>"></textarea>
         </div>
         <div class="card-row-header" style="color: black;"><?php echo strtolower($content["migrant_account__must_complete"]); ?><span class="red">*</span></div>
-            <input id="input-save" type="submit" value="save changes">
+        <div class="card-field" sthle="width: 100%;"><input type="submit" value="save changes"></div>
         </form>
     </div>
 </main>

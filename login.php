@@ -129,7 +129,7 @@
 <header>
     <nav>
         <ul>
-            <li style="float: left; font-size: 20px;"><a href="index.php"><b>Jump</b>Start</a></li>
+            <li style="float: left; font-size: 20px;"><a href="index.php"><b>CIP</b></a></li>
             <li style="float: right; font-size: 20px;"><a href="map.php"><i class="fas fa-map-marked-alt"></i></a></li>
             <li style="float: right; font-size: 20px;"><a href="browse.php"><i class="fas fa-list"></i></a></li>
             <li style="float: right; font-size: 20px;" class="dropdown"><a href="javascript:void(0)" class="dropbtn"><i class="fas fa-user-cog"></i></a>
@@ -153,8 +153,8 @@
     <div class="box-container">
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="card-row-header">
-                <div class="card-field"><input id ="input-user" type="text" name="email"><?php echo $emailErr; ?><br><?php echo  $content["login__email"]; ?></div>
-                <div class="card-field"><input id="input-lock" type="password" name="password"><?php echo $passwordErr; ?><br><?php echo  $content["login__password"]; ?></div>
+                <div class="card-field"><input style="width: 100%;" id ="input-user" type="text" name="email"><?php echo $emailErr; ?><br><?php echo  $content["login__email"]; ?></div>
+                <div class="card-field" style="width: 100%;"><input id="input-lock" type="password" name="password"><?php echo $passwordErr; ?><br><?php echo  $content["login__password"]; ?></div>
             </div>
             <div class="card-row-header">
                 <div class="card-field" style="padding-bottom: 0px;"><button type="submit" name="login_submit"><?php echo $content["login__sign_in_button"]; ?></button></div>

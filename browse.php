@@ -146,9 +146,23 @@
 <body>
 
 <header>
+<header>
+    <nav>
+        <ul>
+            <li style="float: left; font-size: 20px;"><a href="index.php"><b>Cultural</b> Inclusiveness Project</a></li>
+            <li style="float: right; font-size: 20px;"><a href="map.php"><i class="fas fa-map-marked-alt"></i></a></li>
+            <li style="float: right; font-size: 20px;"><a href="browse.php"><i class="fas fa-list"></i></a></li>
+            <li style="float: right; font-size: 20px;" class="dropdown"><a href="javascript:void(0)" class="dropbtn"><i class="fas fa-user-cog"></i></a>
+            <div class="dropdown-content">
+                <a href="#">Account</a>
+                <a href="#">Sign Out</a>
+            </div>
+            </li>
+        </ul>
+    </nav>
 </header>
 
-<main>
+<main style="width: 70%;">
 
 <?php  foreach($guides as $person){
         ?>
@@ -271,6 +285,4 @@
 </main>
 
 </body>
-<footer>
-</footer>
 </html>
