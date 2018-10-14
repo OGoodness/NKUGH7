@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+     html {
+            font-family: 'Open Sans', sans-serif;
+        }
+        body {
+            margin: 0px;
+            padding: 0px;
+            background-color: #ebedee;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        main {
+            margin-top: 5%;
+            width: 75%;
+            margin: 0px auto;
+        }
+        .center {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .top {
+            margin: 0;
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .name {
+            text-transform: uppercase;
+            font-size: 24px;
+            letter-spacing: 3px;
+        }
+        .languages {
+            text-decoration: none;
+            text-transform: lowercase;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+        ul.languages {
+            padding: 0px;
+            color: gray;
+            margin: 10px 0px 40px 0px;
+        }
+        .languages li {
+            list-style: none;
+            display: inline-block;
+            margin: 0px 15px;
+        }
+        .title {
+            text-transform: lowercase;
+            font-size: 36px;
+        }
+        .sub-title {
+            margin: 10px auto;
+            text-decoration: none;
+            text-transform: lowercase;
+            text-align: justify;
+            font-size: 12px;
+            width: 40%;
+            color: gray;
+        }
+        .text {
+            text-transform: lowercase;
+            text-align: justify;
+            text-align-last: justify;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: gray;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        .content {
+            margin: 0px 10%;
+            width: 25%;
+        }
+        .divider {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            text-align: left;
+            width: 75%;
+        }
+        .date {
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            color: gray;
+        }
+        .grade {
+            text-transform: uppercase;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+        .two-column-container {
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            display: flex;
+            flex-flow: row wrap;
+            align-content: flex-start;
+        }
+        .container img {
+            width: auto;
+            height: 60px;
+            margin: 5px auto;
+            transition: all 0.4s ease-in-out;
+            cursor: pointer;
+            margin-bottom: 5px;
+        }
+        .container img:hover {
+            box-shadow: 0px 0px 15px gray;
+        }
+        .fa-user-edit {
+            font-size: 45px;
+        }
+        #language-footer {
+            text-align: center;
+            padding: 10px;
+            color: gray;
+        }
+        select {
+            padding: 10px 5px;
+            color: gray;
+        }
+        button {
+            border: 1px solid lightgray;
+            border-radius: 3px;
+            width: 100%;
+            padding: 10px;
+            font-family: 'Open Sans', sans-serif;
+            text-transform: lowercase;
+            font-weight: 700;
+        }
+        .button {
+            border: 1px solid lightgray;
+            border-radius: 3px;
+            width: 100%;
+            padding: 10px;
+            font-family: 'Open Sans', sans-serif;
+            text-transform: lowercase;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        #input-lock {
+            background-size: 17px;
+            background-repeat: no-repeat;
+            
+        }
+        #input-user {
+            width: 100%;
+            background-size: 17px;
+            background-position: 7px 7px;
+            background-repeat: no-repeat;
+        }
+        .help-block{
+            color:red;
+        }
+        
+ /*Top Nav*/
+    nav {
+        margin-bottom: 25px;
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        margin-top: 10px;
+    }
+    ul li {
+        list-style: none; 
+    }
+    .dropdown-content a:hover {background-color: #f1f1f1}
+
+    li a, .dropbtn {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 0px 20px;
+    text-decoration: none;
+    }
+    .dropdown-content a {
+        padding: 10px;
+        font-size: 13px;
+    }
+    li a:hover, .dropdown:hover .dropbtn {
+        color: darkgray;
+    }
+    li.dropdown {
+        display: block;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        border-radius: 50px;
+        padding: 0px 10px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        top: 28px;
+        right: 25px;
+    }
+    .dropdown:hover .dropdown-content {
+        display: inline-block;
+    }
+    .dropdown-content a:hover {
+        background-color: transparent;
+    }

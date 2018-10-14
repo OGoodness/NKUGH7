@@ -1,15 +1,18 @@
 <?php
 ini_set('display_errors', 'On');
-$servername = "globalhack7.ced2x9toup5e.us-east-2.rds.amazonaws.com";
-$username = "norse";
-$password = "norsehacks";
+$servername = "localhost";
+$username = "root";
+$password = "";
 $database = "globalhack7";
-
 // Create connection
-$conn = new mysqli($servername, $username, $password, $database);
-
+<<<<<<< Updated upstream
+$conn = new mysqli($servername, $username, '', $database);
+=======
+$conn = new mysqli($servername, $username, "", $database);
+>>>>>>> Stashed changes
 // Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
  ?>
+
