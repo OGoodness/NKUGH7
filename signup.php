@@ -5,7 +5,22 @@
     require_once ('vendor/autoload.php');
     use \Statickidz\GoogleTranslate;
 
- 
+    $content["login__err_first_name"] = "Please enter your first name.";
+    $content["login__err_last_name"] = "Please enter your last name.";
+    $content["login__err_enter_email"] = "Please enter an email.";
+    $content["login__err_email_taken"] = "This email is already taken.";
+    $content["login__err_exe_email_failed"] = "Execution email failed";
+    $content["login__err_prep_email_fail"] = "Prepare email failed";
+    $content["login__err_enter_password"] = "Please enter a password.";
+    $content["login__err_password_len6"] = "Password must have at least 6 characters.";
+    $content["login__err_confirm_password"] = "Please confirm password.";
+    $content["login__err_passwords_ dont_match"] = "Password did not match.";
+    $content["login__err_something_wrong"] = "Something went wrong. Please try again later.";
+    $content["login__fname"] = "first name";
+    $content["login__lname"] = "last name";
+    $content["login__email"] = "email";
+
+
     // Define variables and initialize with empty values
     $userFirstName = $userLastName = $type = $password = $confirmPassword = $email = "";
     $userFirstNameErr = $userLastNameErr = $userTypeErr = $passwordErr = $confirmPasswordErr = $emailErr = "";
@@ -149,6 +164,17 @@
     $content["login__sign_in_header_text"]= "for your personal account";
     $content["login__create_account"]="If you are new to this website, click the button below to get started on your personal profile and make one step closer to finding your future guide";
     $content["login__sign_up_button"]="continue";
+
+    
+    $content["login__sign_up_grade"]="sign up";
+    $content["login__spersonal_acc"]="personal account";
+
+
+    $content["login__citz_stat"]="citizenship status";
+    $content["login__password"]="password";
+    $content["login__retype_password"]="retype password";
+    $content["login__retype_password"]="Account";
+
 
     $trans = new GoogleTranslate();
     foreach($content as $key => $text){
@@ -320,31 +346,31 @@
 <main>
 
         <div class="divider">
-            <div class="grade">sign up</div>
-            <div class="date">personal account</div>
+            <div class="grade"><?php echo  $content["login__sign_up_grade"]; ?></div>
+            <div class="date"><?php echo  $content["login__spersonal_acc"]; ?></div>
         </div>
 
         <div class="box-container">
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <div class="card-row-header" style="padding-top: 20px;">
-                    <div class="card-field"><input  type="text" name="fname"><?php echo $userFirstNameErr; ?><br>first name</div>
-                    <div class="card-field"><input  type="text" name="lname"><?php echo $userLastNameErr; ?><br>last name</div>
+                    <div class="card-field"><input  type="text" name="fname"><?php echo $userFirstNameErr; ?><br><?php  echo $content["login__fname"]; ?></div>
+                    <div class="card-field"><input  type="text" name="lname"><?php echo $userLastNameErr; ?><br><?php  echo $content["login__lname"]; ?></div>
                 </div>
                 <div class="card-row-header">
-                <div class="card-field"><input  type="text" name="email"><?php echo $emailErr; ?><br>email</div>
+                <div class="card-field"><input  type="text" name="email"><?php echo $content["login__err_enter_email"]; ?><br> <?php echo $content["login__email"]; ?></div>
                 <div class="card-field">
                     <select name="user-type">
                     <?php
                         foreach($user_type as $data)
                         {
-                                  	echo '<option value="'. $data->id.'">'. $data->user_type.'</option>';
+                                  	echo '<option value="'. $data->id.'">'. $trans->translate("en", $language, $data->user_type) .'</option>';
                           }
                         ?>
-                    </select><br>citizenship status</div>
+                    </select><br><?php echo $content["login__citz_stat"];?></div>
                         </div>
                 <div class="card-row-header">
-                    <div class="card-field"><input  type="password" name="password"><?php echo $passwordErr; ?><br>password</div>
-                    <div class="card-field"><input  type="password" name="confirm_password"><?php echo $confirmPasswordErr; ?><br>retype password</div>
+                    <div class="card-field"><input  type="password" name="password"><?php echo $passwordErr; ?><br><?php echo $content["login__password"]; ?></div>
+                    <div class="card-field"><input  type="password" name="confirm_password"><?php echo $confirmPasswordErr; ?><br> <?php echo  $content["login__retype_password"]; ?></div>
                 </div>
                 <div class="card-row-header">
                     <div class="card-field"><button type="submit" name="signup_submit"><?php echo $content["login__sign_up_button"]; ?></button></div>

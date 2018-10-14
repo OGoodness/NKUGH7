@@ -199,12 +199,12 @@
             <div class="card-field"><input required type="text" name="nationality" placeholder="<?php echo $content["migrant_account__nationality_text"]; ?>"><br><?php echo strtolower($content["migrant_account__nationality_text"]); ?><span class="red">*</span></input></div>
             <div class="card-field"><input type="text" name="Religion"placeholder="<?php echo $content["migrant_account__religion_text"]; ?>"><br><?php echo $content["migrant_account__religion_text"]; ?></input></div>
             <div class="card-field">
-            <select>
-                <option value = "Select"> <?php echo $content["migrant_account__select_select"]; ?></option>
-                <option value="married"><?php echo $content["migrant_account__married_select"]; ?></option>
-                <option value="Single"><?php echo $content["migrant_account__single_select"]; ?></option>
-                <option value="complicated"><?php echo $content["migrant_account__complicated_select"]; ?></option>
-                <option value="Other"><?php echo $content["migrant_account__other_select"]; ?></option>
+            <select name="maritalStat">
+                <option name="maritalStat" value = "Select"> <?php echo $content["migrant_account__select_select"]; ?></option>
+                <option name="maritalStat" value="married"><?php echo $content["migrant_account__married_select"]; ?></option>
+                <option name="maritalStat" value="Single"><?php echo $content["migrant_account__single_select"]; ?></option>
+                <option name="maritalStat" value="complicated"><?php echo $content["migrant_account__complicated_select"]; ?></option>
+                <option name="maritalStat" value="Other"><?php echo $content["migrant_account__other_select"]; ?></option>
             </select>
             <br>maritial status</div>
         </div>

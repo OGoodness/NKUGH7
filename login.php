@@ -4,18 +4,24 @@
     $email = $password = "";
     $emailErr = $passwordErr = "";
 
+    $content["login__err_valid_email"] = "enter a valid email";
+    $content["login__err_incorrect_password"] = "incorrect password";
+    $content["login__err_valid_password"] = "The password you entered was not valid.";
+    $content["login__err_no_account_email"] = "No account found with that email.";
+    $content["login__err_oops"] = "Oops! Something went wrong. Please try again later.";
+
 
     if(isset($_POST['login_submit'])){
         // Check if username is empty
         if(empty(trim($_POST["email"]))){
-            $emailErr = 'enter a valid email';
+            $emailErr = $content["login__err_valid_email"];
         } else{
             $email = trim($_POST["email"]);
         }
 
         // Check if password is empty
         if(empty(trim($_POST['password']))){
-            $passwordErr = 'incorrect password';
+            $passwordErr = $content["login__err_incorrect_password"];
         } else{
             $password = trim($_POST['password']);
         }
@@ -49,22 +55,22 @@
                                 header("location: browse.php");
                             } else{
                                 // Display an error message if password is not valid
-                                $passwordErr = 'The password you entered was not valid.';
+                                $passwordErr = $content["login__err_no_account_email"];
                             }
                         }
                     } else{
                         // Display an error message if username doesn't exist
-                        $emailErr = 'No account found with that email.';
+                        $emailErr = $content["login__err_no_account_email"];
                     }
                 } else{
-                    echo "Oops! Something went wrong. Please try again later.";
+                    echo $content["login__err_oops"];
                 }
             }
 
         }
 
     }
-    
+
 
     if(isset($_POST["language"])){
         $language = $_POST["language"];
@@ -79,6 +85,7 @@
 
     require_once ('vendor/autoload.php');
     use \Statickidz\GoogleTranslate;
+    $content["login__grade_sign_up"] = "sign up";
     $content["login__sign_in_account"]="If you have previously created a profile and are a registered guide, please sign in below";
     $content["login__login_general_use_description"]= "This website will allow you to either help guide an immagrant family or if you are an immagrant family you can find a resdient family to help make your transtion to your new home smoother. we ensure a smooth and safe transition into your new friendship family, so don't worry, your information is confidential and secure";
     $content["login__sign_in_header_text_bold"]= "choose";
@@ -88,6 +95,14 @@
     $content["login__sign_in_button"]= "sign in";
     $content["login__create_account"]="If you are new to this website, click the button below to get started on your personal profile and become one step closer to finding your future friendship family";
 
+    $content["login__grade_log_in"] = "log in";
+    $content["login__log_personal_acct"] = "personal account";
+
+    $content["login__email"] = "email";
+    $content["login__password"] = "password";
+
+    $content["login__grade_sign_up"] = "sign up";
+    $content["login__sign_personal_acct"] = "personal account";
 
     $trans = new GoogleTranslate();
     foreach($content as $key => $text){
@@ -169,15 +184,15 @@
 
 <main>
         <div class="divider">
-            <div class="grade">log in</div>
-            <div class="date">personal account</div>
+            <div class="grade"><?php echo  $content["login__grade_log_in"]; ?></div>
+            <div class="date"><?php echo  $content["login__log_personal_acct"]; ?></div>
         </div>
 
         <div class="box-container">
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <div class="card-row-header" style="padding-top: 20px;">
-                    <div class="card-field"><input id ="input-user" type="text" name="email" placeholder="johnsmith@gmail.com"><?php echo $emailErr; ?><br>email</div>
-                    <div class="card-field"><input id="input-lock" type="password" name="password" placeholder="●●●●●●●●●●●"><?php echo $passwordErr; ?><br>password</div>
+                    <div class="card-field"><input id ="input-user" type="text" name="email" placeholder="johnsmith@gmail.com"><?php echo $emailErr; ?><br><?php echo  $content["login__email"]; ?></div>
+                    <div class="card-field"><input id="input-lock" type="password" name="password" placeholder="●●●●●●●●●●●"><?php echo $passwordErr; ?><br><?php echo  $content["login__password"]; ?></div>
                 </div>
                 <div class="card-row-header">
                     <div class="card-field"><button type="submit" name="login_submit"><?php echo $content["login__sign_in_button"]; ?></button></div>
@@ -187,8 +202,8 @@
     </div>
 
     <div class="divider">
-        <div class="grade">sign up</div>
-        <div class="date">personal account</div>
+        <div class="grade"><?php echo  $content["login__grade_sign_up"]; ?></div>
+        <div class="date"><?php echo  $content["login__sign_personal_acct"]; ?></div>
     </div>
     <div class="box-container">
         <div class="card-row-header" style="padding-top: 20px;">
