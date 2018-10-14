@@ -102,10 +102,13 @@
                     // Redirect to login page
                     $insert_id = mysqli_stmt_insert_id($stmt);
                     session_start();
-                    $_SESSION['user_id'] = $email;
-                    $_SESSION['insert_id'] = $insert_id;
+                    $_SESSION['user_id'] = $insert_id;
+                    $_SESSION['user_email'] = $email;
                     setcookie("insert_id", $insert_id , time() + (86400 * 30), "/");
-                    header("location: guide_or_migrant.php");
+
+                    header("location: migrantForm.php?id=".$_SESSION['user_id']);
+
+
                 } else{
                     echo "Something went wrong. Please try again later.";
                 }

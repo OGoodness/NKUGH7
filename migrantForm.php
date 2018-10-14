@@ -8,6 +8,12 @@
 
     require_once ('vendor/autoload.php');
     use \Statickidz\GoogleTranslate;
+    $id = $_GET['id'];
+    $sql = "SELECT * From users where user_id = $id";
+    $result = mysqli_query($sql, $conn);
+    $row = mysqli_fetch_assoc($result);
+    $firstname = $row['user_first_name'];
+    $lastname = $row['user_last_name'];
 
     $content["migrant_account__header_text"] = 'Create Profile';
     $content["migrant_account__title_text"] = 'Migrant Profile';
@@ -158,8 +164,8 @@
             <div class="input-picture"><img src=""></div>
         </div>
         <div class="card-row-header">
-            <div class="card-field"><input required type="text" name="fname" placeholder="<?php echo $content["migrant_account__first_name_text"]; ?>"><br>first name<span class="red">*</span></input></div>
-            <div class="card-field"><input required type="text" name="lname" placeholder="<?php echo  $content["migrant_account__last_name_text"]; ?>"><br>last name<span class="red">*</span></input></div>
+            <div class="card-field"><input required type="text" name="fname" value="<?php echo $firstname; ?>"><br>first name<span class="red">*</span></input></div>
+            <div class="card-field"><input required type="text" name="lname" value="<?php echo  $lastname; ?>"><br>last name<span class="red">*</span></input></div>
             <div class="card-field"><input type="text" name="gender" placeholder="<?php echo $content["migrant_account__gender_text"]; ?>"><br>gender</input></div>
         </div>
         <div class="card-row-header">
