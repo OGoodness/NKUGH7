@@ -127,10 +127,6 @@
             font-size: 45px;
         }
         #language-footer {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
             text-align: center;
             padding: 10px;
             color: gray;
