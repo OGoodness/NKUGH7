@@ -85,6 +85,7 @@
     $content["login__login"] = "Login";
     $content["login__create_account_button"]= "Create Account";
     $content["login__sign_in_header_text"]= "your account";
+    $content["login__sign_in_button"]= "sign in";
     $content["login__create_account"]="If you are new to this website, click the button below to get started on your personal profile and make one step closer to finding your future guide";
 
 
@@ -173,10 +174,10 @@
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <div class="card-row-header" style="padding-top: 20px;">
                     <div class="card-field"><input id ="input-user" type="text" name="email" placeholder="johnsmith@gmail.com"><?php echo $emailErr; ?><br>email</div>
-                    <div class="card-field"><input id="input-lock" type="password" name="password" placeholder="Enter your password"><?php echo $passwordErr; ?><br>password</div>
+                    <div class="card-field"><input id="input-lock" type="password" name="password" placeholder="●●●●●●●●"><?php echo $passwordErr; ?><br>password</div>
                 </div>
                 <div class="card-row-header">
-                    <div class="card-field"><button type="submit" name="login_submit"><?php echo $content["login__sign_in_header_text_bold"]; ?></button></div>
+                    <div class="card-field"><button type="submit" name="login_submit"><?php echo $content["login__sign_in_button"]; ?></button></div>
                 </div>
         </div>
     </div>
