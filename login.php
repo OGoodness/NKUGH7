@@ -112,7 +112,7 @@
             background-color: white;
             margin-bottom: 25px;
             margin: auto;
-            margin-top: 15px;
+            margin-top: 10px;
             width: 50%;
             box-shadow: 0px 0px 15px lightgray;
         }
@@ -130,7 +130,7 @@
         .card-row-header input::placeholder {
             font-family: 'Open Sans', sans-serif;
             text-transform: uppercase;
-            color: black;
+            color: lightgray;
         }
         .card-field {
             flex-grow: 1;
@@ -148,6 +148,9 @@
         .divider {
             width: 50%;
             margin: 0 auto;
+        }
+        button {
+            cursor: pointer;
         }
     </style>
     </head>
