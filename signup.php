@@ -197,6 +197,15 @@
             font-weight: 700;
             width: 100%;
         }
+        .card-row-header select {
+            border: none;
+            text-transform: uppercase;
+            background-color: #fff;
+            padding: 0px;
+            color: black;
+            font-weight: 700;
+            width: 100%;
+        }
         .divider {
             width: 50%;
             margin: 0 auto;
@@ -243,7 +252,7 @@
                     <br>citizenship status</div>
                 <div class="card-row-header">
                     <div class="card-field"><input  type="password" name="password" placeholder="password"><?php echo $passwordErr; ?><br>password</div>
-                    <div class="card-field"><input  type="password" name="confirm_password" placeholder="confirm_password"><?php echo $confirmPasswordErr; ?><br>retype password</div>
+                    <div class="card-field"><input  type="password" name="confirm_password" placeholder="confirm password"><?php echo $confirmPasswordErr; ?><br>retype password</div>
                 </div>
                 <div class="card-row-header">
                     <div class="card-field"><button type="submit" name="signup_submit"><?php echo $content["login__sign_up_button"]; ?></button></div>
