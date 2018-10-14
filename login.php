@@ -174,9 +174,6 @@
                 <div class="card-row-header">
                     <div class="card-field"><button type="submit" name="login_submit"><?php echo $content["login__sign_in_header_text_bold"]; ?></button></div>
                 </div>
-                <div class="card-row-header">
-                    <div class="card-field"><?php echo $content["login__create_account"]; ?></div>
-                </div>
         </div>
 
     <div class="divider">
@@ -185,7 +182,8 @@
     </div>
 
         <div class="box-container">
-                <div class="card-row-header">
+                <div class="card-row-header" style="padding-top: 20px;">
+                <div class="card-field"><?php echo $content["login__create_account"]; ?></div>
                     <div class="card-field"><a href="signup.php"><button> <?php echo $content["login__create_account_button"]; ?></button></a></div>
                 </div>
             </form>
