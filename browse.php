@@ -201,6 +201,7 @@
 <nav>
     <ul>
         <li style="float: left; font-size: 20px;"><a href="index.php"><b>Jump</b>Start</a></li>
+        <li style="float: left; font-size: 20px; background-color: lightgray; width: 100%;"><a href="index.php"></a></li>
         <li style="float: right; font-size: 20px;"><a href=""><i class="fas fa-map-marked-alt"></i></a></li>
         <li style="float: right; font-size: 20px;"><a href="browse.php"><i class="fas fa-list"></i></a></li>
         <li style="float: right; font-size: 20px;" class="dropdown"><a href="javascript:void(0)" class="dropbtn"><i class="fas fa-user-cog"></i></a>
