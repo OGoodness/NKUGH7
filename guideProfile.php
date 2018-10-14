@@ -52,6 +52,7 @@
     }
 
     $guides = get_guides($conn);
+    print_r($guides);
 ?>
 
 <!DOCTYPE html>
@@ -164,9 +165,6 @@
     <div class="title"><?php echo $content["migrant_account__header_text"]; ?></div>
 </header>
 
-<?php  foreach($guides as $person){
-        ?>
-
 <main>
     <div class="divider">
         <div class="grade"><?php echo $content["migrant_account__edit_text"]; ?></div>
@@ -175,6 +173,8 @@
 
     <div class="box-container">
         <form action="browse.php" method="post">
+        <?php  foreach($guides as $person){
+        ?>
             <div class="input-header"></div>
         <div class="card-row-header" style="margin-bottom: 0px;">
             <div class="input-picture"><img src=""></div>
@@ -223,11 +223,11 @@
             <input class="input-photo" type="file" name="pic2" accept="image/*">
             <input class="input-photo"type="file" name="pic3" accept="image/*">
         </div>
+        <?php      
+        }?>
             <input id="input-save" type="submit" value="save changes">
         </form>
     </div>
-    <?php      
-    }?>
 </main>
 
 </body>
