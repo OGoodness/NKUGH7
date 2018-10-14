@@ -188,13 +188,16 @@
         .card-field {
             margin: 0 auto;
             padding-bottom: 20px;
-            width: 33.33%;
+            width: 50%;
             flex-grow: 1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 12px;
         }
         .card-row-header input {
             border: none;
+            border-bottom: 1px solid black;
             background-color: #fff;
-            padding: 0px;
             color: black;
             font-weight: 700;
             width: 100%;
