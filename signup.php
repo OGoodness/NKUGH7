@@ -254,8 +254,8 @@
         <div class="box-container">
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <div class="card-row-header" style="padding-top: 20px;">
-                    <div class="card-field"><input  type="text" name="fname" placeholder="first name"><?php echo $userFirstNameErr; ?><br>first name</div>
-                    <div class="card-field"><input  type="text" name="lname" placeholder="last name"><?php echo $userLastNameErr; ?><br>last name</div>
+                    <div class="card-field"><input  type="text" name="fname"><?php echo $userFirstNameErr; ?><br>first name</div>
+                    <div class="card-field"><input  type="text" name="lname"><?php echo $userLastNameErr; ?><br>last name</div>
                 </div>
                 <div class="card-row-header">
                 <div class="card-field"><input  type="text" name="email" placeholder="johnsmith@email.com"><?php echo $emailErr; ?><br>email</div>
