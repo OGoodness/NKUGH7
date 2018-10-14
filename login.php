@@ -80,11 +80,11 @@
     require_once ('vendor/autoload.php');
     use \Statickidz\GoogleTranslate;
     $content["login__sign_in_account"]="If you have previously created a profile and are a registered guide, please sign in below";
-    $content["login__login_general_use_description"]= "This website will allow you to either help guide an immagrant family or if you are an immagrant family you can find a resdient family to help make your transtion to your new home smoother. Don't worry, your information is confidential and secure";
-    $content["login__sign_in_header_text_bold"]= "Sign in";
+    $content["login__login_general_use_description"]= "This website will allow you to either help guide an immagrant family or if you are an immagrant family you can find a resdient family to help make your transtion to your new home smoother. we ensure a smooth and safe transition into your new friendship family, so don't worry, your information is confidential and secure";
+    $content["login__sign_in_header_text_bold"]= "choose";
     $content["login__login"] = "Login";
     $content["login__create_account_button"]= "Create Account";
-    $content["login__sign_in_header_text"]= "to your account";
+    $content["login__sign_in_header_text"]= "your account";
     $content["login__create_account"]="If you are new to this website, click the button below to get started on your personal profile and make one step closer to finding your future guide";
 
 
