@@ -107,6 +107,16 @@
         <link rel="stylesheet" type="text/css" href="css/theme.css">
         <script src="js/main.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <style>
+        .box-container {
+            background-color: white;
+            margin-bottom: 25px;
+            margin: auto;
+            margin-top: 15px;
+            width: 50%;
+            box-shadow: 0px 0px 15px lightgray;
+        }
+    </style>
     </head>
 
 <body>
@@ -117,8 +127,8 @@
 </header>
 
 <main>
-    <div class="two-column-container ">
-        <div class="content">
+    <div class="two-column-container">
+        <div class="box-container">
             <div class="text"><?php echo $content["login__sign_in_account"]; ?></div>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <input id ="input-user" type="text" name="email" placeholder="Enter your email">
@@ -131,7 +141,7 @@
             
         </div>
 
-        <div class="content">
+        <div class="box-container">
             <div class="text"><?php echo $content["login__create_account"]; ?></div>
             <a href="signup.php"><button> <?php echo $content["login__create_account_button"]; ?></button></a>
             

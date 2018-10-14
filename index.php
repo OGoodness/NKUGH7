@@ -24,7 +24,7 @@ if(isset($_COOKIE["language"])) {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-around;
-        }
+            }
         </style>
     </head>
 
