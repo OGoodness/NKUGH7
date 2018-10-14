@@ -4,18 +4,25 @@
     $email = $password = "";
     $emailErr = $passwordErr = "";
 
+    $content["login__err_email"] = "Please enter your email.";
+    $content["login__err_password"] = "Please enter your password.";
+    $content["login__err_password_not_valid"] = "The password you entered was not valid.";
+    $content["login__err_no_email"] = "'No account found with that email.";
+    $content["login__err_oops"] = "Oops! Something went wrong. Please try again later.";
+
+
 
     if(!empty($_POST)){
         // Check if username is empty
         if(empty(trim($_POST["email"]))){
-            $emailErr = 'Please enter your email.';
+            $emailErr = $content["login__err_email"];
         } else{
             $email = trim($_POST["email"]);
         }
 
         // Check if password is empty
         if(empty(trim($_POST['password']))){
-            $passwordErr = 'Please enter your password.';
+            $passwordErr = $content["login__err_password"];
         } else{
             $password = trim($_POST['password']);
         }
@@ -49,15 +56,15 @@
                                 header("location: browse.php");
                             } else{
                                 // Display an error message if password is not valid
-                                $passwordErr = 'The password you entered was not valid.';
+                                $passwordErr = $content["login__err_password_not_valid"];
                             }
                         }
                     } else{
                         // Display an error message if username doesn't exist
-                        $emailErr = 'No account found with that email.';
+                        $emailErr = $content["login__err_no_email"];
                     }
                 } else{
-                    echo "Oops! Something went wrong. Please try again later.";
+                    echo $content["login__err_oops"];
                 }
             }
 
@@ -86,6 +93,11 @@
     $content["login__create_account_button"]= "Create Account";
     $content["login__sign_in_header_text"]= "to your account";
     $content["login__create_account"]="If you are new to this website, click the button below to get started on your personal profile and make one step closer to finding your future guide";
+
+    $content["login__log_in"]= "log in";
+    $content["login__lpersonal_acc"]= "personal account";
+    $content["login__sign_up"]= "sign up";
+    $content["login__spersonal_acc"]= "personal account";
 
 
     $trans = new GoogleTranslate();
@@ -117,18 +129,31 @@
 </header>
 
 <main>
-    <div class="two-column-container ">
-        <div class="content">
-            <div class="text"><?php echo $content["login__sign_in_account"]; ?></div>
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                <input id ="input-user" type="text" name="email" placeholder="Enter your email">
-                <br><span class="help-block"><?php echo $emailErr; ?></span><br>
-                <input id="input-lock" type="password" name="password" placeholder="Enter your password">
-                <br><span class="help-block"><?php echo $passwordErr; ?></span><br>
-                <button type="submit"><?php echo $content["login__sign_in_header_text_bold"]; ?></button>
-            </form>
+        <div class="divider">
+            <div class="grade"><?php echo  $content["login__log_in"]; ?></div>
+            <div class="date"><?php echo  $content["login__lpersonal_acc"]; ?></div>
+        </div>
 
-            
+        <div class="box-container">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                <div class="card-row-header" style="padding-top: 20px;">
+                    <div class="card-field"><input id ="input-user" type="text" name="email" placeholder="johnsmith@gmail.com"><?php echo $emailErr; ?><br>email</div>
+                    <div class="card-field"><input id="input-lock" type="password" name="password" placeholder="●●●●●●●●●●●"><?php echo $passwordErr; ?><br>password</div>
+                </div>
+                <div class="card-row-header">
+                    <div class="card-field"><button type="submit" name="login_submit"><?php echo $content["login__sign_in_button"]; ?></button></div>
+                </div>
+
+        </form>
+    </div>
+
+    <div class="divider">
+        <div class="grade"><?php echo  $content["login__sign_up"]; ?></div>
+        <div class="date"><?php echo  $content["login__spersonal_acc"]; ?></div>
+    </div>
+    <div class="box-container">
+        <div class="card-row-header" style="padding-top: 20px;">
+            <div class="card-field"><?php echo $content["login__create_account"]; ?></div>
         </div>
 
         <div class="content">
