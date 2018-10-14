@@ -152,25 +152,31 @@
 
 <?php  foreach($guides as $person){
         ?>
+
+        $trans = new GoogleTranslate();
+    foreach($content as $key => $text){
+        $content["$key"] = $trans->translate("en", $language, $text);
+    }
+    $guides = get_guides($conn);
 <div class="card-container">
         <div class="card-container-left">
             <div class="card-picture"><img src=""></div>
             <div class="card-container-title">
-                <div class="card-title"><b><?php echo $person->user_first_name . " " . $person->user_last_name; ?></b>, <?php echo $person->age; ?></div>
-                <div class="card-subtitle"><?php echo $person->city . ", " . $person->state;?></div>
+                <div class="card-title"><b><?php echo $trans->translate($person->user_first_name . " " . $person->user_last_name); ?></b>, <?php echo $trans->translate($person->age); ?></div>
+                <div class="card-subtitle"><?php echo $trans->translate($person->city . ", " . $person->state);?></div>
             </div>
         </div>
         <div class="card-container-right">
             <div class="card-container-content">
                 <div class="card-row">
-                    <div class="card-field"><b><?php echo $person->primary_language; ?></b><br>primary language</div>
-                    <div class="card-field"><b><?php echo $person->nationality; ?></b><br>nationality</div>
-                    <div class="card-field"><b><?php echo $person->religion; ?></b><br>religion</div>
-                    <div class="card-field"><b><?php echo $person->gender; ?></b><br>gender</div>
-                    <div class="card-field"><b><?php echo $person->occupation; ?></b><br>field of study</div>
+                    <div class="card-field"><b><?php echo $trans->translate($person->primary_language); ?></b><br>primary language</div>
+                    <div class="card-field"><b><?php echo $trans->translate($person->nationality); ?></b><br>nationality</div>
+                    <div class="card-field"><b><?php echo $trans->translate($person->religion); ?></b><br>religion</div>
+                    <div class="card-field"><b><?php echo $trans->translate($person->gender); ?></b><br>gender</div>
+                    <div class="card-field"><b><?php echo $trans->translate($person->occupation); ?></b><br>field of study</div>
                 </div>
                 <div class="card-row">
-                    <div class="card-paragraph"><?php echo $person->self_desc; ?></div>
+                    <div class="card-paragraph"><?php echo $trans->translate($person->self_desc); ?></div>
                 </div>
                <!--  <div class="card-row">
                     <div class="card-verified" style="color: #008F95;"><i class="fas fa-users"></i> &nbsp;Involved in Community</div>
@@ -189,25 +195,25 @@
         <div class="card-container-left">
             <div class="card-picture"><img src=""></div>
             <div class="card-container-title">
-                <div class="card-title"><b>Griffin Burkhardt</b>, 20</div>
-                <div class="card-subtitle">Montgomery, OH</div>
+                <div class="card-title"><b><?php echo $trans->translate('Griffin Burkhardt')?></b>, 20</div>
+                <div class="card-subtitle"><?php echo $trans->translate('Montgomery, OH')?></div>
             </div>
         </div>
         <div class="card-container-right">
             <div class="card-container-content">
                 <div class="card-row">
-                    <div class="card-field"><b>English</b><br>primary language</div>
-                    <div class="card-field"><b>White</b><br>nationality</div>
-                    <div class="card-field"><b>Christian</b><br>religion</div>
-                    <div class="card-field"><b>Male</b><br>gender</div>
-                    <div class="card-field"><b>Business</b><br>field of study</div>
+                    <div class="card-field"><b><?php echo $trans->translate('English')?></b><br><?php echo $trans->translate('primary language') ?></div>
+                    <div class="card-field"><b><?php echo $trans->translate('White')?></b><br><?php echo $trans->translate('nationality')?></div>
+                    <div class="card-field"><b><?php echo $trans->translate('Christian') ?></b><br><?php echo $trans->translate('religion') ?></div>
+                    <div class="card-field"><b><?php echo $trans->translate('Male')?></b><br><?php echo $trans->translate('gender')?></div>
+                    <div class="card-field"><b><?php echo $trans->translate('Business')?></b><br><?php echo $trans->translate('field of study')?></div>
                 </div>
                 <div class="card-row">
-                    <div class="card-paragraph">Hi, my name is Griffin, a leadership-oriented Junior student at Northern Kentucky University with an ability to utilize agile methodology and an inspiration to produce quality driven work seeking an internship in project management that blends business analytics and web development</div>
+                    <div class="card-paragraph"><?php echo $trans->translate('Hi, my name is Griffin, a leadership-oriented Junior student at Northern Kentucky University with an ability to utilize agile methodology and an inspiration to produce quality driven work seeking an internship in project management that blends business analytics and web development')?></div>
                 </div>
                 <div class="card-row">
-                    <div class="card-verified" style="color: #008F95;"><i class="fas fa-users"></i> &nbsp;Involved in Community</div>
-                    <div class="card-verified" style="color: #E24E42;"><i class="fas fa-clock"></i> &nbsp;Previous Refugee</div>
+                    <div class="card-verified" style="color: #008F95;"><i class="fas fa-users"></i> &nbsp;<?php echo $trans->translate('Involved in Community')?></div>
+                    <div class="card-verified" style="color: #E24E42;"><i class="fas fa-clock"></i> &nbsp;<?php echo $trans->translate('Previous Refugee')?></div>
                 </div>
             </div>
         </div>
