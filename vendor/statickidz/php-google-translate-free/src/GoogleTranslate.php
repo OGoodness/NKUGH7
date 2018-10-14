@@ -117,6 +117,7 @@ class GoogleTranslate
      */
     protected static function getSentencesFromJSON($json)
     {
+        print_r($json);
         $sentencesArray = json_decode($json, true);
         $sentences = "";
 
