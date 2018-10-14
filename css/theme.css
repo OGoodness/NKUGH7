@@ -14,7 +14,6 @@
         }
         main {
             margin-top: 5%;
-            margin-bottom: 5%;
         }
         .center {
             margin: 0;
@@ -168,8 +167,3 @@
         .help-block{
             color:red;
         }
-footer{
-    position: relative;
-    margin-top: 150px;
-    height: 150px;
-}
