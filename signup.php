@@ -193,6 +193,8 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             font-size: 12px;
+            text-align: left;
+            text-align: left;
         }
         .card-row-header input {
             border: none;
@@ -200,7 +202,8 @@
             background-color: #fff;
             color: black;
             font-weight: 700;
-            width: 100%;
+            width: 50%;
+            font-size: 16px;
         }
         .card-row-header select {
             border: none;
