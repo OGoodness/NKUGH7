@@ -1,5 +1,5 @@
 <?php 
-    include_once 'include/db_connect.php';
+    include_once '../include/db_connect.php';
     
     $user_id=0;
     if(isset($_COOKIE["insert_id"])){
