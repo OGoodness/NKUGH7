@@ -241,7 +241,6 @@
                         ?>
                     </select>
                     <br>citizenship status</div>
-                </div>
                 <div class="card-row-header">
                     <div class="card-field"><input  type="password" name="password" placeholder="password"><?php echo $passwordErr; ?><br>password</div>
                     <div class="card-field"><input  type="password" name="confirm_password" placeholder="confirm_password"><?php echo $confirmPasswordErr; ?><br>retype password</div>
