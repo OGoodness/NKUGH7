@@ -42,7 +42,7 @@
     foreach($content as $key => $text){
         $content["$key"] = $trans->translate("en", $language, $text);
     }
-    $migrants = get_migrant($conn);
+    $guides = get_guide($conn);
 ?>
 
 <!DOCTYPE html>
@@ -150,7 +150,7 @@
 
 <main>
 
-<?php  foreach($migrants as $person){
+<?php  foreach($guides as $person){
         ?>
 <div class="card-container">
         <div class="card-container-left">
