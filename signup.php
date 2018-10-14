@@ -258,68 +258,6 @@
         .small-nav {
         width: 30px;
         }
-        ul {
-            padding: 0px;
-        }
-        ul li {
-            display: inline-block;
-            padding: 0px 5px;
-        }
-            nav {
-       font-family: 'Open Sans', sans-serif;
-       margin-bottom: 25px;
-    }
-    ul {
-       list-style-type: none;
-       margin: 0;
-       padding: 0;
-       overflow: hidden;
-       margin-top: 10px;
-    }
-    ul li {
-        list-style: none; 
-        }
-
-    .dropdown-content a:hover {background-color: #f1f1f1}
-
-    li a, .dropbtn {
-    display: inline-block;
-    color: black;
-    text-align: center;
-    padding: 0px 20px;
-    text-decoration: none;
-    }
-
-    .dropdown-content a {
-        padding: 10px;
-        font-size: 13px;
-    }
-
-    li a:hover, .dropdown:hover .dropbtn {
-        color: darkgray;
-    }
-
-    li.dropdown {
-        display: block;
-    }
-
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        border-radius: 50px;
-        padding: 0px 10px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-        top: 28px;
-        right: 25px;
-    }
-    .dropdown:hover .dropdown-content {
-        display: inline-block;
-    }
-    .dropdown-content a:hover {
-        background-color: transparent;
-    }
     </style>
     </head>
 
@@ -335,7 +273,7 @@
                 <a href="#">Account</a>
                 <a href="#">Sign Out</a>
             </div>
-        </li>
+            </li>
         </ul>
     </nav>
 
