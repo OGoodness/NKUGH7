@@ -180,11 +180,12 @@
                     <div class="card-field"><button type="submit" name="login_submit"><?php echo $content["login__sign_in_button"]; ?></button></div>
                 </div>
 
-                <div class="divider">
-                    <div class="grade">sign up</div>
-                    <div class="date">personal account</div>
-                </div>
         </form>
+    </div>
+
+    <div class="divider">
+        <div class="grade">sign up</div>
+        <div class="date">personal account</div>
     </div>
     <div class="box-container">
         <div class="card-row-header" style="padding-top: 20px;">
