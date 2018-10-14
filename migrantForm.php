@@ -28,7 +28,7 @@
     if(isset($_GET['id'])){
         $id = $_GET['id'];
         $getUser = getUser($conn, $id);
-        $firstname = $getUser[0]->user_first_name;
+        $firstName = $getUser[0]->user_first_name;
         $lastName = $getUser[0]->user_last_name;
     }
     

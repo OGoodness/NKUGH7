@@ -1,8 +1,8 @@
 <?php
 ini_set('display_errors', 'On');
 $servername = "localhost";
-$username = "root";
-$password = "norsehacks";
+$username = "ganesh";
+$password = "Gbwalter88$";
 $database = "globalhack7";
 // Create connection
 $conn = new mysqli($servername, $username, '', $database);
