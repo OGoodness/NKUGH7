@@ -42,7 +42,7 @@
     foreach($content as $key => $text){
         $content["$key"] = $trans->translate("en", $language, $text);
     }
-    $guides = get_guide($conn);
+    $guides = get_guides($conn);
 ?>
 
 <!DOCTYPE html>
