@@ -4,18 +4,25 @@
     $email = $password = "";
     $emailErr = $passwordErr = "";
 
+    $content["login__err_email"] = "enter a valid email";
+    $content["login__err_password"] = "incorrect_password";
+    $content["login__err_password_not_valid"] = "The password you entered was not valid.";
+    $content["login__err_no_email"] = "'No account found with that email.";
+    $content["login__err_oops"] = "Oops! Something went wrong. Please try again later.";
+
+
 
     if(isset($_POST['login_submit'])){
         // Check if username is empty
         if(empty(trim($_POST["email"]))){
-            $emailErr = 'enter a valid email';
+            $emailErr = $content["login__err_email"];
         } else{
             $email = trim($_POST["email"]);
         }
 
         // Check if password is empty
         if(empty(trim($_POST['password']))){
-            $passwordErr = 'incorrect password';
+            $passwordErr = $content["login__err_password"];
         } else{
             $password = trim($_POST['password']);
         }
@@ -49,15 +56,15 @@
                                 header("location: browse.php");
                             } else{
                                 // Display an error message if password is not valid
-                                $passwordErr = 'The password you entered was not valid.';
+                                $passwordErr = $content["login__err_password_not_valid"];
                             }
                         }
                     } else{
                         // Display an error message if username doesn't exist
-                        $emailErr = 'No account found with that email.';
+                        $emailErr = $content["login__err_no_email"];
                     }
                 } else{
-                    echo "Oops! Something went wrong. Please try again later.";
+                    echo $content["login__err_oops"];
                 }
             }
 
@@ -87,6 +94,11 @@
     $content["login__sign_in_header_text"]= "your account";
     $content["login__sign_in_button"]= "sign in";
     $content["login__create_account"]="If you are new to this website, click the button below to get started on your personal profile and become one step closer to finding your future friendship family";
+
+    $content["login__log_in"]= "log in";
+    $content["login__lpersonal_acc"]= "personal account";
+    $content["login__sign_up"]= "sign up";
+    $content["login__spersonal_acc"]= "personal account";
 
 
     $trans = new GoogleTranslate();
@@ -169,8 +181,8 @@
 
 <main>
         <div class="divider">
-            <div class="grade">log in</div>
-            <div class="date">personal account</div>
+            <div class="grade"><?php echo  $content["login__log_in"]; ?></div>
+            <div class="date"><?php echo  $content["login__lpersonal_acc"]; ?></div>
         </div>
 
         <div class="box-container">
@@ -187,8 +199,8 @@
     </div>
 
     <div class="divider">
-        <div class="grade">sign up</div>
-        <div class="date">personal account</div>
+        <div class="grade"><?php echo  $content["login__sign_up"]; ?></div>
+        <div class="date"><?php echo  $content["login__spersonal_acc"]; ?></div>
     </div>
     <div class="box-container">
         <div class="card-row-header" style="padding-top: 20px;">
