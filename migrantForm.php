@@ -99,6 +99,7 @@
         }
         .card-row-header select {
             border: none;
+            text-transform: uppercase;
             background-color: #fff;
             padding: 0px;
             color: black;

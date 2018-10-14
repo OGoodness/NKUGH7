@@ -86,7 +86,7 @@
     $content["login__create_account_button"]= "Create Account";
     $content["login__sign_in_header_text"]= "your account";
     $content["login__sign_in_button"]= "sign in";
-    $content["login__create_account"]="If you are new to this website, click the button below to get started on your personal profile and make one step closer to finding your future guide";
+    $content["login__create_account"]="If you are new to this website, click the button below to get started on your personal profile and become one step closer to finding your future friendship family";
 
 
     $trans = new GoogleTranslate();
