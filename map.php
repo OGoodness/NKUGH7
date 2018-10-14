@@ -72,21 +72,10 @@
                      
                      //place predictions
                      
-<<<<<<< HEAD
                      
        
-=======
-                      var activity = 'climbing';
-                    var location = 'Ohio';
-        var displaySuggestions = function(predictions, status) {
-          if (status != google.maps.places.PlacesServiceStatus.OK) {
-            alert(status);
-            return;
-          }
->>>>>>> 92100b013f919a462186295e1ef1c86845cfff29
 
 
-<<<<<<< HEAD
              for(var i = 0; i < <?php echo sizeof($ideasArray)?>; i++) {
                 var divcard= document.createElement('div');
                 divcard.setAttribute("class", "card");
@@ -99,10 +88,6 @@
 
           var service = new google.maps.places.AutocompleteService();
         
-=======
-        var service = new google.maps.places.AutocompleteService();
-        service.getPlacePredictions({ input: activity }, displaySuggestions);
->>>>>>> 92100b013f919a462186295e1ef1c86845cfff29
       
                  }
 			</script> 
