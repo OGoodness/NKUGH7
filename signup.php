@@ -11,7 +11,7 @@
     $userFirstNameErr = $userLastNameErr = $userTypeErr = $passwordErr = $confirmPasswordErr = $emailErr = "";
 
     // Processing form data when form is submitted
-    if(!empty($_POST)){
+    if(isset($_POST['signup_submit'])){
 
         // Validate first name
         if(empty(trim($_POST["fname"]))){
@@ -102,10 +102,13 @@
                     // Redirect to login page
                     $insert_id = mysqli_stmt_insert_id($stmt);
                     session_start();
-                    $_SESSION['user_id'] = $email;
-                    $_SESSION['insert_id'] = $insert_id;
+                    $_SESSION['user_id'] = $insert_id;
+                    $_SESSION['user_email'] = $email;
                     setcookie("insert_id", $insert_id , time() + (86400 * 30), "/");
-                    header("location: guide_or_migrant.php");
+
+                    header("location: migrantForm.php?id=".$_SESSION['user_id']);
+
+
                 } else{
                     echo "Something went wrong. Please try again later.";
                 }
@@ -157,45 +160,108 @@
         <link rel="stylesheet" type="text/css" href="css/theme.css">
         <script src="js/main.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-        
+        <style>
+        .box-container {
+            background-color: white;
+            margin-bottom: 25px;
+            margin: auto;
+            margin-top: 10px;
+            width: 50%;
+            box-shadow: 0px 0px 15px lightgray;
+        }
+        .card-row-header {
+            font-size: 13px;
+            color: gray;
+            margin-bottom: 25px;
+            overflow: auto;
+            padding: 0px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            text-align-last: center;
+        }
+        .card-row-header input::placeholder {
+            font-family: 'Open Sans', sans-serif;
+            text-transform: uppercase;
+            color: lightgray;
+        }
+        .card-field {
+            margin: 0 auto;
+            padding-bottom: 20px;
+            width: 33.33%;
+            flex-grow: 1;
+        }
+        .card-row-header input {
+            border: none;
+            background-color: #fff;
+            padding: 0px;
+            color: black;
+            font-weight: 700;
+            width: 100%;
+        }
+        .card-row-header select {
+            border: none;
+            text-transform: uppercase;
+            background-color: #fff;
+            padding: 0px;
+            color: lightgray;
+            font-weight: 700;
+            width: 100%;
+        }
+        .divider {
+            width: 50%;
+            margin: 0 auto;
+        }
+        button {
+            cursor: pointer;
+        }
+        button:focus {
+            outline:0;
+        }
+    </style>
     </head>
 
 <body>
 
-<header>
+<header style="margin-top: 7%;">
     <div class="title"><b><?php echo  $content["login__sign_in_header_text_bold"]; ?></b> <?php echo $content["login__sign_in_header_text"]; ?></div>
     <div class="sub-title"><?php echo  $content["login__login_general_use_description"]; ?></div>
 </header>
 
 <main>
-        <div class="content" style="margin: 0 auto;">
-            <div class="text"><?php echo $content["login__sign_in_account"]; ?></div>
+
+        <div class="divider">
+            <div class="grade">sign up</div>
+            <div class="date">personal account</div>
+        </div>
+
+        <div class="box-container">
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                <input  type="text" name="fname" placeholder="first name">
-                <br><span class="help-block"><?php echo $userFirstNameErr; ?></span><br><br>
-                <input  type="text" name="lname" placeholder="last name">
-                <br><span class="help-block"><?php echo $userLastNameErr; ?></span><br><br>
-                <input  type="text" name="email" placeholder="johnsmith@email.com">
-                <br><span class="help-block"><?php echo $emailErr; ?></span><br><br>
-                <select name="user-type">
+                <div class="card-row-header" style="padding-top: 20px;">
+                    <div class="card-field"><input  type="text" name="fname" placeholder="first name"><?php echo $userFirstNameErr; ?><br>first name</div>
+                    <div class="card-field"><input  type="text" name="lname" placeholder="last name"><?php echo $userLastNameErr; ?><br>first name</div>
+                </div>
+                <div class="card-row-header">
+                <div class="card-field"><input  type="text" name="email" placeholder="johnsmith@email.com"><?php echo $emailErr; ?><br>email</div>
+                <div class="card-field">
+                    <select name="user-type">
                     <?php
                         foreach($user_type as $data)
                         {
                                   	echo '<option value="'. $data->id.'">'. $data->user_type.'</option>';
                           }
-                    ?>
-                </select><br>
-                <input  type="password" name="password" placeholder="password">
-                <br><span class="help-block"><?php echo $passwordErr; ?></span><br>
-                <input  type="password" name="confirm_password" placeholder="confirm_password">
-                <br><span class="help-block"><?php echo $confirmPasswordErr; ?></span><br>
-                <button type="submit"><?php echo $content["login__sign_up_button"]; ?></button>
+                        ?>
+                    </select><br>citizenship status</div>
+                        </div>
+                <div class="card-row-header">
+                    <div class="card-field"><input  type="password" name="password" placeholder="password"><?php echo $passwordErr; ?><br>password</div>
+                    <div class="card-field"><input  type="password" name="confirm_password" placeholder="confirm password"><?php echo $confirmPasswordErr; ?><br>retype password</div>
+                </div>
+                <div class="card-row-header">
+                    <div class="card-field"><button type="submit" name="signup_submit"><?php echo $content["login__sign_up_button"]; ?></button></div>
+                </div>
             </form>
-
-            
-        </div>
     </div>
-</div>
 </main>
 
 </body>
@@ -203,7 +269,7 @@
     <div id="language-footer">
         <div id = "language-display" class="languages"><script>displayLanguage('<?php echo $language?>');</script></div>
         <img src="" alt="">
-</div>
+    </div>
 
 </footer>
 </html>
