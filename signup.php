@@ -173,7 +173,7 @@
     $content["login__citz_stat"]="citizenship status";
     $content["login__password"]="password";
     $content["login__retype_password"]="retype password";
-    $content["login__retype_password"]="Account";
+    $content["login__retype_password"]="retype password";
 
 
     $trans = new GoogleTranslate();
