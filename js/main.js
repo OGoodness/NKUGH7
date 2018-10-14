@@ -26,6 +26,7 @@ function languageRestOfTheStuff(id) {
     myvar.setAttribute('name', 'language');
     myvar.setAttribute('type', 'hidden');
     myvar.setAttribute('value', languageData);
+    myvar.setAttribute('action', 'history.go(0)')
     form.appendChild(myvar);
     document.body.appendChild(form);
     form.submit();
