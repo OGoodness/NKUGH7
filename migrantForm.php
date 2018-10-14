@@ -9,17 +9,17 @@
     require_once ('vendor/autoload.php');
     use \Statickidz\GoogleTranslate;
 
-    $content["migrant_account__header_text"] = 'Edit Profile';
+    $content["migrant_account__header_text"] = 'Create Profile';
     $content["migrant_account__title_text"] = 'Migrant Profile';
-    $content["migrant_account__first_name_text"] = 'Griffin';
-    $content["migrant_account__last_name_text"] = 'Burkhardt';
-    $content["migrant_account__age_text"] = '20';
-    $content["migrant_account__gender_text"] = 'Male';
-    $content["migrant_account__location_city"] = 'Montgomery';
-    $content["migrant_account__location_state"] = 'Ohio';
-    $content["migrant_account__nationality_text"] = 'American';
-    $content["migrant_account__religion_text"] = 'Christian';
-    $content["migrant_account__marital_stat_text"] = 'Single';
+    $content["migrant_account__first_name_text"] = 'First Name:';
+    $content["migrant_account__last_name_text"] = 'Last Name:';
+    $content["migrant_account__age_text"] = 'Age:';
+    $content["migrant_account__gender_text"] = 'Gender:';
+    $content["migrant_account__location_city"] = 'City:';
+    $content["migrant_account__location_state"] = 'State:';
+    $content["migrant_account__nationality_text"] = 'Nationality:';
+    $content["migrant_account__religion_text"] = 'Religion:';
+    $content["migrant_account__marital_stat_text"] = 'Relationship Status:';
     $content["migrant_account__select_select"] = 'Select';
     $content["migrant_account__married_select"] = 'Married';
     $content["migrant_account__single_select"] = 'Single';
@@ -28,7 +28,7 @@
     $content["migrant_account__family_textarea"] = 'Tell us about your family...';
     $content["migrant_account__self_textarea"] = 'Tell us about yourself...';
     $content["migrant_account__language_textarea"] = 'What languages do you speak...';
-    $content["migrant_account__hobby_text"] = 'Composing music';
+    $content["migrant_account__hobby_text"] = 'Hobby:';
     $content["migrant_account__outcome_textarea"] = 'What are you hoping to get out of this...';
     $content["migrant_account__picture_text"] = 'Insert Pictures:';
 
