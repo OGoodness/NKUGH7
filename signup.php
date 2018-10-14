@@ -194,7 +194,7 @@
             letter-spacing: 1px;
             font-size: 12px;
             text-align: left;
-            text-align: left;
+            text-align-last: left;
         }
         .card-row-header input {
             border: none;
@@ -202,7 +202,7 @@
             background-color: #fff;
             color: black;
             font-weight: 700;
-            width: 50%;
+            width: 98%;
             font-size: 16px;
         }
         .card-row-header select {
