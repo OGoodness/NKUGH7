@@ -288,8 +288,8 @@
         padding: 0px 10px;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         z-index: 1;
-        top: 25px;
-        right: 20px;
+        top: 28px;
+        right: 25px;
     }
     .dropdown:hover .dropdown-content {
         display: inline-block;
