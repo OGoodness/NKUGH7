@@ -162,12 +162,12 @@
 <main>
     <div class="divider">
         <div class="grade">log in</div>
-        <div class="date">your personal account</div>
+        <div class="date">personal account</div>
     </div>
 
         <div class="box-container">
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                <div class="card-row-header">
+                <div class="card-row-header" style="padding-top: 20px;">
                     <div class="card-field"><input id ="input-user" type="text" name="email" placeholder="Enter your email"><?php echo $emailErr; ?><br>email</div>
                     <div class="card-field"><input id="input-lock" type="password" name="password" placeholder="Enter your password"><?php echo $passwordErr; ?><br>password</div>
                 </div>
@@ -175,8 +175,11 @@
                     <div class="card-field"><button type="submit" name="login_submit"><?php echo $content["login__sign_in_header_text_bold"]; ?></button></div>
                 </div>
                 <div class="card-row-header">
-                <div class="card-field"><?php echo $content["login__create_account"]; ?></div>
-                <div class="card-field"><a href="signup.php"><button> <?php echo $content["login__create_account_button"]; ?></button></a></div>
+                    <div class="card-field"><?php echo $content["login__create_account"]; ?></div>
+                </div>
+                <div class="card-row-header">
+                    <div class="card-field"><a href="signup.php"><button> <?php echo $content["login__create_account_button"]; ?></button></a></div>
+                </div>
             </form>
         </div>
 
