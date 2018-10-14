@@ -4,25 +4,18 @@
     $email = $password = "";
     $emailErr = $passwordErr = "";
 
-    $content["login__err_email"] = "Please enter your email.";
-    $content["login__err_password"] = "Please enter your password.";
-    $content["login__err_password_not_valid"] = "The password you entered was not valid.";
-    $content["login__err_no_email"] = "'No account found with that email.";
-    $content["login__err_oops"] = "Oops! Something went wrong. Please try again later.";
 
-
-
-    if(!empty($_POST)){
+    if(isset($_POST['login_submit'])){
         // Check if username is empty
         if(empty(trim($_POST["email"]))){
-            $emailErr = $content["login__err_email"];
+            $emailErr = 'enter a valid email';
         } else{
             $email = trim($_POST["email"]);
         }
 
         // Check if password is empty
         if(empty(trim($_POST['password']))){
-            $passwordErr = $content["login__err_password"];
+            $passwordErr = 'incorrect password';
         } else{
             $password = trim($_POST['password']);
         }
@@ -56,15 +49,15 @@
                                 header("location: browse.php");
                             } else{
                                 // Display an error message if password is not valid
-                                $passwordErr = $content["login__err_password_not_valid"];
+                                $passwordErr = 'The password you entered was not valid.';
                             }
                         }
                     } else{
                         // Display an error message if username doesn't exist
-                        $emailErr = $content["login__err_no_email"];
+                        $emailErr = 'No account found with that email.';
                     }
                 } else{
-                    echo $content["login__err_oops"];
+                    echo "Oops! Something went wrong. Please try again later.";
                 }
             }
 
@@ -87,17 +80,13 @@
     require_once ('vendor/autoload.php');
     use \Statickidz\GoogleTranslate;
     $content["login__sign_in_account"]="If you have previously created a profile and are a registered guide, please sign in below";
-    $content["login__login_general_use_description"]= "This website will allow you to either help guide an immagrant family or if you are an immagrant family you can find a resdient family to help make your transtion to your new home smoother. Don't worry, your information is confidential and secure";
-    $content["login__sign_in_header_text_bold"]= "Sign in";
+    $content["login__login_general_use_description"]= "This website will allow you to either help guide an immagrant family or if you are an immagrant family you can find a resdient family to help make your transtion to your new home smoother. we ensure a smooth and safe transition into your new friendship family, so don't worry, your information is confidential and secure";
+    $content["login__sign_in_header_text_bold"]= "choose";
     $content["login__login"] = "Login";
     $content["login__create_account_button"]= "Create Account";
-    $content["login__sign_in_header_text"]= "to your account";
-    $content["login__create_account"]="If you are new to this website, click the button below to get started on your personal profile and make one step closer to finding your future guide";
-
-    $content["login__log_in"]= "log in";
-    $content["login__lpersonal_acc"]= "personal account";
-    $content["login__sign_up"]= "sign up";
-    $content["login__spersonal_acc"]= "personal account";
+    $content["login__sign_in_header_text"]= "your account";
+    $content["login__sign_in_button"]= "sign in";
+    $content["login__create_account"]="If you are new to this website, click the button below to get started on your personal profile and become one step closer to finding your future friendship family";
 
 
     $trans = new GoogleTranslate();
@@ -119,19 +108,69 @@
         <link rel="stylesheet" type="text/css" href="css/theme.css">
         <script src="js/main.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <style>
+        .box-container {
+            background-color: white;
+            margin-bottom: 25px;
+            margin: auto;
+            margin-top: 10px;
+            width: 50%;
+            box-shadow: 0px 0px 15px lightgray;
+        }
+        .card-row-header {
+            font-size: 13px;
+            color: gray;
+            margin-bottom: 25px;
+            overflow: auto;
+            padding: 0px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            text-align-last: center;
+        }
+        .card-row-header input::placeholder {
+            font-family: 'Open Sans', sans-serif;
+            text-transform: uppercase;
+            color: lightgray;
+        }
+        .card-field {
+            margin: 0 auto;
+            padding-bottom: 20px;
+            width: 33.33%;
+            flex-grow: 1;
+        }
+        .card-row-header input {
+            border: none;
+            background-color: #fff;
+            padding: 0px;
+            color: black;
+            font-weight: 700;
+            width: 100%;
+        }
+        .divider {
+            width: 50%;
+            margin: 0 auto;
+        }
+        button {
+            cursor: pointer;
+        }
+        button:focus {
+            outline:0;
+        }
+    </style>
     </head>
 
 <body>
 
-<header>
+<header style="margin-top: 7%;">
     <div class="title"><b><?php echo  $content["login__sign_in_header_text_bold"]; ?></b> <?php echo $content["login__sign_in_header_text"]; ?></div>
     <div class="sub-title"><?php echo  $content["login__login_general_use_description"]; ?></div>
 </header>
 
 <main>
         <div class="divider">
-            <div class="grade"><?php echo  $content["login__log_in"]; ?></div>
-            <div class="date"><?php echo  $content["login__lpersonal_acc"]; ?></div>
+            <div class="grade">log in</div>
+            <div class="date">personal account</div>
         </div>
 
         <div class="box-container">
@@ -148,49 +187,25 @@
     </div>
 
     <div class="divider">
-        <div class="grade"><?php echo  $content["login__sign_up"]; ?></div>
-        <div class="date"><?php echo  $content["login__spersonal_acc"]; ?></div>
+        <div class="grade">sign up</div>
+        <div class="date">personal account</div>
     </div>
     <div class="box-container">
         <div class="card-row-header" style="padding-top: 20px;">
             <div class="card-field"><?php echo $content["login__create_account"]; ?></div>
         </div>
-
-        <div class="content">
-            <div class="text"><?php echo $content["login__create_account"]; ?></div>
-            <a href="signup.php"><button> <?php echo $content["login__create_account_button"]; ?></button></a>
-            
+        <div class="card-row-header">
+            <div class="card-field"> <a href="signup.php"><button><?php echo $content["login__create_account_button"]; ?></button></a></div>
         </div>
-    
-</div>
+    </div>
+
 </main>
 
 </body>
 <footer>
-
-    <div id = "language-display" class="languages"><script>displayLanguage('<?php echo $language?>');</script></div>
     <div id="language-footer">
-<<<<<<< HEAD
-        <div id="language-display"></div><img id="flag-filipino" src="images/flag-filipino.png" style = "width:30px">
-=======
         <div id = "language-display" class="languages"><script>displayLanguage('<?php echo $language?>');</script></div>
-<<<<<<< HEAD
-        
-        <div class="container">
-        <img id="flag-spanish" height="2" src="images/flag-spanish.png" alt="Spanish Flag" data="es" onclick="languageSelect('flag-spanish')">   
-        <img id="flag-usa" src="images/flag-usa.png" alt="USA Flag" data="en" onclick="languageSelect('flag-usa')">
-        <img id="flag-arabic" src="images/flag-arabic.png" alt="Arabic Flag" data="ar" onclick="languageSelect('flag-arabic')">
-        <img id="flag-vietnam" src="images/flag-vietnam.png" alt="Vietnam Flag" data="vi" onclick="languageSelect('flag-vietnam')">
-        <img id="flag-india" src="images/flag-india.png" alt="Indian Flag" data="hi" onclick="languageSelect('flag-india')">
-        <img id="flag-ethiopia" src="images/flag-ethiopia.png" alt="Ethiopia Flag" data="am" onclick="languageSelect('flag-ethiopia')">
-        <img id="flag-bulgaria" src="images/flag-bulgaria.png" alt="Bulgaria Flag" data="bg" onclick="languageSelect('flag-bulgaria')">
-        <img id="flag-france" src="images/flag-france.png" alt="France Flag" data="fr" onclick="languageSelect('flag-france')">
-        <img id="flag-turkey" src="images/flag-turkey.png" alt="Turkey Flag" data="tr" onclick="languageSelect('flag-turkey')">
-    </div>
-=======
         <img id ="language-flag" src="" alt="" onclick="languageSelect(id)">
->>>>>>> 90da053368a139fc1e48d55779c5eb0847a304c1
->>>>>>> 8f43469464a8d0d8287e483f1d00a7288f7ac7f7
 </div>
 </footer>
 </html>
