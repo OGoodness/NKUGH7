@@ -4,16 +4,19 @@
     if(isset($_POST["language"])){
         $language = $_POST["language"];
         setcookie("language", $language, time() + (86400 * 30), "/");
+        setcookie("type", "migrant", time() + (86400 * 30), "/");
     }elseif(!isset($_COOKIE["language"])) {
         $language = "en";
         setcookie("language", $language, time() + (86400 * 30), "/");
+        setcookie("type", "migrant", time() + (86400 * 30), "/");
     }else{
         $language=$_COOKIE["language"];
+        setcookie("type", "migrant", time() + (86400 * 30), "/");
     }
     
 
     require_once ('vendor/autoload.php');
-    require_once ('functions/processData.php');
+    //require_once ('functions/processData.php');
     use \Statickidz\GoogleTranslate;
 
     $id = null;
@@ -22,8 +25,8 @@
     if(isset($_GET['id'])){
         $id = $_GET['id'];
         $getUser = getUser($conn, $id);
-        $firstname = $getUser->user_first_name;
-        $lastName = $getUser->user_last_name;
+        $firstname = $getUser[0]->user_first_name;
+        $lastName = $getUser[0]->user_last_name;
     }
     
     
@@ -177,7 +180,9 @@
     </div>
 
     <div class="box-container">
-        <form action="browse.php" method="post">
+        <form action="functions/processData.php" method="post">
+             <!-- DONT REMOVE THIS AGAIN!! -->
+             <input type="hidden" name="type" value="migrant">
             <div class="input-header"></div>
         <div class="card-row-header" style="margin-bottom: 0px;">
             <div class="input-picture"><img src=""></div>

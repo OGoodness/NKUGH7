@@ -1,17 +1,26 @@
 <?php 
-    include "../include/db_connect.php";
+    ini_set('display_errors', 'On');
+    $servername = "localhost";
+    $username = "root";
+    $password = "norsehacks";
+    $database = "globalhack7";
+    // Create connection
+    $conn = new mysqli($servername, $username, '', $database);
+    // Check connection
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
 
 
     
     $user_id=0;
-    print_r($_POST);
     if(isset($_COOKIE["insert_id"])){
         $user_id=$_COOKIE["insert_id"];
     }else if(isset($_SESSION["insert_id"])){
         $user_id=$_SESSION["insert_id"];
     }
     print_r($user_id);
-    if($_POST["type"] == "guide"){
+    if(  $_COOKIE["type"] == "guide" || $_POST["type"] == "guide"){
         $insert = $conn->prepare("INSERT INTO guide
             SET users_id=?,
                 age=?,
@@ -40,7 +49,7 @@
     }
 
     $insert->close();
-    }elseif($_POST["type"] == "migrant"){
+    }elseif($_COOKIE["type"] == "migrant" || $_POST["type"] == "migrant"){
         $insert = $conn->prepare("INSERT INTO migrant
             SET users_id=?,
                 age=?,
@@ -123,7 +132,7 @@
         echo '<p>Click <a href="index.html">here</a> to go back</p>';
     }
 
-     /*header("Location: ../browse.php");*/
+     header("Location: ../browse.php");
 
 
  /*     

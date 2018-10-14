@@ -58,6 +58,5 @@ function getUser($conn, $id){
         }
         $result->free();
     }
-    
     return $response;
 }

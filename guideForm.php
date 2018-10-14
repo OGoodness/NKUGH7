@@ -2,11 +2,14 @@
     if(isset($_POST["language"])){
         $language = $_POST["language"];
         setcookie("language", $language, time() + (86400 * 30), "/");
+        setcookie("type", "guide", time() + (86400 * 30), "/");
     }elseif(!isset($_COOKIE["language"])) {
         $language = "en";
         setcookie("language", $language, time() + (86400 * 30), "/");
+        setcookie("type", "guide", time() + (86400 * 30), "/");
     }else{
         $language=$_COOKIE["language"];
+        setcookie("type", "guide", time() + (86400 * 30), "/");
     }
 
     require_once ('vendor/autoload.php');
@@ -171,12 +174,14 @@
     </div>
 
     <div class="box-container">
-        <form action="browse.php" method="post">
+        <form action="functions/processData.php" method="post">
             <div class="input-header"></div>
         <div class="card-row-header" style="margin-bottom: 0px;">
             <div class="input-picture"><img src=""></div>
         </div>
         <div class="card-row-header">
+            <!-- DONT REMOVE THIS AGAIN!! -->
+            <input type="hidden" name="type" value="guide">
             <div class="card-field"><input required type="text" name="fname" placeholder="<?php echo $content["migrant_account__first_name_text"]; ?>"><br><?php echo strtolower($content["migrant_account__first_name_text"]); ?><span class="red">*</span></input></div>
             <div class="card-field"><input required type="text" name="lname" placeholder="<?php echo  $content["migrant_account__last_name_text"]; ?>"><br><?php echo strtolower($content["migrant_account__last_name_text"]); ?><span class="red">*</span></input></div>
             <div class="card-field"><input type="text" name="gender" placeholder="<?php echo $content["migrant_account__gender_text"]; ?>"><br><?php echo strtolower($content["migrant_account__gender_text"]); ?></input></div>
