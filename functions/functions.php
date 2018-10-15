@@ -32,10 +32,16 @@ function get_migrant($conn){
 }
 
 
-function get_guides($conn){
+function get_guides($conn, $pass = false){
+
+
     $response = NULL;
+    $string="";
+
+    
     $sql = "SELECT *
-    FROM guide m LEFT JOIN users u ON u.user_id  = m.users_id";
+    FROM guide m LEFT JOIN users u ON u.user_id = m.users_id
+     ORDER BY m.state";
     if($result = $conn->query($sql)){
         if($result->num_rows > 0){
             while($row = $result->fetch_object()){

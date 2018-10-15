@@ -30,6 +30,8 @@
     $insert->bind_param("iisssssssssssss", $user_id, $_POST["age"], $_POST["gender"], $_POST["occupation"], $_POST["self"], $_POST["religion"], $_POST["maritalStat"], 
                                            $_POST["city"], $_POST["state"], $_POST["nationality"], $_POST["primary_language"], 
                                            $_POST["secondary_language"], $_POST["hobby1"], $_POST["hobby2"], $_POST["family"]);
+    
+ 
     if (!$insert->execute()) {
         print_r($insert->error); 
         echo "Error, could not insert into users";
@@ -57,6 +59,7 @@
                 hobby_2=?,
                 family_desc=?,
                 end_goal=?");
+
         $insert->bind_param("iisssssssssssss", $user_id, $_POST["age"], $_POST["gender"], $_POST["self"], $_POST["religion"], $_POST["maritalStat"], 
                                            $_POST["city"], $_POST["state"], $_POST["nationality"], $_POST["primary_language"], 
                                            $_POST["secondary_language"], $_POST["hobby1"], $_POST["hobby2"], $_POST["family"], $_POST["outcome"]);
@@ -123,7 +126,7 @@
         echo '<p>Click <a href="index.html">here</a> to go back</p>';
     }
 
-     header("Location: ../browse.php");
+    header("Location: ../browse.php");
 
  
  /*     
